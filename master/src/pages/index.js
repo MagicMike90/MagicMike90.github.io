@@ -1,11 +1,11 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import { graphql } from 'gatsby'
-import Drawer from '../components/drawer'
+import Layout from '../components/layout'
 import SEO from '../components/seo'
 
 const IndexPage = () => (
-  <Drawer>
+  <Layout>
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
     <h1>Hi people</h1>
     <p>Welcome to your new Gatsby site.</p>
@@ -14,7 +14,7 @@ const IndexPage = () => (
       <Image />
     </div> */}
     <Link to="/page-2/">Go to page 2</Link>
-  </Drawer>
+  </Layout>
 )
 
 export default IndexPage
