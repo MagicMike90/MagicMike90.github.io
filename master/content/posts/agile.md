@@ -1,3 +1,8 @@
+---
+title: 'Agile Notes'
+date: '2019-01-20'
+---
+
 # Agile Notes
 
 ## Methodology
