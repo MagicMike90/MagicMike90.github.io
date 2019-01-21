@@ -7,9 +7,19 @@ const Sidebar = styled.div`
   z-index: 1;
   top: 0;
   left: 0;
-  background-color: #111;
+
   overflow-x: hidden;
   padding-top: 20px;
+
+  :after {
+    top: 20px;
+    right: 0;
+    width: 1px;
+    bottom: 20px;
+    content: '';
+    position: absolute;
+    border-right: 1px solid #dedede;
+  }
 
   @media screen and (max-height: 450px) {
     padding-top: 15px;
