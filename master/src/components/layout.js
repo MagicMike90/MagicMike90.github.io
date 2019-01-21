@@ -66,7 +66,7 @@ class Layout extends React.Component {
               <Menu.List>
                 {menus.map(item => {
                   return (
-                    <Menu.ListItem>
+                    <Menu.ListItem key={item}>
                       <Link
                         style={{
                           boxShadow: `none`,

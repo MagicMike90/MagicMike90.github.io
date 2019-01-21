@@ -5,6 +5,7 @@ import Layout from '../components/Layout'
 import SEO from '../components/seo'
 import { rhythm } from '../utils/typography'
 import { H3 } from '../styles/Elements'
+import Card from '../styles/Card'
 
 class BlogIndex extends React.Component {
   render() {
@@ -21,7 +22,7 @@ class BlogIndex extends React.Component {
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug
           return (
-            <div key={node.fields.slug}>
+            <Card key={node.fields.slug}>
               <H3>
                 <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
                   {title}
@@ -29,7 +30,7 @@ class BlogIndex extends React.Component {
               </H3>
               <small>{node.frontmatter.date}</small>
               <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
-            </div>
+            </Card>
           )
         })}
       </Layout>
