@@ -7,7 +7,7 @@ import StyledApp from '../styles/StyledApp'
 import Menu from '../styles/Menu'
 import Bio from './Bio'
 
-const menus = ['works', 'about', 'contact']
+const menus = ['projects', 'about', 'contact']
 
 class Layout extends React.Component {
   render() {

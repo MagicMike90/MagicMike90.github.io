@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-blog",
+  "name": "michael-luo-blog",
   "private": true,
-  "description": "A starter for a blog powered by Gatsby and Markdown",
+  "description": "A personal blog powered by Gatsby and Markdown",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Michael Luo <michael.luo0801@gmail.com>",
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby/issues"
   },
@@ -36,6 +36,7 @@
     "typeface-merriweather": "0.0.43",
     "typeface-montserrat": "0.0.43",
     "typography": "^0.16.17",
+    "typography-theme-grand-view": "^0.16.18",
     "typography-theme-wordpress-2016": "^0.15.10"
   },
   "devDependencies": {

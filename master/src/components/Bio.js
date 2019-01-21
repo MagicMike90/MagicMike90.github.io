@@ -20,9 +20,7 @@ function Bio() {
               />
             </Avartar>
             <p>
-              Written by <strong>{author}</strong> who lives and works in San
-              Francisco building useful things.
-              {` `}
+              <strong>{author}</strong>
               <a href={`https://twitter.com/${social.twitter}`}>
                 You should follow him on Twitter
               </a>
@@ -38,7 +36,7 @@ const bioQuery = graphql`
   query BioQuery {
     avatar: file(absolutePath: { regex: "/profile-pic.jpg/" }) {
       childImageSharp {
-        fixed(width: 50, height: 50) {
+        fixed(width: 75, height: 75) {
           ...GatsbyImageSharpFixed
         }
       }
