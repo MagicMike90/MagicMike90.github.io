@@ -21,9 +21,6 @@ function Bio() {
             </Avartar>
             <p>
               <strong>{author}</strong>
-              <a href={`https://twitter.com/${social.twitter}`}>
-                You should follow him on Twitter
-              </a>
             </p>
           </header>
         )

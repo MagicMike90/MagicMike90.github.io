@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
+    title: `Michael Luo Personal Website`,
     author: `Michael Luo`,
     description: `A personal portolio site powered by Gatsby.`,
     siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
@@ -58,7 +58,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
+        name: `Michael Luo Personal Website`,
         short_name: `GatsbyJS`,
         start_url: `/`,
         background_color: `#ffffff`,

@@ -1,3 +1,8 @@
+---
+title: Angular Notes!
+date: '2019-07-21'
+---
+
 # Angular Notes
 
 Angular is consisted of six parts:

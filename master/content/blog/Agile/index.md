@@ -1,3 +1,18 @@
+---
+title: Agile Notes!
+date: '2019-07-21'
+---
+
+## Methodology
+
+- extreme programming
+- scrum
+- kanban
+
+## Cargo Cult
+
+Being envious of the success and benefits of Agile, many companies adopt the superficial trappings of Agile, renaming the meetings as “stand ups” and calling management reviews “retrospectives”. But in practice, nothing changes. It’s still the same primitive management driven hierarchical organization, micromanaging the teams, using outdated waterfall practices, and completely failing to grasp the core principles of agility.
+
 # The Scrum team
 
 - Product Owner (PO):collects requirements from customers (internal or external) and produces the requirements documents. The PO constantly aligns with customers and determines the scope of work and change in the scope, so the PO will get results from the Sprints. The PO is responsible for providing all the necessary product-related information required by the team and providing requirements.
