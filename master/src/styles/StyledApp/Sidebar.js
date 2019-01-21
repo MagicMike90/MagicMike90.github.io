@@ -9,7 +9,6 @@ const Sidebar = styled.div`
   left: 0;
 
   overflow-x: hidden;
-  padding-top: 20px;
 
   :after {
     top: 20px;
@@ -20,10 +19,9 @@ const Sidebar = styled.div`
     position: absolute;
     border-right: 1px solid #dedede;
   }
-
-  @media screen and (max-height: 450px) {
-    padding-top: 15px;
-  }
+`
+const Inner = styled.div`
+  padding: 2.5rem;
 `
 const A = styled.a`
   padding: 6px 8px 6px 16px;
@@ -40,6 +38,7 @@ const A = styled.a`
     font-size: 18px;
   }
 `
+Sidebar.Inner = Inner
 Sidebar.A = A
 
 export default Sidebar

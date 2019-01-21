@@ -4,7 +4,10 @@ import { Link } from 'gatsby'
 import { rhythm, scale } from '../utils/typography'
 
 import StyledApp from '../styles/StyledApp'
+import Menu from '../styles/Menu'
 import Bio from './Bio'
+
+const menus = ['works', 'about', 'contact']
 
 class Layout extends React.Component {
   render() {
@@ -57,7 +60,29 @@ class Layout extends React.Component {
     return (
       <StyledApp>
         <StyledApp.Siderbar>
-          <Bio />
+          <StyledApp.Siderbar.Inner>
+            <Bio />
+            <Menu>
+              <Menu.List>
+                {menus.map(item => {
+                  return (
+                    <Menu.ListItem>
+                      <Link
+                        style={{
+                          boxShadow: `none`,
+                          textDecoration: `none`,
+                          color: `inherit`,
+                        }}
+                        to={`/${item}`}
+                      >
+                        {item}
+                      </Link>
+                    </Menu.ListItem>
+                  )
+                })}
+              </Menu.List>
+            </Menu>
+          </StyledApp.Siderbar.Inner>
         </StyledApp.Siderbar>
         <StyledApp.Container>
           {header}
