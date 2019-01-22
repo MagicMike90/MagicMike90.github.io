@@ -20,7 +20,8 @@ function Bio() {
               />
             </Avartar>
             <p>
-              <strong>{author}</strong>
+              {/* <strong>{author}</strong> */}
+              <strong>{'test'}</strong>
             </p>
           </header>
         )

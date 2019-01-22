@@ -32,7 +32,7 @@ class Layout extends React.Component {
             }}
             to={`/`}
           >
-            {title}
+            {'test'}
           </Link>
         </h1>
       )
@@ -52,7 +52,7 @@ class Layout extends React.Component {
             }}
             to={`/`}
           >
-            {title}
+                {'test'}
           </Link>
         </h3>
       )

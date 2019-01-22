@@ -1,4 +1,8 @@
-# Application Development Notes
+---
+title: Application Development Notes!
+date: '2019-07-22'
+---
+
 
 ## Frontend technoloy choices
 

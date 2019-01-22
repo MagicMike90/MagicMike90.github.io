@@ -1,3 +1,8 @@
+---
+title: Notes for authendication!
+date: '2019-07-22'
+---
+
 # Notes for authendication
 
 ## Sessions
