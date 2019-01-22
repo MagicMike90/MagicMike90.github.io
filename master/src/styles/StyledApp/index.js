@@ -9,6 +9,7 @@ const StyledApp = styled.div`
   margin-left: auto;
   margin-right: auto;
   padding: ${rhythm(1.5)} ${rhythm(3 / 4)};
+  background-color: #f0f2f5;
 `
 
 StyledApp.Container = Container

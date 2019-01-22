@@ -4,6 +4,7 @@ const Sidebar = styled.div`
   height: 100%;
   width: 320px;
   position: fixed;
+  background-color: white;
   z-index: 1;
   top: 0;
   left: 0;
