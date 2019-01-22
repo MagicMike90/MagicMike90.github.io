@@ -82,6 +82,11 @@ class Layout extends React.Component {
                 })}
               </Menu.List>
             </Menu>
+            <footer>
+              © {new Date().getFullYear()}, Built with
+              {` `}
+              <a href="https://www.gatsbyjs.org">Gatsby</a>
+            </footer>
           </AppLayout.Siderbar.Inner>
         </AppLayout.Siderbar>
         <AppLayout.Container>
@@ -89,11 +94,6 @@ class Layout extends React.Component {
 
           {children}
         </AppLayout.Container>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
       </AppLayout>
     )
   }

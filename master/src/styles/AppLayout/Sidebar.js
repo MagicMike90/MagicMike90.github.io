@@ -11,17 +11,13 @@ const Sidebar = styled.div`
 
   // overflow-x: hidden;
 
-  background: #d7e8d4;
   width: 320px;
 
   :after {
-    top: 20px;
-    right: 0;
-    width: 1px;
-    bottom: 20px;
     content: '';
-    position: absolute;
-    border-right: 1px solid #dedede;
+    flex: 1; /* thats where it takes room not use by the text */
+    margin: -1em 0; /* grow them taller */
+    border-right: solid 1px white;
   }
 
   @media (max-width: 700px) {
