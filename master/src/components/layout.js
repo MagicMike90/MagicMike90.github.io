@@ -3,7 +3,7 @@ import { Link } from 'gatsby'
 
 import { rhythm, scale } from '../utils/typography'
 
-import StyledApp from '../styles/StyledApp'
+import AppLayout from '../styles/AppLayout'
 import Menu from '../styles/Menu'
 import Bio from './Bio'
 
@@ -52,15 +52,15 @@ class Layout extends React.Component {
             }}
             to={`/`}
           >
-                {'test'}
+            {'test'}
           </Link>
         </h3>
       )
     }
     return (
-      <StyledApp>
-        <StyledApp.Siderbar>
-          <StyledApp.Siderbar.Inner>
+      <AppLayout>
+        <AppLayout.Siderbar>
+          <AppLayout.Siderbar.Inner>
             <Bio />
             <Menu>
               <Menu.List>
@@ -82,18 +82,19 @@ class Layout extends React.Component {
                 })}
               </Menu.List>
             </Menu>
-          </StyledApp.Siderbar.Inner>
-        </StyledApp.Siderbar>
-        <StyledApp.Container>
-          {header}
+          </AppLayout.Siderbar.Inner>
+        </AppLayout.Siderbar>
+        <AppLayout.Container>
+          {/* {header} */}
+
           {children}
-          <footer>
-            © {new Date().getFullYear()}, Built with
-            {` `}
-            <a href="https://www.gatsbyjs.org">Gatsby</a>
-          </footer>
-        </StyledApp.Container>
-      </StyledApp>
+        </AppLayout.Container>
+        <footer>
+          © {new Date().getFullYear()}, Built with
+          {` `}
+          <a href="https://www.gatsbyjs.org">Gatsby</a>
+        </footer>
+      </AppLayout>
     )
   }
 }

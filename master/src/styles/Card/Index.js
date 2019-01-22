@@ -7,11 +7,9 @@ import Title from './Title'
 const Card = styled.div`
   background-color: white;
   padding: 20px;
-  margin-top: 20px;
+  margin: 20px 0;
 
   box-shadow: rgba(25, 17, 34, 0.05) 0px 3px 10px;
-  margin-left: -2.1rem;
-  margin-right: -2.1rem;
   background: rgb(255, 255, 255);
   border-radius: 4px;
   padding: 2.1rem 3.15rem;
