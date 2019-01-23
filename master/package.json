@@ -8,7 +8,9 @@
     "url": "https://github.com/gatsbyjs/gatsby/issues"
   },
   "dependencies": {
+    "@material-ui/core": "^3.9.0",
     "babel-plugin-styled-components": "^1.10.0",
+    "bootstrap": "^4.2.1",
     "gatsby": "^2.0.76",
     "gatsby-image": "^2.0.22",
     "gatsby-plugin-feed": "^2.0.8",
@@ -36,8 +38,7 @@
     "typeface-merriweather": "0.0.43",
     "typeface-montserrat": "0.0.43",
     "typography": "^0.16.17",
-    "typography-theme-grand-view": "^0.16.18",
-    "typography-theme-wordpress-2016": "^0.15.10"
+    "typography-theme-grand-view": "^0.16.18"
   },
   "devDependencies": {
     "eslint": "^4.19.1",

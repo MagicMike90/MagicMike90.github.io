@@ -3,7 +3,6 @@ title: Application Development Notes!
 date: '2019-07-22'
 ---
 
-
 ## Frontend technoloy choices
 
 `ReactJS`: React has shorter learning curve since, it can be impletemented with `FlowJS` a type checking library developed by Facebook, flux pattern is well supported by `Redux` library.
