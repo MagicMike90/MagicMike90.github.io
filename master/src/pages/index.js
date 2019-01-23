@@ -3,8 +3,7 @@ import { Link, graphql } from 'gatsby'
 
 import Layout from '../components/Layout'
 import SEO from '../components/seo'
-import { rhythm } from '../utils/typography'
-import { H3 } from '../styles/Elements'
+import { H3, Article } from '../styles/Elements'
 import Card from '../styles/Card'
 
 class BlogIndex extends React.Component {
@@ -22,7 +21,7 @@ class BlogIndex extends React.Component {
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug
           return (
-            <article key={node.fields.slug}>
+            <Article key={node.fields.slug}>
               <Card>
                 <H3>
                   <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
@@ -32,7 +31,7 @@ class BlogIndex extends React.Component {
                 <small>{node.frontmatter.date}</small>
                 <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
               </Card>
-            </article>
+            </Article>
           )
         })}
       </Layout>
@@ -43,17 +42,13 @@ class BlogIndex extends React.Component {
 export default BlogIndex
 
 export const pageQuery = graphql`
-  query($skip: Int!, $limit: Int!) {
+  query {
     site {
       siteMetadata {
         title
       }
     }
-    allMarkdownRemark(
-      sort: { fields: [frontmatter___date], order: DESC }
-      limit: $limit
-      skip: $skip
-    ) {
+    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
       edges {
         node {
           excerpt
