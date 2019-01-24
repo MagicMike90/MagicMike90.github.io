@@ -19,29 +19,58 @@ const HeaderInner = styled.div`
   text-align: center;
   margin: 0 auto;
 `;
+const HeaderH1 = styled.h1`
+  float: left;
+  font: normal 28px Cookie, Arial, Helvetica, sans-serif;
+  line-height: 40px;
+  margin: 0;
+`;
+const HeaderSpan = styled.span`
+  color: #5383d3;
+`;
+const HeaderLink = styled.a`
+  color: #ffffff;
+  text-decoration: none;
+`;
+const HeaderNav = styled.nav`
+  font: 16px Arial, Helvetica, sans-serif;
+  line-height: 40px;
+  float: right;
+`;
 
+const NavLink = styled(HeaderLink)`
+  display: inline-block;
+  padding: 0 5px;
+  text-decoration: none;
+  color: #ffffff;
+  opacity: 0.9;
+
+  :hover {
+    opacity: 1;
+  }
+`;
 export default class Header extends React.Component {
   render() {
     return (
       <FixedHeader>
         <HeaderInner>
-          <h1>
-            <a href="#">
+          <HeaderH1>
+            <HeaderLink href="#">
               Company
-              <span>logo</span>
-            </a>
-          </h1>
+              <HeaderSpan>logo</HeaderSpan>
+            </HeaderLink>
+          </HeaderH1>
 
-          <nav>
-            <a href="#">Home</a>
-            <a href="#" className="selected">
+          <HeaderNav>
+            <NavLink href="#">Home</NavLink>
+            <NavLink href="#" className="selected">
               Blog
-            </a>
-            <a href="#">Pricing</a>
-            <a href="#">About</a>
-            <a href="#">Faq</a>
-            <a href="#">Contact</a>
-          </nav>
+            </NavLink>
+            <NavLink href="#">Pricing</NavLink>
+            <NavLink href="#">About</NavLink>
+            <NavLink href="#">Faq</NavLink>
+            <NavLink href="#">Contact</NavLink>
+          </HeaderNav>
         </HeaderInner>
       </FixedHeader>
     );
