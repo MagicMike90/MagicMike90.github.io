@@ -1,8 +1,12 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
 import { Parallax, ParallaxLayer } from 'react-spring/addons'
+import { Trail } from 'react-spring'
 import Header from '../core/Header'
 import About from './about'
+
+const items = 'michael'.split('')
+console.log(items)
 
 const Page = ({ offset, caption, first, second, gradient, onClick }) => (
   <React.Fragment>
@@ -18,7 +22,7 @@ const Page = ({ offset, caption, first, second, gradient, onClick }) => (
       <span>0{offset + 1}</span>
     </ParallaxLayer>
 
-    <ParallaxLayer className="text header" offset={offset} speed={0.4} factor={3}>
+    <ParallaxLayer className="text header" offset={offset} speed={0.4}>
       <span>
         <p style={{ fontSize: 20 }}>{caption}</p>
         <div className={`stripe ${gradient}`} />
@@ -31,14 +35,11 @@ const Page = ({ offset, caption, first, second, gradient, onClick }) => (
 
 export default class App extends React.Component {
   scroll = to => this.refs.parallax.scrollTo(to)
-
   render() {
-    const { data } = this.props
-
     return (
       <div>
         <Header />
-        <Parallax className="container" ref="parallax" pages={3} horizontal scrolling={false}>
+        <Parallax className="container" ref="parallax" pages={3} vertical>
           <Page
             offset={0}
             gradient="pink"

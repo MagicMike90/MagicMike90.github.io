@@ -2,19 +2,17 @@ import React from 'react';
 import styled from 'styled-components';
 import Link from 'gatsby-link';
 
-const StyledLink = styled(Link)`
-  text-decoration: none;
-  color: inherit;
-`;
-
 const FixedHeader = styled.header`
-  background-color: #292c2f;
-  box-shadow: 0 1px 1px #ccc;
+  background-color: #20232f;
   padding: 20px 40px;
   height: 80px;
   color: #ffffff;
   box-sizing: border-box;
-  top: -100px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1030;
 
   -webkit-transition: top 0.3s;
   transition: top 0.3s;
@@ -49,7 +47,7 @@ const HeaderH1 = styled.h1`
 `;
 
 const HeaderSpan = styled.span`
-  color: #5383d3;
+  color: #1c46f2;
 `;
 const HeaderLink = styled(Link)`
   color: #ffffff;
@@ -82,7 +80,7 @@ const NavLink = styled(HeaderLink)`
   }
 
   &.selected {
-    color: #608bd2;
+    color: #1c46f2;
     pointer-events: none;
     opacity: 1;
   }
