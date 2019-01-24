@@ -12,6 +12,11 @@ const FixedHeader = styled.header`
 
   -webkit-transition: top 0.3s;
   transition: top 0.3s;
+
+  @media all and (max-width: 600px) {
+    padding: 20px 0;
+    height: 75px;
+  }
 `;
 
 const HeaderInner = styled.div`
@@ -19,12 +24,24 @@ const HeaderInner = styled.div`
   text-align: center;
   margin: 0 auto;
 `;
+
 const HeaderH1 = styled.h1`
   float: left;
   font: normal 28px Cookie, Arial, Helvetica, sans-serif;
   line-height: 40px;
   margin: 0;
+  font-size: 24px;
+  line-height: 30px;
+
+  @media all and (max-width: 600px) {
+    float: none;
+    margin: -8px 0 10px;
+    text-align: center;
+    font-size: 24px;
+    line-height: 1;
+  }
 `;
+
 const HeaderSpan = styled.span`
   color: #5383d3;
 `;
@@ -36,6 +53,12 @@ const HeaderNav = styled.nav`
   font: 16px Arial, Helvetica, sans-serif;
   line-height: 40px;
   float: right;
+  line-height: 28px;
+
+  @media all and (max-width: 600px) {
+    line-height: 1;
+    float: none;
+  }
 `;
 
 const NavLink = styled(HeaderLink)`
@@ -48,7 +71,17 @@ const NavLink = styled(HeaderLink)`
   :hover {
     opacity: 1;
   }
+  @media all and (max-width: 600px) {
+    font-size: 13px;
+  }
 `;
+
+const NavLinkSelected = styled(NavLink)`
+  color: #608bd2;
+  pointer-events: none;
+  opacity: 1;
+`;
+
 export default class Header extends React.Component {
   render() {
     return (
@@ -67,7 +100,7 @@ export default class Header extends React.Component {
               Blog
             </NavLink>
             <NavLink href="#">Pricing</NavLink>
-            <NavLink href="#">About</NavLink>
+            <NavLinkSelected href="#">About</NavLinkSelected>
             <NavLink href="#">Faq</NavLink>
             <NavLink href="#">Contact</NavLink>
           </HeaderNav>
