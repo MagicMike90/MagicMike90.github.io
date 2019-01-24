@@ -1,5 +1,11 @@
 import React from 'react';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
+import Link from 'gatsby-link';
+
+const StyledLink = styled(Link)`
+  text-decoration: none;
+  color: inherit;
+`;
 
 const FixedHeader = styled.header`
   background-color: #292c2f;
@@ -45,7 +51,7 @@ const HeaderH1 = styled.h1`
 const HeaderSpan = styled.span`
   color: #5383d3;
 `;
-const HeaderLink = styled.a`
+const HeaderLink = styled(Link)`
   color: #ffffff;
   text-decoration: none;
 `;
@@ -63,7 +69,7 @@ const HeaderNav = styled.nav`
 
 const NavLink = styled(HeaderLink)`
   display: inline-block;
-  padding: 0 5px;
+  padding: 0 10px;
   text-decoration: none;
   color: #ffffff;
   opacity: 0.9;
@@ -74,12 +80,12 @@ const NavLink = styled(HeaderLink)`
   @media all and (max-width: 600px) {
     font-size: 13px;
   }
-`;
 
-const NavLinkSelected = styled(NavLink)`
-  color: #608bd2;
-  pointer-events: none;
-  opacity: 1;
+  &.selected {
+    color: #608bd2;
+    pointer-events: none;
+    opacity: 1;
+  }
 `;
 
 export default class Header extends React.Component {
@@ -88,21 +94,34 @@ export default class Header extends React.Component {
       <FixedHeader>
         <HeaderInner>
           <HeaderH1>
-            <HeaderLink href="#">
+            <HeaderLink to="/">
               Company
               <HeaderSpan>logo</HeaderSpan>
             </HeaderLink>
           </HeaderH1>
 
           <HeaderNav>
-            <NavLink href="#">Home</NavLink>
-            <NavLink href="#" className="selected">
+            <NavLink to="/" activeClassName="selected">
+              Home
+            </NavLink>
+            <NavLink
+              to="/blog/"
+              activeClassName="selected"
+              state={{
+                pleasant: 'reasonably',
+              }}
+            >
               Blog
             </NavLink>
-            <NavLink href="#">Pricing</NavLink>
-            <NavLinkSelected href="#">About</NavLinkSelected>
-            <NavLink href="#">Faq</NavLink>
-            <NavLink href="#">Contact</NavLink>
+            <NavLink
+              to="/contact/"
+              activeClassName="selected"
+              state={{
+                pleasant: 'reasonably',
+              }}
+            >
+              Contact
+            </NavLink>
           </HeaderNav>
         </HeaderInner>
       </FixedHeader>

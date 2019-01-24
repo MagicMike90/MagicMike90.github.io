@@ -1,149 +1,70 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { Link, graphql } from 'gatsby';
-import { Parallax, ParallaxLayer } from 'react-spring/addons';
+import React from 'react'
+import { Link, graphql } from 'gatsby'
+import { Parallax, ParallaxLayer } from 'react-spring/addons'
+import Header from '../core/Header'
+import About from './about'
 
-import Layout from '../components/Layout';
-import About from './about';
-// Little helpers ...
-const url = (name, wrap = false) => `${wrap ? 'url(' : ''}https://awv3node-homepage.surge.sh/build/assets/${name}.svg${
-  wrap ? ')' : ''
-}`;
-const Pink = ({ children }) => <span style={{ color: '#FF6AC1' }}>{children}</span>;
-const Yellow = ({ children }) => <span style={{ color: '#EFF59B' }}>{children}</span>;
-const Lightblue = ({ children }) => <span style={{ color: '#9AEDFE' }}>{children}</span>;
-const Green = ({ children }) => <span style={{ color: '#57EE89' }}>{children}</span>;
-const Blue = ({ children }) => <span style={{ color: '#57C7FF' }}>{children}</span>;
-const Gray = ({ children }) => <span style={{ color: '#909090' }}>{children}</span>;
+const Page = ({ offset, caption, first, second, gradient, onClick }) => (
+  <React.Fragment>
+    <ParallaxLayer offset={offset} speed={0.2} onClick={onClick}>
+      <div className="slopeBegin" />
+    </ParallaxLayer>
+
+    <ParallaxLayer offset={offset} speed={-0.2} onClick={onClick}>
+      <div className={`slopeEnd ${gradient}`} />
+    </ParallaxLayer>
+
+    <ParallaxLayer className="text number" offset={offset} speed={0.3}>
+      <span>0{offset + 1}</span>
+    </ParallaxLayer>
+
+    <ParallaxLayer className="text header" offset={offset} speed={0.4} factor={3}>
+      <span>
+        <p style={{ fontSize: 20 }}>{caption}</p>
+        <div className={`stripe ${gradient}`} />
+        <p>{first}</p>
+        <p>{second}</p>
+      </span>
+    </ParallaxLayer>
+  </React.Fragment>
+)
 
 export default class App extends React.Component {
+  scroll = to => this.refs.parallax.scrollTo(to)
+
   render() {
-    const { data } = this.props;
-    const siteTitle = data.site.siteMetadata.title;
-    const posts = data.allMarkdownRemark.edges;
+    const { data } = this.props
 
     return (
-      <Layout location={this.props.location} title={siteTitle}>
-        <Parallax ref={ref => (this.parallax = ref)} pages={3}>
-          <ParallaxLayer offset={1} speed={1} style={{ backgroundColor: '#805E73' }} />
-          <ParallaxLayer offset={2} speed={1} style={{ backgroundColor: '#87BCDE' }} />
-
-          <ParallaxLayer
+      <div>
+        <Header />
+        <Parallax className="container" ref="parallax" pages={3} horizontal scrolling={false}>
+          <Page
             offset={0}
-            speed={0}
-            factor={3}
-            style={{
-              backgroundColor: '#373c4c',
-              backgroundImage: url('stars', true),
-              backgroundSize: 'cover',
-            }}
+            gradient="pink"
+            caption="who we are"
+            first="Lorem ipsum"
+            second="dolor sit"
+            onClick={() => this.scroll(1)}
           />
-
-          <ParallaxLayer offset={1.3} speed={-0.3} style={{ pointerEvents: 'none' }}>
-            <img src={url('satellite4')} style={{ width: '15%', marginLeft: '70%' }} />
-          </ParallaxLayer>
-
-          <ParallaxLayer offset={1} speed={0.8} style={{ opacity: 0.1 }}>
-            <img src={url('cloud')} style={{ display: 'block', width: '20%', marginLeft: '55%' }} />
-            <img src={url('cloud')} style={{ display: 'block', width: '10%', marginLeft: '15%' }} />
-          </ParallaxLayer>
-
-          <ParallaxLayer offset={1.75} speed={0.5} style={{ opacity: 0.1 }}>
-            <img src={url('cloud')} style={{ display: 'block', width: '20%', marginLeft: '70%' }} />
-            <img src={url('cloud')} style={{ display: 'block', width: '20%', marginLeft: '40%' }} />
-          </ParallaxLayer>
-
-          <ParallaxLayer offset={1} speed={0.2} style={{ opacity: 0.2 }}>
-            <img src={url('cloud')} style={{ display: 'block', width: '10%', marginLeft: '10%' }} />
-            <img src={url('cloud')} style={{ display: 'block', width: '20%', marginLeft: '75%' }} />
-          </ParallaxLayer>
-
-          <ParallaxLayer offset={1.6} speed={-0.1} style={{ opacity: 0.4 }}>
-            <img src={url('cloud')} style={{ display: 'block', width: '20%', marginLeft: '60%' }} />
-            <img src={url('cloud')} style={{ display: 'block', width: '25%', marginLeft: '30%' }} />
-            <img src={url('cloud')} style={{ display: 'block', width: '10%', marginLeft: '80%' }} />
-          </ParallaxLayer>
-
-          <ParallaxLayer offset={2.6} speed={0.4} style={{ opacity: 0.6 }}>
-            <img src={url('cloud')} style={{ display: 'block', width: '20%', marginLeft: '5%' }} />
-            <img src={url('cloud')} style={{ display: 'block', width: '15%', marginLeft: '75%' }} />
-          </ParallaxLayer>
-
-          <ParallaxLayer
-            offset={2.5}
-            speed={-0.4}
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              pointerEvents: 'none',
-            }}
-          >
-            <img src={url('earth')} style={{ width: '60%' }} />
-          </ParallaxLayer>
-
-          <ParallaxLayer
-            offset={2}
-            speed={-0.3}
-            style={{
-              backgroundSize: '80%',
-              backgroundPosition: 'center',
-              backgroundImage: url('clients', true),
-            }}
-          />
-
-          <ParallaxLayer
-            offset={0}
-            speed={0.1}
-            onClick={() => this.parallax.scrollTo(1)}
-            style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}
-          >
-            <img src={url('server')} style={{ width: '20%' }} />
-          </ParallaxLayer>
-
-          <ParallaxLayer
+          <Page
             offset={1}
-            speed={0.1}
-            onClick={() => this.parallax.scrollTo(2)}
-            style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}
-          >
-            <img src={url('bash')} style={{ width: '40%' }} />
-          </ParallaxLayer>
-
-          <ParallaxLayer
+            gradient="teal"
+            caption="what we do"
+            first="consectetur"
+            second="adipiscing elit"
+            onClick={() => this.scroll(2)}
+          />
+          <Page
             offset={2}
-            speed={-0}
-            style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}
-            onClick={() => this.parallax.scrollTo(0)}
-          >
-            <img src={url('clients-main')} style={{ width: '40%' }} />
-          </ParallaxLayer>
+            gradient="tomato"
+            caption="what we want"
+            first="Morbi quis"
+            second="est dignissim"
+            onClick={() => this.scroll(0)}
+          />
         </Parallax>
-      </Layout>
-    );
+      </div>
+    )
   }
 }
-
-export const pageQuery = graphql`
-  query {
-    site {
-      siteMetadata {
-        title
-      }
-    }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
-      edges {
-        node {
-          excerpt
-          fields {
-            slug
-          }
-          frontmatter {
-            date(formatString: "MMMM DD, YYYY")
-            title
-          }
-        }
-      }
-    }
-  }
-`;

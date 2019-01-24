@@ -16,12 +16,12 @@ const Page = ({ offset, caption, first, second, gradient, onClick }) => (
       <span>0{offset + 1}</span>
     </ParallaxLayer>
 
-    <ParallaxLayer className="text header" offset={offset} speed={0.4}>
+    <ParallaxLayer className="text header" offset={offset} speed={0.4} factor={3}>
       <span>
         <p style={{ fontSize: 20 }}>{caption}</p>
         <div className={`stripe ${gradient}`} />
-        <p>{first}</p>
-        <p>{second}</p>
+        <p>test</p>
+        <p>abc</p>
       </span>
     </ParallaxLayer>
   </React.Fragment>
