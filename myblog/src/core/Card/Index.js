@@ -1,6 +1,7 @@
 // Import styled-components library
-import styled, { css } from 'styled-components';
+
 import React from 'react';
+import styled, { css } from 'styled-components';
 
 import { remy } from '../utils';
 import { GridContainer, GridRow, GridColumn } from '../Grid';
