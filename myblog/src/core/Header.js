@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 import Link from 'gatsby-link';
 import { shine } from './Effect';
 
-const FixedHeader = styled.header`
+const FixedHeader = styled.nav`
   background-color: #20232f;
   padding: 20px 40px;
   height: 80px;
@@ -28,14 +28,18 @@ const HeaderInner = styled.div`
   max-width: 1200px;
   text-align: center;
   margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+
+  @media all and (max-width: 600px) {
+    display: block;
+  }
 `;
 
 const HeaderH1 = styled.h1`
-  float: left;
-  font: normal 28px Cookie, Arial, Helvetica, sans-serif;
   line-height: 40px;
   margin: 0;
-  font-size: 24px;
+  font-size: 28px;
   line-height: 30px;
 
   @media all and (max-width: 600px) {
@@ -51,11 +55,16 @@ const HeaderSpan = styled.span`
   color: #1c46f2;
 `;
 
-const HeaderNav = styled.nav`
-  font: 16px Arial, Helvetica, sans-serif;
-  line-height: 40px;
-  float: right;
-  line-height: 28px;
+const HeaderMenu = styled.ul`
+  font-size: 16px;
+  line-height: 1.5;
+  box-sizing: border-box;
+  outline: none;
+  list-style: none;
+  color: rgba(0, 0, 0, 0.65);
+  line-height: 0;
+  transition: background 0.3s, width 0.2s;
+  padding: 0;
 
   @media all and (max-width: 600px) {
     line-height: 1;
@@ -63,56 +72,34 @@ const HeaderNav = styled.nav`
   }
 `;
 
-const HeaderLink = styled(Link)`
-  color: #ffffff;
-  text-decoration: none;
-`;
-
-const NavLink = styled(HeaderLink)`
+const MenuItem = styled.li`
   display: inline-block;
   padding: 0 10px;
-  text-decoration: none;
   color: #ffffff;
-  opacity: 0.9;
-
-  :before {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: #000;
-    visibility: hidden;
-    transform: scaleX(0);
-    transition: all 0.3s ease-in-out 0s;
-  }
-
-  :hover {
-    // opacity: 1;
-    // -webkit-mask-image: linear-gradient(
-    //   -75deg,
-    //   rgba(0, 0, 0, 0.6) 30%,
-    //   #000 50%,
-    //   rgba(0, 0, 0, 0.6) 70%
-    // );
-    // -webkit-mask-size: 200%;
-    // animation: ${shine} 2s infinite;
-    color: #fff;
-  }
-
-  :hover:before {
-    visibility: visible;
-    transform: scaleX(1);
-  }
 
   @media all and (max-width: 600px) {
     font-size: 13px;
   }
+`;
+const StyledLink = styled(Link)`
+  color: #ffffff;
+  text-decoration: none;
 
   &.selected {
     color: #1c46f2;
     opacity: 1;
+  }
+
+  :hover {
+    opacity: 1;
+    -webkit-mask-image: linear-gradient(
+      -75deg,
+      rgba(0, 0, 0, 0.6) 30%,
+      #000 50%,
+      rgba(0, 0, 0, 0.6) 70%
+    );
+    -webkit-mask-size: 200%;
+    animation: ${shine} 2s infinite;
   }
 `;
 
@@ -122,35 +109,41 @@ export default class Header extends React.Component {
       <FixedHeader>
         <HeaderInner>
           <HeaderH1>
-            <HeaderLink to="/">
+            <StyledLink to="/">
               Company
               <HeaderSpan>logo</HeaderSpan>
-            </HeaderLink>
+            </StyledLink>
           </HeaderH1>
 
-          <HeaderNav>
-            <NavLink to="/" activeClassName="selected">
-              Home
-            </NavLink>
-            <NavLink
-              to="/blog/"
-              activeClassName="selected"
-              state={{
-                pleasant: 'reasonably',
-              }}
-            >
-              Blog
-            </NavLink>
-            <NavLink
-              to="/contact/"
-              activeClassName="selected"
-              state={{
-                pleasant: 'reasonably',
-              }}
-            >
-              Contact
-            </NavLink>
-          </HeaderNav>
+          <HeaderMenu>
+            <MenuItem>
+              <StyledLink to="/" activeClassName="selected">
+                Home
+              </StyledLink>
+            </MenuItem>
+            <MenuItem>
+              <StyledLink
+                to="/blog/"
+                activeClassName="selected"
+                state={{
+                  pleasant: 'reasonably',
+                }}
+              >
+                Blog
+              </StyledLink>
+            </MenuItem>
+            <MenuItem>
+              <StyledLink
+                to="/contact/"
+                activeClassName="selected"
+                state={{
+                  pleasant: 'reasonably',
+                }}
+              >
+                Contact
+              </StyledLink>
+            </MenuItem>
+          </HeaderMenu>
         </HeaderInner>
       </FixedHeader>
     );
