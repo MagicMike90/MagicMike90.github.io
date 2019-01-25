@@ -3,10 +3,8 @@ import styled from 'styled-components';
 
 import Header from '../core/Header';
 
-import { rhythm, scale } from '../core/utils/typography';
-
 const Container = styled.main`
-  padding: ${rhythm(4)} ${rhythm(6)};
+  padding: 4rem 6rem;
   background: white;
 `;
 class Layout extends React.Component {

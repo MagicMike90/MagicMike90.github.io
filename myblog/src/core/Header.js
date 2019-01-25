@@ -1,6 +1,7 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import Link from 'gatsby-link';
+import { shine } from './Effect';
 
 const FixedHeader = styled.header`
   background-color: #20232f;
@@ -49,10 +50,7 @@ const HeaderH1 = styled.h1`
 const HeaderSpan = styled.span`
   color: #1c46f2;
 `;
-const HeaderLink = styled(Link)`
-  color: #ffffff;
-  text-decoration: none;
-`;
+
 const HeaderNav = styled.nav`
   font: 16px Arial, Helvetica, sans-serif;
   line-height: 40px;
@@ -65,6 +63,11 @@ const HeaderNav = styled.nav`
   }
 `;
 
+const HeaderLink = styled(Link)`
+  color: #ffffff;
+  text-decoration: none;
+`;
+
 const NavLink = styled(HeaderLink)`
   display: inline-block;
   padding: 0 10px;
@@ -72,16 +75,43 @@ const NavLink = styled(HeaderLink)`
   color: #ffffff;
   opacity: 0.9;
 
-  :hover {
-    opacity: 1;
+  :before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #000;
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out 0s;
   }
+
+  :hover {
+    // opacity: 1;
+    // -webkit-mask-image: linear-gradient(
+    //   -75deg,
+    //   rgba(0, 0, 0, 0.6) 30%,
+    //   #000 50%,
+    //   rgba(0, 0, 0, 0.6) 70%
+    // );
+    // -webkit-mask-size: 200%;
+    // animation: ${shine} 2s infinite;
+    color: #fff;
+  }
+
+  :hover:before {
+    visibility: visible;
+    transform: scaleX(1);
+  }
+
   @media all and (max-width: 600px) {
     font-size: 13px;
   }
 
   &.selected {
     color: #1c46f2;
-    pointer-events: none;
     opacity: 1;
   }
 `;
