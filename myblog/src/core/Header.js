@@ -74,21 +74,17 @@ const HeaderMenu = styled.ul`
 
 const MenuItem = styled.li`
   display: inline-block;
-  padding: 0 10px;
   color: #ffffff;
 
   @media all and (max-width: 600px) {
     font-size: 13px;
+    padding: 0 10px;
   }
 `;
-const StyledLink = styled(Link)`
+
+const LogoLinked = styled(Link)`
   color: #ffffff;
   text-decoration: none;
-
-  &.selected {
-    color: #1c46f2;
-    opacity: 1;
-  }
 
   :hover {
     opacity: 1;
@@ -102,6 +98,38 @@ const StyledLink = styled(Link)`
     animation: ${shine} 2s infinite;
   }
 `;
+const StyledLink = styled(LogoLinked)`
+  padding: 0.7em calc(0.7em * 1.2);
+  border: 3px solid transparent;
+  position: relative;
+
+  :before {
+    content: '';
+    position: absolute;
+    content: '';
+    bottom: -3px;
+    left: calc(0.7em * 1.2);
+    right: calc(0.7em * 1.2);
+    height: 3px;
+    background: #f26522;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out 0s;
+  }
+
+  :hover:before {
+    visibility: visible;
+    transform: scaleX(1);
+  }
+
+  &.selected {
+    color: #1c46f2;
+    opacity: 1;
+  }
+  &.selected:before {
+    visibility: visible;
+    transform: scaleX(1);
+  }
+`;
 
 export default class Header extends React.Component {
   render() {
@@ -109,10 +137,10 @@ export default class Header extends React.Component {
       <FixedHeader>
         <HeaderInner>
           <HeaderH1>
-            <StyledLink to="/">
+            <LogoLinked to="/">
               Company
               <HeaderSpan>logo</HeaderSpan>
-            </StyledLink>
+            </LogoLinked>
           </HeaderH1>
 
           <HeaderMenu>
