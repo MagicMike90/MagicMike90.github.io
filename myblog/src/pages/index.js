@@ -1,38 +1,37 @@
 import React from 'react'
-import { Link, graphql } from 'gatsby'
 import { Parallax, ParallaxLayer } from 'react-spring/addons'
-import { Trail } from 'react-spring'
 import Header from '../core/Header'
-import About from './about'
 
 const items = 'michael'.split('')
 console.log(items)
 
-const Page = ({ offset, caption, first, second, gradient, onClick }) => (
-  <React.Fragment>
-    <ParallaxLayer offset={offset} speed={0.2} onClick={onClick}>
-      <div className="slopeBegin" />
-    </ParallaxLayer>
+const Page = props => {
+  const { offset, caption, first, second, gradient, onClick } = props
+  return (
+    <React.Fragment>
+      <ParallaxLayer offset={offset} speed={0.2} onClick={onClick}>
+        <div className="slopeBegin" />
+      </ParallaxLayer>
 
-    <ParallaxLayer offset={offset} speed={-0.2} onClick={onClick}>
-      <div className={`slopeEnd ${gradient}`} />
-    </ParallaxLayer>
+      <ParallaxLayer offset={offset} speed={-0.2} onClick={onClick}>
+        <div className={`slopeEnd ${gradient}`} />
+      </ParallaxLayer>
 
-    <ParallaxLayer className="text number" offset={offset} speed={0.3}>
-      <span>0{offset + 1}</span>
-    </ParallaxLayer>
+      <ParallaxLayer className="text number" offset={offset} speed={0.3}>
+        <span>0{offset + 1}</span>
+      </ParallaxLayer>
 
-    <ParallaxLayer className="text header" offset={offset} speed={0.4}>
-      <span>
-        <p style={{ fontSize: 20 }}>{caption}</p>
-        <div className={`stripe ${gradient}`} />
-        <p>{first}</p>
-        <p>{second}</p>
-      </span>
-    </ParallaxLayer>
-  </React.Fragment>
-)
-
+      <ParallaxLayer className="text header" offset={offset} speed={0.4}>
+        <span>
+          <p style={{ fontSize: 20 }}>{caption}</p>
+          <div className={`stripe ${gradient}`} />
+          <p>{first}</p>
+          <p>{second}</p>
+        </span>
+      </ParallaxLayer>
+    </React.Fragment>
+  )
+}
 export default class App extends React.Component {
   scroll = to => this.refs.parallax.scrollTo(to)
   render() {

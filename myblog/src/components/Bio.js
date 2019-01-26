@@ -30,7 +30,10 @@ function Bio() {
 who lives and works in San Francisco building
               useful things.
               {' '}
-              <a href={`https://twitter.com/${social.twitter}`}>You should follow him on Twitter</a>
+              <a href={`https://github.com/${social.github}`}>You should follow him on Twitter</a>
+              <a href={`https://www.linkedin.com/in/${social.linkin}`}>
+                You should follow him on Twitter
+              </a>
             </p>
           </div>
         );
