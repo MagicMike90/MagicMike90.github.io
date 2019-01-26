@@ -1,12 +1,10 @@
 import React from 'react'
 import { Parallax, ParallaxLayer } from 'react-spring/addons'
 import Header from '../core/Header'
-
-const items = 'michael'.split('')
-console.log(items)
+import Bio from '../components/Bio'
 
 const Page = props => {
-  const { offset, caption, first, second, gradient, onClick } = props
+  const { offset, caption, first, second, gradient, component, onClick } = props
   return (
     <React.Fragment>
       <ParallaxLayer offset={offset} speed={0.2} onClick={onClick}>
@@ -22,16 +20,20 @@ const Page = props => {
       </ParallaxLayer>
 
       <ParallaxLayer className="text header" offset={offset} speed={0.4}>
-        <span>
-          <p style={{ fontSize: 20 }}>{caption}</p>
-          <div className={`stripe ${gradient}`} />
-          <p>{first}</p>
-          <p>{second}</p>
-        </span>
+        {props.children}
       </ParallaxLayer>
     </React.Fragment>
   )
 }
+const PageContent = ({ caption, first, second, gradient }) => (
+  <span>
+    <p style={{ fontSize: 20 }}>{caption}</p>
+    <div className={`stripe ${gradient}`} />
+    <p>{first}</p>
+    <p>{second}</p>
+  </span>
+)
+
 export default class App extends React.Component {
   scroll = to => this.refs.parallax.scrollTo(to)
   render() {
@@ -46,7 +48,15 @@ export default class App extends React.Component {
             first="Lorem ipsum"
             second="dolor sit"
             onClick={() => this.scroll(1)}
-          />
+          >
+            {/* <PageContent
+              gradient="pink"
+              caption="who we are"
+              first="Lorem ipsum"
+              second="dolor sit"
+            /> */}
+            <Bio />
+          </Page>
           <Page
             offset={1}
             gradient="teal"
@@ -54,7 +64,14 @@ export default class App extends React.Component {
             first="consectetur"
             second="adipiscing elit"
             onClick={() => this.scroll(2)}
-          />
+          >
+            <PageContent
+              gradient="teal"
+              caption="what we do"
+              first="consectetur"
+              second="adipiscing elit"
+            />
+          </Page>
           <Page
             offset={2}
             gradient="tomato"

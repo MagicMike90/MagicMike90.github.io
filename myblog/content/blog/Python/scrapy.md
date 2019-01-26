@@ -1,11 +1,16 @@
+---
+title: Notes for Scrapy!
+date: "2019-07-26"
+---
+
 # Scrapy notes
 
-### Database choice
+## Database choice
 
 - If you plan to build some kind of search engine later on, Elasticsearch was a good choice
 - If on the other hand you just want to store the data and do processing tasks on it later, Elasticsearch was a poor choice and you would be better off with Cassandra or another NoSQL database.
 
-### Important notes
+## Important notes
 
 1. Python twisted
 2. Using MySQL instead of MongoDB due to some of the drawbacks that when using MongoDB as Database for data scraping.

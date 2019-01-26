@@ -98,6 +98,7 @@ const LogoLinked = styled(Link)`
     animation: ${shine} 2s infinite;
   }
 `;
+
 const StyledLink = styled(LogoLinked)`
   padding: 0.7em calc(0.7em * 1.2);
   border: 3px solid transparent;
@@ -111,7 +112,7 @@ const StyledLink = styled(LogoLinked)`
     left: calc(0.7em * 1.2);
     right: calc(0.7em * 1.2);
     height: 3px;
-    background: #f26522;
+    background: tomato;
     transform: scaleX(0);
     transition: all 0.3s ease-in-out 0s;
   }

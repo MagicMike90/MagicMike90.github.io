@@ -1,8 +1,10 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
+import _ from 'lodash';
 
 import Layout from '../components/Layout';
 import SEO from '../components/seo';
+import Card from '../core/Card';
 
 class BlogIndex extends React.Component {
   render() {
@@ -18,17 +20,13 @@ class BlogIndex extends React.Component {
           const title = node.frontmatter.title || node.fields.slug;
           return (
             <article key={node.fields.slug}>
-              <h3
-                style={{
-                  marginBottom: '2px',
-                }}
-              >
+              <Card title={title}>
                 <Link style={{ boxShadow: 'none' }} to={node.fields.slug}>
                   {title}
                 </Link>
-              </h3>
-              <small>{node.frontmatter.date}</small>
-              <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
+                <small>{node.frontmatter.date}</small>
+                <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
+              </Card>
             </article>
           );
         })}
