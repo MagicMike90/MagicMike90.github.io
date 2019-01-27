@@ -9,6 +9,26 @@ import { Location } from 'styled-icons/icomoon/Location';
 
 import Divider from '../core/Divider';
 
+const StyledUl = styled.ul`
+  display: flex;
+  list-style-type: none;
+  font-size: 12px;
+  color: white;
+  padding: 0;
+  margin: 0;
+`;
+
+const StyledLi = styled.li`
+  flex: 1;
+`;
+
+const StyledLink = styled.a`
+  font-size: 18;
+  color: white;
+`;
+const StyledLinkText = styled.span`
+  padding: 15px 0;
+`;
 function Bio() {
   return (
     <StaticQuery
@@ -22,26 +42,26 @@ function Bio() {
               <h1>Michael Luo</h1>
               <h5>Software Engineer</h5>
               <Divider />
-              <ul className="nav contact-infos d-flex justify-content-between">
-                <li>
-                  <a className="" href="">
-                    <Location size="48" />
-                    <span>Syndey, NSW</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="http://magicmike90.github.io/">
-                    <GithubSquare size="48" />
-                    <span>MagicMike90.github.io</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="mailto:michael.luo0801@gmail">
-                    <Linkedin size="48" />
-                    <span>michael.luo0801@gmail.com</span>
-                  </a>
-                </li>
-              </ul>
+              <StyledUl className="nav contact-infos d-flex justify-content-between">
+                <StyledLi>
+                  <StyledLink className="" href="">
+                    <Location size="12" />
+                    <StyledLinkText>Syndey, NSW</StyledLinkText>
+                  </StyledLink>
+                </StyledLi>
+                <StyledLi>
+                  <StyledLink href="http://magicmike90.github.io/">
+                    <GithubSquare size="12" />
+                    <StyledLinkText>MagicMike90.github.io</StyledLinkText>
+                  </StyledLink>
+                </StyledLi>
+                <StyledLi>
+                  <StyledLink href="mailto:michael.luo0801@gmail">
+                    <Linkedin size="12" />
+                    <StyledLinkText>michael.luo0801@gmail.com</StyledLinkText>
+                  </StyledLink>
+                </StyledLi>
+              </StyledUl>
             </div>
           </section>
         );
