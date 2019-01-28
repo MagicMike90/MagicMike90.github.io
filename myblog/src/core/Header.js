@@ -1,12 +1,14 @@
 import React from 'react';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import Link from 'gatsby-link';
+
+import { Github } from 'styled-icons/fa-brands/Github';
+import { LinkedinIn } from 'styled-icons/fa-brands/LinkedinIn';
 import { shine } from './Effect';
 
 const FixedHeader = styled.nav`
   background-color: #20232f;
-  padding: 20px 40px;
-  height: 80px;
+  padding: 15px 0;
   color: #ffffff;
   box-sizing: border-box;
   position: fixed;
@@ -15,7 +17,6 @@ const FixedHeader = styled.nav`
   left: 0;
   z-index: 1030;
 
-  -webkit-transition: top 0.3s;
   transition: top 0.3s;
 
   @media all and (max-width: 600px) {
@@ -112,7 +113,7 @@ const StyledLink = styled(LogoLinked)`
     left: calc(0.7em * 1.2);
     right: calc(0.7em * 1.2);
     height: 3px;
-    background: tomato;
+    background: #1c46f2;
     transform: scaleX(0);
     transition: all 0.3s ease-in-out 0s;
   }
@@ -131,18 +132,30 @@ const StyledLink = styled(LogoLinked)`
     transform: scaleX(1);
   }
 `;
+const SocialLink = styled.a`
+  padding: 0.7em calc(0.7em * 1.2);
+  border: 3px solid transparent;
+  position: relative;
+  font-size: 18px;
+  color: inherit;
+  transition: 200ms;
+  transition-timing-function: ease-in-out;
 
+  :hover {
+    color: #1c46f2;
+  }
+`;
 export default class Header extends React.Component {
   render() {
     return (
       <FixedHeader>
         <HeaderInner>
-          <HeaderH1>
+          {/* <HeaderH1>
             <LogoLinked to="/">
               Company
               <HeaderSpan>logo</HeaderSpan>
             </LogoLinked>
-          </HeaderH1>
+          </HeaderH1> */}
 
           <HeaderMenu>
             <MenuItem>
@@ -158,21 +171,18 @@ export default class Header extends React.Component {
                   pleasant: 'reasonably',
                 }}
               >
-                Blog
-              </StyledLink>
-            </MenuItem>
-            <MenuItem>
-              <StyledLink
-                to="/contact/"
-                activeClassName="selected"
-                state={{
-                  pleasant: 'reasonably',
-                }}
-              >
-                Contact
+                Notes
               </StyledLink>
             </MenuItem>
           </HeaderMenu>
+          <span>
+            <SocialLink href="http://magicmike90.github.io/">
+              <Github size={32} />
+            </SocialLink>
+            <SocialLink href="mailto:michael.luo0801@gmail">
+              <LinkedinIn size={32} />
+            </SocialLink>
+          </span>
         </HeaderInner>
       </FixedHeader>
     );

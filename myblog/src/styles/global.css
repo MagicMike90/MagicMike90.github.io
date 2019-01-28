@@ -2,13 +2,12 @@
 
 body {
   font-family: "Roboto", sans-serif;
+  margin: 0;
 }
 a {
   text-decoration: none;
 }
-.container {
-  left: 0;
-}
+
 .container > div > div {
   display: flex;
   align-items: center;
@@ -16,11 +15,10 @@ a {
 }
 
 .text {
-  pointer-events: none;
+  /* pointer-events: none;
   justify-content: start !important;
-  font-family: "Kanit", sans-serif;
-  line-height: 0px;
-  text-transform: uppercase;
+  text-transform: uppercase; */
+  justify-content: start !important;
 }
 
 .number {

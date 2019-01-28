@@ -1,34 +1,24 @@
 import React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
-import Image from 'gatsby-image';
-
 import styled from 'styled-components';
-import { Linkedin } from 'styled-icons/fa-brands/Linkedin';
-import { GithubSquare } from 'styled-icons/fa-brands/GithubSquare';
-import { Location } from 'styled-icons/icomoon/Location';
+import { shine } from '../core/Effect';
 
-import Divider from '../core/Divider';
+const Content = styled.div`
+  line-height: 0;
 
-const StyledUl = styled.ul`
-  display: flex;
-  list-style-type: none;
-  font-size: 12px;
-  color: white;
-  padding: 0;
-  margin: 0;
+  :hover {
+    opacity: 1;
+    -webkit-mask-image: linear-gradient(
+      -75deg,
+      rgba(0, 0, 0, 0.6) 30%,
+      #000 50%,
+      rgba(0, 0, 0, 0.6) 70%
+    );
+    -webkit-mask-size: 200%;
+    animation: ${shine} 2s infinite;
+  }
 `;
 
-const StyledLi = styled.li`
-  flex: 1;
-`;
-
-const StyledLink = styled.a`
-  font-size: 18;
-  color: white;
-`;
-const StyledLinkText = styled.span`
-  padding: 15px 0;
-`;
 function Bio() {
   return (
     <StaticQuery
@@ -36,34 +26,13 @@ function Bio() {
       render={(data) => {
         const { author, social } = data.site.siteMetadata;
         return (
-          <section id="welcome" className="section welcome">
-            <div className="content">
-              <h5>Hello, I am </h5>
-              <h1>Michael Luo</h1>
-              <h5>Software Engineer</h5>
-              <Divider />
-              <StyledUl className="nav contact-infos d-flex justify-content-between">
-                <StyledLi>
-                  <StyledLink className="" href="">
-                    <Location size="12" />
-                    <StyledLinkText>Syndey, NSW</StyledLinkText>
-                  </StyledLink>
-                </StyledLi>
-                <StyledLi>
-                  <StyledLink href="http://magicmike90.github.io/">
-                    <GithubSquare size="12" />
-                    <StyledLinkText>MagicMike90.github.io</StyledLinkText>
-                  </StyledLink>
-                </StyledLi>
-                <StyledLi>
-                  <StyledLink href="mailto:michael.luo0801@gmail">
-                    <Linkedin size="12" />
-                    <StyledLinkText>michael.luo0801@gmail.com</StyledLinkText>
-                  </StyledLink>
-                </StyledLi>
-              </StyledUl>
-            </div>
-          </section>
+          <Content>
+            <p>Hello, I am </p>
+            <h1>Michael Luo</h1>
+            <p>Software Engineer</p>
+
+            {/* <Divider /> */}
+          </Content>
         );
       }}
     />

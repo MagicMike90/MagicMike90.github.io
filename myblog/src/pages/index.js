@@ -1,17 +1,17 @@
-import React from 'react'
-import { Parallax, ParallaxLayer } from 'react-spring/addons'
-import Header from '../core/Header'
-import Bio from '../components/Bio'
+import React from 'react';
+import { Parallax, ParallaxLayer } from 'react-spring/addons';
+import Header from '../core/Header';
+import Bio from '../components/Bio';
 
 const Page = props => {
-  const { offset, caption, first, second, gradient, component, onClick } = props
+  const { offset, gradient } = props;
   return (
     <React.Fragment>
-      <ParallaxLayer offset={offset} speed={0.2} onClick={onClick}>
+      <ParallaxLayer offset={offset} speed={0.2}>
         <div className="slopeBegin" />
       </ParallaxLayer>
 
-      <ParallaxLayer offset={offset} speed={-0.2} onClick={onClick}>
+      <ParallaxLayer offset={offset} speed={-0.2}>
         <div className={`slopeEnd ${gradient}`} />
       </ParallaxLayer>
 
@@ -23,8 +23,8 @@ const Page = props => {
         {props.children}
       </ParallaxLayer>
     </React.Fragment>
-  )
-}
+  );
+};
 const PageContent = ({ caption, first, second, gradient }) => (
   <span>
     <p style={{ fontSize: 20 }}>{caption}</p>
@@ -32,10 +32,10 @@ const PageContent = ({ caption, first, second, gradient }) => (
     <p>{first}</p>
     <p>{second}</p>
   </span>
-)
+);
 
 export default class App extends React.Component {
-  scroll = to => this.refs.parallax.scrollTo(to)
+  scroll = to => this.refs.parallax.scrollTo(to);
   render() {
     return (
       <div>
@@ -79,9 +79,16 @@ export default class App extends React.Component {
             first="Morbi quis"
             second="est dignissim"
             onClick={() => this.scroll(0)}
-          />
+          >
+            <PageContent
+              gradient="teal"
+              caption="what we do"
+              first="consectetur"
+              second="adipiscing elit"
+            />
+          </Page>
         </Parallax>
       </div>
-    )
+    );
   }
 }
