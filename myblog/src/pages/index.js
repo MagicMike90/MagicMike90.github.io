@@ -33,7 +33,10 @@ const PageContent = ({ caption, first, second, gradient }) => (
     <p>{second}</p>
   </span>
 );
-
+const url = (name, wrap = false) =>
+  `${wrap ? 'url(' : ''}https://awv3node-homepage.surge.sh/build/assets/${name}.svg${
+    wrap ? ')' : ''
+  }`;
 export default class App extends React.Component {
   scroll = to => this.refs.parallax.scrollTo(to);
   render() {
@@ -41,6 +44,12 @@ export default class App extends React.Component {
       <div>
         <Header />
         <Parallax className="container" ref="parallax" pages={3} vertical>
+          <ParallaxLayer
+            offset={0}
+            speed={0}
+            factor={3}
+            style={{ backgroundImage: url('stars', true), backgroundSize: 'cover' }}
+          />
           <Page
             offset={0}
             gradient="pink"
