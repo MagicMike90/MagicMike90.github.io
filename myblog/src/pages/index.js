@@ -2,6 +2,7 @@ import React from 'react';
 import { Parallax, ParallaxLayer } from 'react-spring/addons';
 import Header from '../core/Header';
 import Bio from '../components/Bio';
+import { Galaxy } from '../components/Galaxy';
 
 const Page = props => {
   const { offset, gradient } = props;
@@ -44,12 +45,9 @@ export default class App extends React.Component {
       <div>
         <Header />
         <Parallax className="container" ref="parallax" pages={3} vertical>
-          <ParallaxLayer
-            offset={0}
-            speed={0}
-            factor={3}
-            style={{ backgroundImage: url('stars', true), backgroundSize: 'cover' }}
-          />
+          <ParallaxLayer offset={0} speed={0} factor={3}>
+            <Galaxy />
+          </ParallaxLayer>
           <Page
             offset={0}
             gradient="pink"
