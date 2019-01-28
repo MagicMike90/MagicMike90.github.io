@@ -6,19 +6,15 @@ import Divider from '../core/Divider';
 
 const Content = styled.div`
   font-size: 6rem;
+`;
+const ContentInner = styled.div`
   :hover {
     opacity: 1;
-    -webkit-mask-image: linear-gradient(
-      -75deg,
-      rgba(0, 0, 0, 0.6) 30%,
-      #000 50%,
-      rgba(0, 0, 0, 0.6) 70%
-    );
-    -webkit-mask-size: 200%;
-    animation: ${shine} 2s infinite;
+    mask-image: linear-gradient(-75deg, rgba(0, 0, 0, 0.6) 30%, #000 50%, rgba(0, 0, 0, 0.6) 70%);
+    mask-size: 200%;
+    animation: ${shine} 1.5s infinite;
   }
 `;
-
 const StyledName = styled.p`
   margin: 0;
 `;
@@ -31,10 +27,12 @@ function Bio() {
       query={bioQuery}
       render={data => (
         <Content>
-          <StyledSubtitle>Hello, I am </StyledSubtitle>
-          <StyledName>Michael Luo</StyledName>
-          <StyledSubtitle>Software Engineer</StyledSubtitle>
-          <Divider />
+          <ContentInner>
+            <StyledSubtitle>Hello, I am </StyledSubtitle>
+            <StyledName>Michael Luo</StyledName>
+            <StyledSubtitle>Software Engineer</StyledSubtitle>
+          </ContentInner>
+          <Divider className="stripe teal" />
         </Content>
       )}
     />
