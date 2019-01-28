@@ -4,8 +4,10 @@ import styled from 'styled-components';
 import Header from '../core/Header';
 
 const Container = styled.main`
-  padding: 4rem 6rem;
   background: white;
+  @media (min-width: 700px) {
+    padding: 4rem 6rem;
+  }
 `;
 class Layout extends React.Component {
   render() {

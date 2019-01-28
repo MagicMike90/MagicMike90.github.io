@@ -31,10 +31,6 @@ const HeaderInner = styled.div`
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
-
-  @media all and (max-width: 600px) {
-    display: block;
-  }
 `;
 
 const HeaderH1 = styled.h1`
