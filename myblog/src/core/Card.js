@@ -1,5 +1,5 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
 const StyledCard = styled.div`
   background-color: white;
@@ -12,7 +12,8 @@ const StyledCard = styled.div`
   border-radius: 0.25rem;
 
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1) 0s,
-    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0s, padding 250ms cubic-bezier(0.4, 0, 0.2, 1) 0s;
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0s,
+    padding 250ms cubic-bezier(0.4, 0, 0.2, 1) 0s;
 
   :hover {
     transform: translateY(-4px);
@@ -23,7 +24,6 @@ const StyledCard = styled.div`
     width: 100%;
   }
   @media (min-width: 700px) {
-    max-width: 320px;
     margin-right: 20px;
     margin-bottom: 20px;
 
