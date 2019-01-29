@@ -19,14 +19,12 @@ li {
 }
 
 .text {
-  /* pointer-events: none;
-  justify-content: start !important;
-  text-transform: uppercase; */
+  pointer-events: none;
   justify-content: start !important;
 }
 
 .number {
-  font-size: 450px;
+  font-size: 48vw;
   color: #373c4c;
 }
 
@@ -37,9 +35,16 @@ li {
 }
 
 .header {
-  margin-left: 180px;
-  font-size: 70px;
+  margin-left: 20vw;
+  font-size: 8vw;
   color: white;
+}
+@media only screen and (max-width: 600px) {
+  .header {
+    justify-content: center !important;
+    font-size: 60px;
+    margin-left: 10px;
+  }
 }
 
 .stripe {
