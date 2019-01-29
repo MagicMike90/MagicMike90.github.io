@@ -1,10 +1,12 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
-import Header from '../core/Header';
+import Header from "../core/Header";
 
 const Container = styled.main`
   background: white;
+  padding: 4rem 0;
+
   @media (min-width: 700px) {
     padding: 4rem 6rem;
   }
@@ -19,12 +21,7 @@ class Layout extends React.Component {
         <Header />
         <Container>{children}</Container>
         <footer>
-          ©
-          {' '}
-          {new Date().getFullYear()}
-          {' '}
-, Built with
-          {' '}
+          © {new Date().getFullYear()} , Built with{" "}
           <a href="https://www.gatsbyjs.org">Gatsby</a>
         </footer>
       </div>
