@@ -177,6 +177,17 @@ export default class Header extends React.Component {
                 Notes
               </StyledLink>
             </MenuItem>
+            <MenuItem>
+              <StyledLink
+                to="/portfolio/"
+                activeClassName="selected"
+                state={{
+                  pleasant: "reasonably"
+                }}
+              >
+                Portfolio
+              </StyledLink>
+            </MenuItem>
           </HeaderMenu>
           <span>
             <SocialLink href="http://magicmike90.github.io/">

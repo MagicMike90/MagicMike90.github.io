@@ -4,7 +4,6 @@ import styled from "styled-components";
 const StyledCard = styled.div`
   background-color: white;
   padding: 20px;
-  margin: 20px 0;
 
   box-shadow: rgba(25, 17, 34, 0.05) 0px 3px 10px;
   background: rgb(255, 255, 255);
@@ -15,9 +14,12 @@ const StyledCard = styled.div`
     box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0s,
     padding 250ms cubic-bezier(0.4, 0, 0.2, 1) 0s;
 
+  transition: 0.3s;
+
   :hover {
     transform: translateY(-4px);
     box-shadow: rgba(25, 17, 34, 0.1) 0px 10px 42px;
+    background: tomato;
   }
 
   @media (max-width: 700px) {
