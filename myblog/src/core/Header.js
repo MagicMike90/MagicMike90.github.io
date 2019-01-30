@@ -55,6 +55,7 @@ const HeaderSpan = styled.span`
 
 const HeaderMenu = styled.ul`
   font-size: 16px;
+  margin: 0;
   line-height: 1.5;
   box-sizing: border-box;
   outline: none;
@@ -74,6 +75,7 @@ const HeaderMenu = styled.ul`
 const MenuItem = styled.li`
   display: inline-block;
   color: #ffffff;
+  margin: 0;
 `;
 
 const LogoLinked = styled(Link)`
