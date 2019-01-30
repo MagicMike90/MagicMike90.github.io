@@ -42,8 +42,8 @@ class BlogIndex extends React.Component {
             {posts.map(({ node }) => {
               const title = node.frontmatter.title || node.fields.slug;
               return (
-                <Grid item xs={12} sm={6}>
-                  <Item key={node.fields.slug}>
+                <Grid item xs={12} sm={6} key={node.fields.slug}>
+                  <Item>
                     <Link style={{ boxShadow: "none" }} to={node.fields.slug}>
                       <Card title={title}>
                         <small>{node.frontmatter.date}</small>
