@@ -1,3 +1,9 @@
+---
+title: Data-intensive Architecture Notes!
+date: "2019-07-21"
+tag: architecture
+---
+
 # Data-intensive architecute
 
 ## A data-intensive application

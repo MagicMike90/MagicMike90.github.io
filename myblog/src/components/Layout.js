@@ -11,6 +11,12 @@ const Container = styled.main`
     padding: 4rem 6rem;
   }
 `;
+const Footer = styled.footer`
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+`;
 class Layout extends React.Component {
   render() {
     const { location, title, children } = this.props;
@@ -20,10 +26,10 @@ class Layout extends React.Component {
       <div>
         <Header />
         <Container>{children}</Container>
-        <footer>
+        <Footer>
           © {new Date().getFullYear()} , Built with{" "}
           <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
+        </Footer>
       </div>
     );
   }

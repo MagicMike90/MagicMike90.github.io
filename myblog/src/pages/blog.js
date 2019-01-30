@@ -7,6 +7,13 @@ import SEO from "../components/seo";
 import Grid from "@material-ui/core/Grid";
 import Card from "../core/Card";
 
+import styled from "styled-components";
+
+const StyeldP = styled.p`
+  font-size: 16px;
+  font-weight: 300;
+  margin: 10px 0;
+`;
 class BlogIndex extends React.Component {
   render() {
     const { data } = this.props;
@@ -26,13 +33,14 @@ class BlogIndex extends React.Component {
             return (
               <Grid item xs={12} sm={6}>
                 <article key={node.fields.slug}>
-                  <Card title={title}>
-                    <Link style={{ boxShadow: "none" }} to={node.fields.slug}>
-                      {title}
-                    </Link>
-                    <small>{node.frontmatter.date}</small>
-                    <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
-                  </Card>
+                  <Link style={{ boxShadow: "none" }} to={node.fields.slug}>
+                    <Card title={title}>
+                      <small>{node.frontmatter.date}</small>
+                      <StyeldP
+                        dangerouslySetInnerHTML={{ __html: node.excerpt }}
+                      />
+                    </Card>
+                  </Link>
                 </article>
               </Grid>
             );

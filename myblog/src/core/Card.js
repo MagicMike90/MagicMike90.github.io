@@ -43,7 +43,8 @@ const StyledCard = styled.div`
   }
 `;
 const CardHeader = styled.div`
-  font-size: 24px;
+  font-size: 32px;
+  font-weight: 700;
 `;
 
 const Card = ({ title, children }) => (

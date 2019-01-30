@@ -1,3 +1,8 @@
+---
+title: React Notes!
+date: "2019-07-30"
+---
+
 # React Notes
 
 ## Communicate Child to Parent
@@ -50,7 +55,7 @@ A common pattern in React is for a component to return multiple elements. Fragme
 
 ## Container and Presentational pattern
 
->Container components
+> Container components
 
 - They are more concerned about the behavior
 - They render their presentational components
@@ -58,7 +63,7 @@ A common pattern in React is for a component to return multiple elements. Fragme
 - They define event handlers
 - They are written as classes
 
->Presentational components`
+> Presentational components`
 
 - They are more concerned with the visual representation
 - They render the HTML markup (or other components)
@@ -68,11 +73,11 @@ A common pattern in React is for a component to return multiple elements. Fragme
 ## Function as Child
 
 ```javascript
-const FunctionAsChild = ({ children }) => children()
+const FunctionAsChild = ({ children }) => children();
 
 FunctionAsChild.propTypes = {
-  children: React.PropTypes.func.isRequired,
-}
+  children: React.PropTypes.func.isRequired
+};
 ```
 
 ## Uncontrolled Components
@@ -86,6 +91,7 @@ We have full control over the value of the fields
 ## Event
 
 > Synthetic Event is an object that wraps the original event object provided by the browser, and it has the same properties, no matter the browser where it is created.
+
 - **event bubbling**: What it does instead is attach a single event handler to the root element, which listens to all the events,
 - **single global handler**: When an event we are interested in is fired by the browser, React calls the handler on the specific components on its behalf.
 
@@ -114,7 +120,7 @@ We have full control over the value of the fields
 - **PurComponent** always re-render if the state or props reference a new object. This implies that if we do not want to lose the benefits of `PureComponent`, we should avoid such structures:
 
   ```javascript
-  <Entity values={this.props.values || []}/>
+  <Entity values={this.props.values || []} />
   ```
 
   It is important to remember, that `PureComponent` skips the re-render operation not only for component itself, but also for all its children, so the `best use case` for `PureComponent` are presentational components which have no child components and no dependencies on the global state in the application.
@@ -167,24 +173,27 @@ The best thing we can do when problems happen in our applications is:
 ## HOC
 
 ```javascript
-import React from 'react';
+import React from "react";
 
 // We receive a component constructor as an argument
-const makeRed = (Component) => {
+const makeRed = Component => {
   // We make a new component constructor that takes props, just as any component
-  const wrappedComponent = (props) => {
+  const wrappedComponent = props => {
     // This new component returns the original component, but with the style applied
     return (
-    // But we also use the ES6 spread operator to apply the regular props passed in.
-    // The spread operator applies props like the text in <RedButton text="hello" />
-    // to our new component
-    // It will "spread" any and all props across our component
-    <Component style={{ backgroundColor: 'red', color: 'white' }} {...props} />
+      // But we also use the ES6 spread operator to apply the regular props passed in.
+      // The spread operator applies props like the text in <RedButton text="hello" />
+      // to our new component
+      // It will "spread" any and all props across our component
+      <Component
+        style={{ backgroundColor: "red", color: "white" }}
+        {...props}
+      />
     );
   };
   // We return the new constructor, so it can be called as <RedButton /> or <RedAlertBox />
   return wrappedComponent;
-}
+};
 
 export default makeRed;
 ```
