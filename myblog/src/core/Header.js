@@ -1,10 +1,10 @@
-import React from 'react';
-import styled from 'styled-components';
-import Link from 'gatsby-link';
+import React from "react";
+import styled from "styled-components";
+import Link from "gatsby-link";
 
-import { Github } from 'styled-icons/fa-brands/Github';
-import { LinkedinIn } from 'styled-icons/fa-brands/LinkedinIn';
-import { shine } from './Effect';
+import { Github } from "styled-icons/fa-brands/Github";
+import { LinkedinIn } from "styled-icons/fa-brands/LinkedinIn";
+import { shine } from "./Effect";
 
 const FixedHeader = styled.nav`
   background-color: #20232f;
@@ -16,7 +16,7 @@ const FixedHeader = styled.nav`
   right: 0;
   left: 0;
   z-index: 1030;
-
+  align-items: center;
   transition: top 0.3s;
 
   @media all and (max-width: 600px) {
@@ -30,6 +30,7 @@ const HeaderInner = styled.div`
   text-align: center;
   margin: 0 auto;
   display: flex;
+  align-items: center;
   justify-content: space-between;
 `;
 
@@ -72,11 +73,6 @@ const HeaderMenu = styled.ul`
 const MenuItem = styled.li`
   display: inline-block;
   color: #ffffff;
-
-  @media all and (max-width: 600px) {
-    font-size: 13px;
-    padding: 0 10px;
-  }
 `;
 
 const LogoLinked = styled(Link)`
@@ -102,9 +98,9 @@ const StyledLink = styled(LogoLinked)`
   position: relative;
 
   :before {
-    content: '';
+    content: "";
     position: absolute;
-    content: '';
+    content: "";
     bottom: -3px;
     left: calc(0.7em * 1.2);
     right: calc(0.7em * 1.2);
@@ -141,6 +137,17 @@ const SocialLink = styled.a`
     color: #1c46f2;
   }
 `;
+const StyledGithubIcon = styled(Github)`
+  @media all and (max-width: 600px) {
+    width: 24px;
+  }
+`;
+
+const StyledLinkedinInIcon = styled(LinkedinIn)`
+  @media all and (max-width: 600px) {
+    width: 24px;
+  }
+`;
 export default class Header extends React.Component {
   render() {
     return (
@@ -164,7 +171,7 @@ export default class Header extends React.Component {
                 to="/blog/"
                 activeClassName="selected"
                 state={{
-                  pleasant: 'reasonably',
+                  pleasant: "reasonably"
                 }}
               >
                 Notes
@@ -173,10 +180,10 @@ export default class Header extends React.Component {
           </HeaderMenu>
           <span>
             <SocialLink href="http://magicmike90.github.io/">
-              <Github size={32} />
+              <StyledGithubIcon size={32} />
             </SocialLink>
             <SocialLink href="mailto:michael.luo0801@gmail">
-              <LinkedinIn size={32} />
+              <StyledLinkedinInIcon size={32} />
             </SocialLink>
           </span>
         </HeaderInner>

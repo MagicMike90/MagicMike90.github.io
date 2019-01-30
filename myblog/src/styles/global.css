@@ -19,7 +19,7 @@ li {
 }
 
 .text {
-  pointer-events: none;
+  /* pointer-events: none; */
   justify-content: start !important;
 }
 
