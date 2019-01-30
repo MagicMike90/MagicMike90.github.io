@@ -20,7 +20,7 @@ const FixedHeader = styled.nav`
   transition: top 0.3s;
 
   @media all and (max-width: 600px) {
-    padding: 20px 0;
+    padding: 20px 15px;
     height: 75px;
   }
 `;
@@ -67,6 +67,7 @@ const HeaderMenu = styled.ul`
   @media all and (max-width: 600px) {
     line-height: 1;
     float: none;
+    font-size: 13px;
   }
 `;
 
@@ -94,7 +95,6 @@ const LogoLinked = styled(Link)`
 
 const StyledLink = styled(LogoLinked)`
   padding: 0.7em calc(0.7em * 1.2);
-  border: 3px solid transparent;
   position: relative;
 
   :before {
@@ -126,9 +126,8 @@ const StyledLink = styled(LogoLinked)`
 `;
 const SocialLink = styled.a`
   padding: 0.7em calc(0.7em * 1.2);
-  border: 3px solid transparent;
   position: relative;
-  font-size: 18px;
+
   color: inherit;
   transition: 200ms;
   transition-timing-function: ease-in-out;
@@ -139,13 +138,13 @@ const SocialLink = styled.a`
 `;
 const StyledGithubIcon = styled(Github)`
   @media all and (max-width: 600px) {
-    width: 24px;
+    width: 22px;
   }
 `;
 
 const StyledLinkedinInIcon = styled(LinkedinIn)`
   @media all and (max-width: 600px) {
-    width: 24px;
+    width: 22px;
   }
 `;
 export default class Header extends React.Component {
@@ -189,14 +188,19 @@ export default class Header extends React.Component {
               </StyledLink>
             </MenuItem>
           </HeaderMenu>
-          <span>
-            <SocialLink href="http://magicmike90.github.io/">
-              <StyledGithubIcon size={32} />
-            </SocialLink>
-            <SocialLink href="mailto:michael.luo0801@gmail">
-              <StyledLinkedinInIcon size={32} />
-            </SocialLink>
-          </span>
+
+          <HeaderMenu>
+            <MenuItem>
+              <SocialLink href="http://magicmike90.github.io/">
+                <StyledGithubIcon size={32} />
+              </SocialLink>
+            </MenuItem>
+            <MenuItem>
+              <SocialLink href="mailto:michael.luo0801@gmail">
+                <StyledLinkedinInIcon size={32} />
+              </SocialLink>
+            </MenuItem>
+          </HeaderMenu>
         </HeaderInner>
       </FixedHeader>
     );

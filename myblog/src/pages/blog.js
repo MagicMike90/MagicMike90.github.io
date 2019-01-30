@@ -20,7 +20,7 @@ class BlogIndex extends React.Component {
           keywords={["blog", "gatsby", "javascript", "react"]}
         />
 
-        <Grid container spacing={24}>
+        <Grid container>
           {posts.map(({ node }) => {
             const title = node.frontmatter.title || node.fields.slug;
             return (
