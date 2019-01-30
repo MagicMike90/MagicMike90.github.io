@@ -1,7 +1,20 @@
 import React from "react";
 import { Link, graphql } from "gatsby";
-
+import posed from "react-pose";
 import SEO from "../components/seo";
+
+const Section = posed.section({
+  enter: { staggerChildren: 50 }
+});
+
+const Title = posed.h1({
+  enter: { x: 0, opacity: 1 },
+  exit: { x: 50, opacity: 0 }
+});
+const P = posed.p({
+  enter: { x: 0, opacity: 1 },
+  exit: { x: 50, opacity: 0 }
+});
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -9,11 +22,11 @@ class BlogPostTemplate extends React.Component {
     const { previous, next } = this.props.pageContext;
 
     return (
-      <React.Fragment>
+      <Section>
         <SEO title={post.frontmatter.title} description={post.excerpt} />
-        <h1>{post.frontmatter.title}</h1>
-        <p>{post.frontmatter.date}</p>
-        <div dangerouslySetInnerHTML={{ __html: post.html }} />
+        <Title>{post.frontmatter.title}</Title>
+        <P>{post.frontmatter.date}</P>
+        <P dangerouslySetInnerHTML={{ __html: post.html }} />
         <hr />
 
         <ul
@@ -40,7 +53,7 @@ class BlogPostTemplate extends React.Component {
             )}
           </li>
         </ul>
-      </React.Fragment>
+      </Section>
     );
   }
 }

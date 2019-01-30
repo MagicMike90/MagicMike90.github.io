@@ -7,7 +7,7 @@ import posed, { PoseGroup } from "react-pose";
 import Layout from "./src/components/Layout";
 
 const Transition = posed.div({
-  enter: { opacity: 1, delay: 100, beforeChildren: true },
+  enter: { opacity: 1, delay: 150, beforeChildren: true },
   exit: { opacity: 0 }
 });
 
