@@ -9,9 +9,7 @@ import posed from "react-pose";
 
 const ListContainer = posed.div({
   enter: {
-    staggerChildren: 50,
-    closed: { x: "-100%", delay: 300 },
-    initialPose: "closed"
+    staggerChildren: 50
   },
   exit: { staggerChildren: 20, staggerDirection: -1 }
 });
@@ -20,9 +18,7 @@ const Item = posed.article({
   enter: { y: 0, opacity: 1 },
   exit: { y: 50, opacity: 0 }
 });
-const StyledListContainer = styled(ListContainer)`
-  padding: 100px 15px 0 15px;
-`;
+
 const StyeldP = styled.p`
   font-size: 16px;
   font-weight: 300;
@@ -41,7 +37,7 @@ class BlogIndex extends React.Component {
           keywords={["blog", "gatsby", "javascript", "react"]}
         />
 
-        <StyledListContainer>
+        <ListContainer>
           <Grid container>
             {posts.map(({ node }) => {
               const title = node.frontmatter.title || node.fields.slug;
@@ -62,7 +58,7 @@ class BlogIndex extends React.Component {
               );
             })}
           </Grid>
-        </StyledListContainer>
+        </ListContainer>
       </React.Fragment>
     );
   }

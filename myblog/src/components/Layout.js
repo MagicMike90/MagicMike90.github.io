@@ -3,8 +3,10 @@ import styled from "styled-components";
 
 import Header from "../core/Header";
 
+const rootPath = `${__PATH_PREFIX__}/`;
 const Container = styled.main`
   background: white;
+  padding: ${props => (props.rootPath !== rootPath ? "100px 15px 0 15px" : 0)};
 `;
 const Footer = styled.footer`
   text-align: center;
@@ -16,12 +18,11 @@ const Footer = styled.footer`
 class Layout extends React.Component {
   render() {
     const { location, title, children } = this.props;
-    const rootPath = `${__PATH_PREFIX__}/`;
 
     return (
       <div>
         <Header />
-        <Container>{children}</Container>
+        <Container location={location.pathname}>{children}</Container>
         <Footer>© {new Date().getFullYear()} , Michael Luo</Footer>
       </div>
     );
