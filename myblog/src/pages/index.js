@@ -1,8 +1,8 @@
-import React from 'react';
-import { Parallax, ParallaxLayer } from 'react-spring/addons';
-import Header from '../core/Header';
-import Bio from '../components/Bio';
-import { Galaxy } from '../components/Galaxy';
+import React from "react";
+import { Parallax, ParallaxLayer } from "react-spring/addons";
+import Header from "../core/Header";
+import Bio from "../components/Bio";
+import { Galaxy } from "../components/Galaxy";
 
 const Page = props => {
   const { offset, gradient } = props;
@@ -35,8 +35,10 @@ const PageContent = ({ caption, first, second, gradient }) => (
   </span>
 );
 const url = (name, wrap = false) =>
-  `${wrap ? 'url(' : ''}https://awv3node-homepage.surge.sh/build/assets/${name}.svg${
-    wrap ? ')' : ''
+  `${
+    wrap ? "url(" : ""
+  }https://awv3node-homepage.surge.sh/build/assets/${name}.svg${
+    wrap ? ")" : ""
   }`;
 export default class App extends React.Component {
   scroll = to => this.refs.parallax.scrollTo(to);
@@ -45,9 +47,10 @@ export default class App extends React.Component {
       <div>
         <Header />
         <Parallax className="container" ref="parallax" pages={3} vertical>
-          <ParallaxLayer offset={0} speed={0} factor={3}>
+          {/* <ParallaxLayer offset={0} speed={0} factor={3}>
             <Galaxy />
-          </ParallaxLayer>
+          </ParallaxLayer> */}
+
           <Page
             offset={0}
             gradient="pink"
