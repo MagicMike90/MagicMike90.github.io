@@ -5,11 +5,6 @@ import Header from "../core/Header";
 
 const Container = styled.main`
   background: white;
-  padding: 4rem 0;
-
-  @media (min-width: 700px) {
-    padding: 4rem 6rem;
-  }
 `;
 const Footer = styled.footer`
   text-align: center;
@@ -17,6 +12,7 @@ const Footer = styled.footer`
   bottom: 0;
   width: 100%;
 `;
+
 class Layout extends React.Component {
   render() {
     const { location, title, children } = this.props;
@@ -26,10 +22,7 @@ class Layout extends React.Component {
       <div>
         <Header />
         <Container>{children}</Container>
-        <Footer>
-          © {new Date().getFullYear()} , Built with{" "}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </Footer>
+        <Footer>© {new Date().getFullYear()} , Michael Luo</Footer>
       </div>
     );
   }

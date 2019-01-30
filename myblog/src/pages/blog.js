@@ -1,14 +1,28 @@
 import React from "react";
 import { Link, graphql } from "gatsby";
 import _ from "lodash";
-
-import Layout from "../components/Layout";
 import SEO from "../components/seo";
 import Grid from "@material-ui/core/Grid";
 import Card from "../core/Card";
-
 import styled from "styled-components";
+import posed from "react-pose";
 
+const ListContainer = posed.div({
+  enter: {
+    staggerChildren: 50,
+    closed: { x: "-100%", delay: 300 },
+    initialPose: "closed"
+  },
+  exit: { staggerChildren: 20, staggerDirection: -1 }
+});
+
+const Item = posed.article({
+  enter: { y: 0, opacity: 1 },
+  exit: { y: 50, opacity: 0 }
+});
+const StyledListContainer = styled(ListContainer)`
+  padding: 100px 15px 0 15px;
+`;
 const StyeldP = styled.p`
   font-size: 16px;
   font-weight: 300;
@@ -21,32 +35,35 @@ class BlogIndex extends React.Component {
     const posts = data.allMarkdownRemark.edges;
 
     return (
-      <Layout location={this.props.location} title={siteTitle}>
+      <React.Fragment>
         <SEO
           title="All posts"
           keywords={["blog", "gatsby", "javascript", "react"]}
         />
 
-        <Grid container>
-          {posts.map(({ node }) => {
-            const title = node.frontmatter.title || node.fields.slug;
-            return (
-              <Grid item xs={12} sm={6}>
-                <article key={node.fields.slug}>
-                  <Link style={{ boxShadow: "none" }} to={node.fields.slug}>
-                    <Card title={title}>
-                      <small>{node.frontmatter.date}</small>
-                      <StyeldP
-                        dangerouslySetInnerHTML={{ __html: node.excerpt }}
-                      />
-                    </Card>
-                  </Link>
-                </article>
-              </Grid>
-            );
-          })}
-        </Grid>
-      </Layout>
+        <StyledListContainer>
+          <Grid container>
+            {posts.map(({ node }) => {
+              const title = node.frontmatter.title || node.fields.slug;
+              return (
+                <Grid item xs={12} sm={6}>
+                  <Item key={node.fields.slug}>
+                    <Link style={{ boxShadow: "none" }} to={node.fields.slug}>
+                      <Card title={title}>
+                        <small>{node.frontmatter.date}</small>
+
+                        <StyeldP
+                          dangerouslySetInnerHTML={{ __html: node.excerpt }}
+                        />
+                      </Card>
+                    </Link>
+                  </Item>
+                </Grid>
+              );
+            })}
+          </Grid>
+        </StyledListContainer>
+      </React.Fragment>
     );
   }
 }

@@ -4,9 +4,9 @@ import Layout from "../components/Layout";
 export default class Portfolio extends React.Component {
   render() {
     return (
-      <Layout>
+      <React.Fragment>
         <h1>Coming soon...</h1>
-      </Layout>
+      </React.Fragment>
     );
   }
 }

@@ -44,8 +44,7 @@ export default class App extends React.Component {
   scroll = to => this.refs.parallax.scrollTo(to);
   render() {
     return (
-      <div>
-        <Header />
+      <React.Fragment>
         <Parallax className="container" ref="parallax" pages={3} vertical>
           {/* <ParallaxLayer offset={0} speed={0} factor={3}>
             <Galaxy />
@@ -98,7 +97,7 @@ export default class App extends React.Component {
             />
           </Page>
         </Parallax>
-      </div>
+      </React.Fragment>
     );
   }
 }

@@ -21,26 +21,6 @@ const StyledCard = styled.div`
     box-shadow: rgba(25, 17, 34, 0.1) 0px 10px 42px;
     background: tomato;
   }
-
-  @media (max-width: 700px) {
-    width: 100%;
-  }
-  @media (min-width: 700px) {
-    margin-right: 20px;
-    margin-bottom: 20px;
-
-    :nth-child(even) {
-      margin-right: 0;
-    }
-  }
-  @media (min-width: 980px) {
-    :nth-child(even) {
-      margin-right: 20px;
-    }
-    :nth-child(3n) {
-      margin-right: 0;
-    }
-  }
 `;
 const CardHeader = styled.div`
   font-size: 32px;
