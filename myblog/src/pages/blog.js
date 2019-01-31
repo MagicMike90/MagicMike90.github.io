@@ -7,6 +7,7 @@ import Grid from "@material-ui/core/Grid";
 import Card from "../core/Card";
 import styled from "styled-components";
 import posed from "react-pose";
+import Layout from "../components/Layout";
 
 const ListContainer = posed.div({
   enter: {
@@ -27,11 +28,11 @@ const StyeldP = styled.p`
 `;
 class BlogIndex extends React.Component {
   render() {
-    const { data } = this.props;
+    const { data, location } = this.props;
     const posts = data.allMarkdownRemark.edges;
 
     return (
-      <React.Fragment>
+      <Layout location={location}>
         <SEO
           title="All posts"
           keywords={["blog", "gatsby", "javascript", "react"]}
@@ -62,7 +63,7 @@ class BlogIndex extends React.Component {
             })}
           </Grid>
         </ListContainer>
-      </React.Fragment>
+      </Layout>
     );
   }
 }

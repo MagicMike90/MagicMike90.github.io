@@ -1,8 +1,9 @@
-import React from 'react';
-import { Parallax, ParallaxLayer } from 'react-spring/addons';
-import Bio from '../components/Bio';
+import React from "react";
+import { Parallax, ParallaxLayer } from "react-spring/addons";
+import Bio from "../components/Bio";
+import Layout from "../components/Layout";
 
-const Page = ({ offset, gradient,children }) => {
+const Page = ({ offset, gradient, children }) => {
   return (
     <React.Fragment>
       <ParallaxLayer offset={offset} speed={0.2}>
@@ -32,14 +33,16 @@ const PageContent = ({ caption, first, second, gradient }) => (
   </span>
 );
 const url = (name, wrap = false) =>
-  `${wrap ? 'url(' : ''}https://awv3node-homepage.surge.sh/build/assets/${name}.svg${
-    wrap ? ')' : ''
+  `${
+    wrap ? "url(" : ""
+  }https://awv3node-homepage.surge.sh/build/assets/${name}.svg${
+    wrap ? ")" : ""
   }`;
 export default class App extends React.Component {
   scroll = to => this.refs.parallax.scrollTo(to);
   render() {
     return (
-      <React.Fragment>
+      <Layout location={location}>
         <Parallax className="container" ref="parallax" pages={3} vertical>
           <Page offset={0} gradient="pink">
             <Bio />
@@ -62,7 +65,7 @@ export default class App extends React.Component {
             />
           </Page>
         </Parallax>
-      </React.Fragment>
+      </Layout>
     );
   }
 }
