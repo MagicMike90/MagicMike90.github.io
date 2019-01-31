@@ -24,13 +24,13 @@ class Layout extends React.Component {
     const { location, title, children } = this.props;
 
     return (
-      <div>
+      <React.Fragment>
         <Header />
         <Container location={location.pathname}>{children}</Container>
         <Footer location={location.pathname}>
           © {new Date().getFullYear()} Michael Luo
         </Footer>
-      </div>
+      </React.Fragment>
     );
   }
 }

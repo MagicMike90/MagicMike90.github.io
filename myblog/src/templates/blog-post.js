@@ -4,7 +4,7 @@ import posed from "react-pose";
 import SEO from "../components/seo";
 
 const Section = posed.section({
-  enter: { staggerChildren: 50 }
+  enter: { staggerChildren: 50, staggerDirection: -1 }
 });
 
 const Title = posed.h1({
