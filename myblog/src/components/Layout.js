@@ -28,7 +28,6 @@ class Layout extends React.Component {
     const { location, children } = this.props;
     const isHomepage = location.pathname === withPrefix("/");
 
-    console.log("location", location);
     return (
       <React.Fragment>
         <Header />

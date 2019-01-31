@@ -2,6 +2,7 @@ import React from "react";
 import { Link, graphql } from "gatsby";
 import posed from "react-pose";
 import SEO from "../components/seo";
+import Layout from "../components/Layout";
 
 const Section = posed.section({
   enter: { staggerChildren: 50, staggerDirection: -1 }
@@ -22,38 +23,40 @@ class BlogPostTemplate extends React.Component {
     const { previous, next } = this.props.pageContext;
 
     return (
-      <Section>
-        <SEO title={post.frontmatter.title} description={post.excerpt} />
-        <Title>{post.frontmatter.title}</Title>
-        <P>{post.frontmatter.date}</P>
-        <P dangerouslySetInnerHTML={{ __html: post.html }} />
-        <hr />
+      <Layout location={this.props.location}>
+        <Section initialPose="exit" pose="enter">
+          <SEO title={post.frontmatter.title} description={post.excerpt} />
+          <Title>{post.frontmatter.title}</Title>
+          <P>{post.frontmatter.date}</P>
+          <P dangerouslySetInnerHTML={{ __html: post.html }} />
+          <hr />
 
-        <ul
-          style={{
-            display: "flex",
-            flexWrap: "wrap",
-            justifyContent: "space-between",
-            listStyle: "none",
-            padding: 0
-          }}
-        >
-          <li>
-            {previous && (
-              <Link to={previous.fields.slug} rel="prev">
-                ← {previous.frontmatter.title}
-              </Link>
-            )}
-          </li>
-          <li>
-            {next && (
-              <Link to={next.fields.slug} rel="next">
-                {next.frontmatter.title} →
-              </Link>
-            )}
-          </li>
-        </ul>
-      </Section>
+          <ul
+            style={{
+              display: "flex",
+              flexWrap: "wrap",
+              justifyContent: "space-between",
+              listStyle: "none",
+              padding: 0
+            }}
+          >
+            <li>
+              {previous && (
+                <Link to={previous.fields.slug} rel="prev">
+                  ← {previous.frontmatter.title}
+                </Link>
+              )}
+            </li>
+            <li>
+              {next && (
+                <Link to={next.fields.slug} rel="next">
+                  {next.frontmatter.title} →
+                </Link>
+              )}
+            </li>
+          </ul>
+        </Section>
+      </Layout>
     );
   }
 }
