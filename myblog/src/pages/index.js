@@ -1,6 +1,7 @@
 import React from "react";
 import { Parallax, ParallaxLayer } from "react-spring/addons";
 import Bio from "../components/Bio";
+import Intro from "../components/Intro";
 import Layout from "../components/Layout";
 
 const Page = ({ offset, gradient, children }) => {
@@ -49,12 +50,7 @@ export default class App extends React.Component {
           </Page>
 
           <Page offset={1} gradient="teal">
-            <PageContent
-              gradient="teal"
-              caption="About me"
-              first="consectetur"
-              second="adipiscing elit"
-            />
+            <Intro />
           </Page>
           <Page offset={2} gradient="tomato">
             <PageContent
