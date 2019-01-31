@@ -1,3 +1,8 @@
+---
+title: JavaScript Notes!
+date: '2019-01-31'
+---
+
 # JavaScript notes
 
 ## comparasion

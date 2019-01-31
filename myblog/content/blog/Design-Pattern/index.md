@@ -1,3 +1,7 @@
+---
+title: Design Pattern Notes!
+date: '2019-01-31'
+---
 
 ## Behavioral Pattern
 **Strategy pattern**

@@ -1,3 +1,8 @@
+---
+title: Ensemble learning Notes!
+date: '2019-01-31'
+---
+
 # Ensemble learning
 
 Ensemble methods: combine different classifiers into a meta-classifier that has a better generalization performance than each individual classifier alone.

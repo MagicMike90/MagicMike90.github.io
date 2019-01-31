@@ -1,3 +1,7 @@
+---
+title: ELK Stack Notes!
+date: '2019-01-31'
+---
 # ELK Stack notes
 
 ## Elasticsearch
@@ -12,3 +16,6 @@ Start Filebeat
 
 Config Filebeat
 `sudo vi /etc/filebeat/filebeat.yml`
+
+# To see a list of available indexes
+curl 'localhost:9200/_cat/indices?v'

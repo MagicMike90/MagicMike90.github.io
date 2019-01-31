@@ -1,3 +1,8 @@
+---
+title: Vagrant Notes!
+date: '2019-01-31'
+---
+
 ## Clean vagrant build
 vagrant global-status --prune - Prunes invalid entries from the list. This is much more time consuming than simply listing the entries.
 

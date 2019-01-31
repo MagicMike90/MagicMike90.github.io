@@ -1,3 +1,9 @@
+---
+title: Dimensionality Reduction Notes!
+date: '2019-01-31'
+---
+
+
 # Dimensionality Reduction
 
 ## Principal component analysis (PCA)

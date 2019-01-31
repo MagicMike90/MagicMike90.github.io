@@ -1,3 +1,8 @@
+---
+title: General DevOps Notes!
+date: '2019-01-31'
+---
+
 # General notes
 
 ## Portable vagrant with docker

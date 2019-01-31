@@ -1,3 +1,8 @@
+---
+title: Dotnet Notes!
+date: '2019-01-31'
+---
+
 # Dotnet notes
 
 ## Dotnet MVC
@@ -34,7 +39,7 @@ dotnet build
 
 Or
 
-````
+````bash
 ASPNETCORE_ENVIRONMENT=Development dotnet watch run
 
 ## migrate a database
@@ -59,7 +64,7 @@ dotnet ef database drop
 dotnet ef database update
 ```
 
-```
+```bash
 ASPNETCORE_ENVIRONMENT=Development dotnet run
 ```
 

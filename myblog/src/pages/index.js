@@ -2,7 +2,7 @@ import React from 'react';
 import { Parallax, ParallaxLayer } from 'react-spring/addons';
 import Bio from '../components/Bio';
 
-const Page = ({ offset, gradient }) => {
+const Page = ({ offset, gradient,children }) => {
   return (
     <React.Fragment>
       <ParallaxLayer offset={offset} speed={0.2}>
@@ -18,7 +18,7 @@ const Page = ({ offset, gradient }) => {
       </ParallaxLayer>
 
       <ParallaxLayer className="text header" offset={offset} speed={0.4}>
-        {props.children}
+        {children}
       </ParallaxLayer>
     </React.Fragment>
   );

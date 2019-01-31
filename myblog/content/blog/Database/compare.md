@@ -1,3 +1,8 @@
+---
+title: Datebase Notes!
+date: '2019-01-31'
+---
+
 ## What are common use cases for MongoDB?
 
 MongoDB is a general purpose database that is used for a variety of use cases. The most common use cases for MongoDB include Single View, Internet of Things, Mobile, Real-Time Analytics, Personalization, Catalog, and Content Management.

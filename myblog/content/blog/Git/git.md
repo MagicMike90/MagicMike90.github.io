@@ -1,3 +1,8 @@
+---
+title: Git Notes!
+date: '2019-01-31'
+---
+
 # Git Notes
 
 ## Revert file to specific commit

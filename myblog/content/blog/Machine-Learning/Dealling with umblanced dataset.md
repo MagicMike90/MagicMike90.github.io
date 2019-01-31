@@ -1,3 +1,8 @@
+---
+title: Dealling with umblanced dataset Notes!
+date: '2019-01-31'
+---
+
 # Dealling with umblanced dataset
 
 The conventional model evaluation methods do not accurately measure model performance when faced with imbalanced datasets.

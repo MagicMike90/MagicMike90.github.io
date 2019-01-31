@@ -1,3 +1,8 @@
+---
+title: Embedding a machine learning model to web application Notes!
+date: '2019-01-31'
+---
+
 # Embedding a machine learning model to web application
 
 ## Serializing fitted scikit-learn estimaters

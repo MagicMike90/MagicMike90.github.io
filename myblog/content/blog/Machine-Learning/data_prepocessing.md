@@ -1,3 +1,8 @@
+---
+title: Data Prepocessing Notes!
+date: '2019-01-31'
+---
+
 # Data prepocessing
 
 - Dealling with Missing data
