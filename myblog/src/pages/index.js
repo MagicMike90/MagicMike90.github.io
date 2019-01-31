@@ -1,11 +1,8 @@
-import React from "react";
-import { Parallax, ParallaxLayer } from "react-spring/addons";
-import Header from "../core/Header";
-import Bio from "../components/Bio";
-import { Galaxy } from "../components/Galaxy";
+import React from 'react';
+import { Parallax, ParallaxLayer } from 'react-spring/addons';
+import Bio from '../components/Bio';
 
-const Page = props => {
-  const { offset, gradient } = props;
+const Page = ({ offset, gradient }) => {
   return (
     <React.Fragment>
       <ParallaxLayer offset={offset} speed={0.2}>
@@ -35,10 +32,8 @@ const PageContent = ({ caption, first, second, gradient }) => (
   </span>
 );
 const url = (name, wrap = false) =>
-  `${
-    wrap ? "url(" : ""
-  }https://awv3node-homepage.surge.sh/build/assets/${name}.svg${
-    wrap ? ")" : ""
+  `${wrap ? 'url(' : ''}https://awv3node-homepage.surge.sh/build/assets/${name}.svg${
+    wrap ? ')' : ''
   }`;
 export default class App extends React.Component {
   scroll = to => this.refs.parallax.scrollTo(to);
@@ -46,52 +41,22 @@ export default class App extends React.Component {
     return (
       <React.Fragment>
         <Parallax className="container" ref="parallax" pages={3} vertical>
-          {/* <ParallaxLayer offset={0} speed={0} factor={3}>
-            <Galaxy />
-          </ParallaxLayer> */}
-
-          <Page
-            offset={0}
-            gradient="pink"
-            caption="who we are"
-            first="Lorem ipsum"
-            second="dolor sit"
-            onClick={() => this.scroll(1)}
-          >
-            {/* <PageContent
-              gradient="pink"
-              caption="who we are"
-              first="Lorem ipsum"
-              second="dolor sit"
-            /> */}
+          <Page offset={0} gradient="pink">
             <Bio />
           </Page>
-          <Page
-            offset={1}
-            gradient="teal"
-            caption="what we do"
-            first="consectetur"
-            second="adipiscing elit"
-            onClick={() => this.scroll(2)}
-          >
+
+          <Page offset={1} gradient="teal">
             <PageContent
               gradient="teal"
-              caption="what we do"
+              caption="About me"
               first="consectetur"
               second="adipiscing elit"
             />
           </Page>
-          <Page
-            offset={2}
-            gradient="tomato"
-            caption="what we want"
-            first="Morbi quis"
-            second="est dignissim"
-            onClick={() => this.scroll(0)}
-          >
+          <Page offset={2} gradient="tomato">
             <PageContent
               gradient="teal"
-              caption="what we do"
+              caption="Skills"
               first="consectetur"
               second="adipiscing elit"
             />
