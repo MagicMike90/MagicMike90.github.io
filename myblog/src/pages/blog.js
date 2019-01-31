@@ -38,7 +38,7 @@ class BlogIndex extends React.Component {
         />
 
         <ListContainer>
-          <Grid container>
+          <Grid container spacing={8}>
             {posts.map(({ node }) => {
               const title = node.frontmatter.title || node.fields.slug;
               return (
