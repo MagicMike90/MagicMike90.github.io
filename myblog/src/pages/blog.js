@@ -15,8 +15,8 @@ const ListContainer = posed.div({
 });
 
 const Item = posed.article({
-  enter: { y: 0, opacity: 1 },
-  exit: { y: 50, opacity: 0 }
+  enter: { x: 0, opacity: 1 },
+  exit: { x: 50, opacity: 0 }
 });
 
 const StyeldP = styled.p`
@@ -36,6 +36,7 @@ class BlogIndex extends React.Component {
           title="All posts"
           keywords={["blog", "gatsby", "javascript", "react"]}
         />
+        <h1>The notes from the books I have read</h1>
 
         <ListContainer>
           <Grid container spacing={8}>

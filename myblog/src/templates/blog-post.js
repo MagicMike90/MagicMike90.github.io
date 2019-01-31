@@ -8,12 +8,12 @@ const Section = posed.section({
 });
 
 const Title = posed.h1({
-  enter: { x: 0, opacity: 1 },
-  exit: { x: 50, opacity: 0 }
+  enter: { y: 0, opacity: 1 },
+  exit: { y: 50, opacity: 0 }
 });
 const P = posed.p({
-  enter: { x: 0, opacity: 1 },
-  exit: { x: 50, opacity: 0 }
+  enter: { y: 0, opacity: 1 },
+  exit: { y: 50, opacity: 0 }
 });
 
 class BlogPostTemplate extends React.Component {
