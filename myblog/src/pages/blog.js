@@ -1,7 +1,8 @@
 import React from "react";
-import { Link, graphql } from "gatsby";
+import { graphql } from "gatsby";
 import _ from "lodash";
 import SEO from "../components/seo";
+import Link from "../components/Link";
 import Grid from "@material-ui/core/Grid";
 import Card from "../core/Card";
 import styled from "styled-components";
@@ -44,10 +45,12 @@ class BlogIndex extends React.Component {
               return (
                 <Grid item xs={12} sm={6} key={node.fields.slug}>
                   <Item>
-                    <Link style={{ boxShadow: "none" }} to={node.fields.slug}>
+                    <Link
+                      style={{ boxShadow: "none" }}
+                      to={`/${node.fields.slug}`}
+                    >
                       <Card title={title}>
                         <small>{node.frontmatter.date}</small>
-
                         <StyeldP
                           dangerouslySetInnerHTML={{ __html: node.excerpt }}
                         />
