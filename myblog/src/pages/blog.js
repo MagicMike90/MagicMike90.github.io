@@ -16,7 +16,7 @@ const ListContainer = posed.div({
 
 const Item = posed.article({
   enter: { x: 0, opacity: 1 },
-  exit: { x: 50, opacity: 0 }
+  exit: { x: 50, opacity: 0, transition: { duration: 200 } }
 });
 
 const StyeldP = styled.p`

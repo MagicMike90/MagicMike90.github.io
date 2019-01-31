@@ -32,7 +32,7 @@ const ContentInner = styled.div`
   //   animation: ${shine} 1.5s infinite;
   // }
 `;
-const StyledName = styled.p`
+const StyledName = styled.div`
   margin: 0;
 `;
 const StyledSubtitle = styled.div`

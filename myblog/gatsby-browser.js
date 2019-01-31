@@ -10,15 +10,16 @@ import Layout from "./src/components/Layout";
  * @dealy A duration, in milliseconds, to delay this transition. Does not affect children.
  */
 const Transition = posed.div({
-  enter: { opacity: 1, delay: 0, beforeChildren: true },
+  enter: { opacity: 1, delay: 300, beforeChildren: true },
   exit: { opacity: 0 }
 });
 
 export const replaceComponentRenderer = ({ props, ...other }) => {
   const { component } = props.pageResources;
+
   return (
     <Layout location={props.location}>
-      <PoseGroup animateOnMount>
+      <PoseGroup>
         <Transition key={props.location.key}>
           {React.createElement(component, props)}
         </Transition>
