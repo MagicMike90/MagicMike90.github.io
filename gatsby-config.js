@@ -60,8 +60,8 @@ module.exports = {
     {
       resolve: "gatsby-plugin-manifest",
       options: {
-        name: "Gatsby Starter Blog",
-        short_name: "GatsbyJS",
+        name: "Michael Blog",
+        short_name: "MichaelLuo",
         start_url: "/",
         background_color: "#ffffff",
         theme_color: "#663399",
@@ -75,7 +75,6 @@ module.exports = {
         pathToConfigModule: "src/utils/typography"
       }
     },
-    "gatsby-plugin-offline",
-    "gatsby-plugin-react-helmet"
+    "gatsby-plugin-offline"
   ]
 };

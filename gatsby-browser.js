@@ -8,9 +8,9 @@ import Layout from "./src/components/Layout";
 
 const transitionDelay = 350;
 
-// export const wrapPageElement = ({ element, props }) => {
-//   return <Layout {...props}>{element}</Layout>;
-// };
+export const wrapPageElement = ({ element, props }) => {
+  return <Layout {...props}>{element}</Layout>;
+};
 
 // export const shouldUpdateScroll = ({
 //   routerProps: { location },

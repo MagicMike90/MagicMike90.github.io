@@ -32,14 +32,14 @@ class BlogIndex extends React.Component {
     const posts = data.allMarkdownRemark.edges;
 
     return (
-      <Layout location={location}>
+      <React.Fragment>
         <SEO
           title="All posts"
           keywords={["blog", "gatsby", "javascript", "react"]}
         />
         <h1>The notes from the books I have read</h1>
 
-        <ListContainer initialPose="exit" pose="enter">
+        <ListContainer>
           <Grid container spacing={8}>
             {posts.map(({ node }) => {
               const title = node.frontmatter.title || node.fields.slug;
@@ -63,7 +63,7 @@ class BlogIndex extends React.Component {
             })}
           </Grid>
         </ListContainer>
-      </Layout>
+      </React.Fragment>
     );
   }
 }

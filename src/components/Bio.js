@@ -49,15 +49,9 @@ function Bio() {
           <div>
             <ContentInner>
               <Section initialPose="exit" pose="enter">
-                <StyledSubtitle>
-                  <SplitText charPoses={charPoses}>Hello, I am</SplitText>
-                </StyledSubtitle>
-                <StyledName>
-                  <SplitText charPoses={charPoses}>{author}</SplitText>
-                </StyledName>
-                <StyledSubtitle>
-                  <SplitText charPoses={charPoses}>{role}</SplitText>
-                </StyledSubtitle>
+                <StyledSubtitle>Hello, I am</StyledSubtitle>
+                <StyledName>{author}</StyledName>
+                <StyledSubtitle>{role}</StyledSubtitle>
               </Section>
             </ContentInner>
             <Divider className="stripe teal" />

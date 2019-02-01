@@ -43,7 +43,7 @@ export default class App extends React.Component {
   scroll = to => this.refs.parallax.scrollTo(to);
   render() {
     return (
-      <Layout location={location}>
+      <React.Fragment>
         <Parallax className="container" ref="parallax" pages={3} vertical>
           <Page offset={0} gradient="pink">
             <Bio />
@@ -61,7 +61,7 @@ export default class App extends React.Component {
             />
           </Page>
         </Parallax>
-      </Layout>
+      </React.Fragment>
     );
   }
 }
