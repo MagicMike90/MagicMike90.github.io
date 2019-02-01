@@ -23,7 +23,7 @@ class BlogPostTemplate extends React.Component {
     const { previous, next } = this.props.pageContext;
 
     return (
-      <Layout location={this.props.location}>
+      <React.Fragment>
         <Section initialPose="exit" pose="enter">
           <SEO title={post.frontmatter.title} description={post.excerpt} />
           <Title>{post.frontmatter.title}</Title>
@@ -56,7 +56,7 @@ class BlogPostTemplate extends React.Component {
             </li>
           </ul>
         </Section>
-      </Layout>
+      </React.Fragment>
     );
   }
 }
