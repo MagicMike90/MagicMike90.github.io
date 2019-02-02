@@ -1,17 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Michael Blog]]></title><description><![CDATA[A starter blog demonstrating what Gatsby can do.]]></description><link>https://gatsby-starter-blog-demo.netlify.com/</link><generator>RSS for Node</generator><lastBuildDate>Fri, 01 Feb 2019 12:36:38 GMT</lastBuildDate><item><title><![CDATA[No title]]></title><description><![CDATA[SOA VS Mircoservice Microservices are fine-grained SOA components. In other words, a single SOA
-component can be decomposed in a number of…]]></description><link>https://gatsby-starter-blog-demo.netlify.com/microservices-readme</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com/microservices-readme</guid><content:encoded>&lt;h1&gt;SOA VS Mircoservice&lt;/h1&gt;
-&lt;p&gt;Microservices are fine-grained SOA components. In other words, a single SOA
-component can be decomposed in a number of microservices that can work together
-in order to provide the same level of functionality&lt;/p&gt;
-&lt;p&gt;J2EE is a technology stack that was designed to write SOA architectures as it
-enforced enterprise standards. Java Naming and Directory Interface, Enterprise
-Java Beans, and Enterprise Service Bus (ESB) were the ecosystems where SOA
-applications were built and maintained. Although ESB is a standard, very few
-engineers who graduated after 2005 have heard about ESB, even fewer have used it,
-and nowadays the modern frameworks such as Ruby on Rails do not even consider
-such complex pieces of software.&lt;/p&gt;
-&lt;h1&gt;NodeJS drawback&lt;/h1&gt;
-&lt;p&gt;Due to it uses sigle tread, it results in bad performance on CPU intensive computing (concurrent computing or grid computing)&lt;/p&gt;</content:encoded></item><item><title><![CDATA[No title]]></title><description><![CDATA[Notes for NodeJS Asynchronous batching and caching Batching 
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Michael Blog]]></title><description><![CDATA[A starter blog demonstrating what Gatsby can do.]]></description><link>https://gatsby-starter-blog-demo.netlify.com/</link><generator>RSS for Node</generator><lastBuildDate>Sat, 02 Feb 2019 12:02:17 GMT</lastBuildDate><item><title><![CDATA[No title]]></title><description><![CDATA[Notes for NodeJS Asynchronous batching and caching Batching 
 If we are invoking an asynchronous function while there is still another one…]]></description><link>https://gatsby-starter-blog-demo.netlify.com/node-js-readme</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com/node-js-readme</guid><content:encoded>&lt;h1&gt;Notes for NodeJS&lt;/h1&gt;
 &lt;h2&gt;Asynchronous batching and caching&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;Batching&lt;/strong&gt;
@@ -134,7 +121,20 @@ horizontal scaling - adding more machines to the infrastructure&lt;/p&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;Secure codebase&lt;/h2&gt;</content:encoded></item><item><title><![CDATA[No title]]></title><description><![CDATA[Feature Engineering Identifying Important Features In Random Forests NOTE:  there are two things to keep in mind regarding feature…]]></description><link>https://gatsby-starter-blog-demo.netlify.com/machine-learning-feature-engineering</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com/machine-learning-feature-engineering</guid><content:encoded>&lt;h1&gt;Feature Engineering&lt;/h1&gt;
+&lt;h2&gt;Secure codebase&lt;/h2&gt;</content:encoded></item><item><title><![CDATA[No title]]></title><description><![CDATA[SOA VS Mircoservice Microservices are fine-grained SOA components. In other words, a single SOA
+component can be decomposed in a number of…]]></description><link>https://gatsby-starter-blog-demo.netlify.com/microservices-readme</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com/microservices-readme</guid><content:encoded>&lt;h1&gt;SOA VS Mircoservice&lt;/h1&gt;
+&lt;p&gt;Microservices are fine-grained SOA components. In other words, a single SOA
+component can be decomposed in a number of microservices that can work together
+in order to provide the same level of functionality&lt;/p&gt;
+&lt;p&gt;J2EE is a technology stack that was designed to write SOA architectures as it
+enforced enterprise standards. Java Naming and Directory Interface, Enterprise
+Java Beans, and Enterprise Service Bus (ESB) were the ecosystems where SOA
+applications were built and maintained. Although ESB is a standard, very few
+engineers who graduated after 2005 have heard about ESB, even fewer have used it,
+and nowadays the modern frameworks such as Ruby on Rails do not even consider
+such complex pieces of software.&lt;/p&gt;
+&lt;h1&gt;NodeJS drawback&lt;/h1&gt;
+&lt;p&gt;Due to it uses sigle tread, it results in bad performance on CPU intensive computing (concurrent computing or grid computing)&lt;/p&gt;</content:encoded></item><item><title><![CDATA[No title]]></title><description><![CDATA[Feature Engineering Identifying Important Features In Random Forests NOTE:  there are two things to keep in mind regarding feature…]]></description><link>https://gatsby-starter-blog-demo.netlify.com/machine-learning-feature-engineering</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com/machine-learning-feature-engineering</guid><content:encoded>&lt;h1&gt;Feature Engineering&lt;/h1&gt;
 &lt;h2&gt;Identifying Important Features In Random Forests&lt;/h2&gt;
 &lt;p&gt;NOTE:  there are two things to keep in mind regarding feature importance:&lt;/p&gt;
 &lt;ul&gt;
@@ -307,6 +307,15 @@ it increase computational cost, since it trains k models instead of a single mod
 &lt;li&gt;Least Absolute&lt;/li&gt;
 &lt;li&gt;Shrinkage and Selection Operator (LASSO)&lt;/li&gt;
 &lt;li&gt;Elastic Net&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[No title]]></title><description><![CDATA[Sentiment Analysis bag of words model: It allows us to represent text as numerical feature vectores Transforming words into feature vectors…]]></description><link>https://gatsby-starter-blog-demo.netlify.com/machine-learning-sentiment-analysis</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com/machine-learning-sentiment-analysis</guid><content:encoded>&lt;h1&gt;Sentiment Analysis&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;bag of words model: It allows us to represent text as numerical feature vectores&lt;/li&gt;
+&lt;li&gt;Transforming words into feature vectors&lt;/li&gt;
+&lt;li&gt;Assessing word relevancy via term frequency-inverse document frequency&lt;/li&gt;
+&lt;li&gt;Cleaning text data&lt;/li&gt;
+&lt;li&gt;Processing documents into tokens&lt;/li&gt;
+&lt;li&gt;Training a logistic regression model for document classification&lt;/li&gt;
+&lt;li&gt;Online algorithms and out-of-core learning for large datasets&lt;/li&gt;
 &lt;/ul&gt;</content:encoded></item><item><title><![CDATA[No title]]></title><description><![CDATA[Scifit-learn Overfitting  means that the model captures the patterns in the training data well, but fails to generalize well to unseen data…]]></description><link>https://gatsby-starter-blog-demo.netlify.com/machine-learning-scikit-learn</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com/machine-learning-scikit-learn</guid><content:encoded>&lt;h1&gt;Scifit-learn&lt;/h1&gt;
 &lt;p&gt;&lt;strong&gt;Overfitting&lt;/strong&gt; means that the model captures the patterns in the training data well, but fails to generalize well to unseen data.&lt;/p&gt;
 &lt;ul&gt;
@@ -346,16 +355,32 @@ It requires more memory and are slower to train and to predict than linear model
 &lt;p&gt;Adanvatage:
 They are able to capture information contained in large amounts of data and build incredibly complex models. Given enough computation time, data, and careful tuning of the parameters, neural networks often beat other machine learning algorithms (for classifcation and regression tasks)&lt;/p&gt;
 &lt;p&gt;Disadavantage
-Take a long time to train.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[No title]]></title><description><![CDATA[Sentiment Analysis bag of words model: It allows us to represent text as numerical feature vectores Transforming words into feature vectors…]]></description><link>https://gatsby-starter-blog-demo.netlify.com/machine-learning-sentiment-analysis</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com/machine-learning-sentiment-analysis</guid><content:encoded>&lt;h1&gt;Sentiment Analysis&lt;/h1&gt;
+Take a long time to train.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[No title]]></title><description><![CDATA[Training Algorithms Linear Algebra notes Numpy The advantage of using Numpy over classic Python for-loop structures is that its arithmetic…]]></description><link>https://gatsby-starter-blog-demo.netlify.com/machine-learning-training-algorithms</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com/machine-learning-training-algorithms</guid><content:encoded>&lt;h1&gt;Training Algorithms&lt;/h1&gt;
+&lt;h2&gt;&lt;a href=&quot;http://www.cs.cmu.edu/~zkolter/course/linalg/linalg_notes.pdf&quot;&gt;Linear Algebra notes&lt;/a&gt;&lt;/h2&gt;
+&lt;h2&gt;Numpy&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;bag of words model: It allows us to represent text as numerical feature vectores&lt;/li&gt;
-&lt;li&gt;Transforming words into feature vectors&lt;/li&gt;
-&lt;li&gt;Assessing word relevancy via term frequency-inverse document frequency&lt;/li&gt;
-&lt;li&gt;Cleaning text data&lt;/li&gt;
-&lt;li&gt;Processing documents into tokens&lt;/li&gt;
-&lt;li&gt;Training a logistic regression model for document classification&lt;/li&gt;
-&lt;li&gt;Online algorithms and out-of-core learning for large datasets&lt;/li&gt;
-&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[No title]]></title><description><![CDATA[Summary of machine learning Common used machine learning algorithm Listed in order of increasing complexity: Logiistic regressiong K-nearest…]]></description><link>https://gatsby-starter-blog-demo.netlify.com/machine-learning-summary</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com/machine-learning-summary</guid><content:encoded>&lt;h1&gt;Summary of machine learning&lt;/h1&gt;
+&lt;li&gt;The advantage of using Numpy over classic Python for-loop structures is that its arithmetic operations are vectorized, imporve the performance of operations by making better use of &lt;strong&gt;Single Instruction, Multiple Data (SIMD)&lt;/strong&gt; of moden CPU architecures.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;methods&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;dot()&lt;/strong&gt;:dot product of two pioints&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;zip()&lt;/strong&gt;:The zip() function take iterables (can be zero or more), makes iterator that aggregates elements based on the iterables passed, and returns an iterator of tuples.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;where&lt;/strong&gt;(condition[, x, y]): Return elements, either from x or y, depending on condition.i.e. np.where(y == ‘Iris-setosa’, -1, 1), where value equals ‘Iris-setosa’ will change to be -1.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Pandas&lt;/h2&gt;
+&lt;p&gt;methods&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;read_csv()&lt;/strong&gt;: read csv file , return &lt;em&gt;DataFrame&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;tail()&lt;/strong&gt;: get last n line of DataFrame&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;iloc(array, index)&lt;/strong&gt;: get numer of rows of column index&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Disadvantage of perceptron&lt;/h2&gt;
+&lt;p&gt;its biggest disadvantage is that it never converges if the classes are not perfectly linearly separable.&lt;/p&gt;
+&lt;h2&gt;The curse of dimensionality&lt;/h2&gt;
+&lt;p&gt;The curse of dimensionality describes the phenomenon where the feature
+space becomes increasingly sparse for an increasing number
+of dimensions of a fixed-size training dataset&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Regularization&lt;/em&gt; is not applicable such as decision trees and KNN, we can use feature selection and dimensionality reduction techniques to help us avoid the curse of dimensionality&lt;/p&gt;</content:encoded></item><item><title><![CDATA[No title]]></title><description><![CDATA[Summary of machine learning Common used machine learning algorithm Listed in order of increasing complexity: Logiistic regressiong K-nearest…]]></description><link>https://gatsby-starter-blog-demo.netlify.com/machine-learning-summary</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com/machine-learning-summary</guid><content:encoded>&lt;h1&gt;Summary of machine learning&lt;/h1&gt;
 &lt;h2&gt;Common used machine learning algorithm&lt;/h2&gt;
 &lt;p&gt;Listed in order of increasing complexity:&lt;/p&gt;
 &lt;ul&gt;
@@ -465,32 +490,7 @@ Take a long time to train.&lt;/p&gt;</content:encoded></item><item><title><![CDA
 &lt;/li&gt;
 &lt;/ul&gt;</content:encoded></item><item><title><![CDATA[No title]]></title><description><![CDATA[Notes for Progressive Web App Case study - Facebook Facebook tried to make the web its primary platform, but due to many engineering…]]></description><link>https://gatsby-starter-blog-demo.netlify.com/pwa-readme</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com/pwa-readme</guid><content:encoded>&lt;h1&gt;Notes for Progressive Web App&lt;/h1&gt;
 &lt;h2&gt;Case study - Facebook&lt;/h2&gt;
-&lt;p&gt;Facebook tried to make the web its primary platform, but due to many engineering mistakes and browser/hardware limitations, they failed. At that point, they switched to native apps as a primary focus and have since created a very large, walled off community of data and interactions.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[No title]]></title><description><![CDATA[Training Algorithms Linear Algebra notes Numpy The advantage of using Numpy over classic Python for-loop structures is that its arithmetic…]]></description><link>https://gatsby-starter-blog-demo.netlify.com/machine-learning-training-algorithms</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com/machine-learning-training-algorithms</guid><content:encoded>&lt;h1&gt;Training Algorithms&lt;/h1&gt;
-&lt;h2&gt;&lt;a href=&quot;http://www.cs.cmu.edu/~zkolter/course/linalg/linalg_notes.pdf&quot;&gt;Linear Algebra notes&lt;/a&gt;&lt;/h2&gt;
-&lt;h2&gt;Numpy&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;The advantage of using Numpy over classic Python for-loop structures is that its arithmetic operations are vectorized, imporve the performance of operations by making better use of &lt;strong&gt;Single Instruction, Multiple Data (SIMD)&lt;/strong&gt; of moden CPU architecures.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;methods&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;dot()&lt;/strong&gt;:dot product of two pioints&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;zip()&lt;/strong&gt;:The zip() function take iterables (can be zero or more), makes iterator that aggregates elements based on the iterables passed, and returns an iterator of tuples.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;where&lt;/strong&gt;(condition[, x, y]): Return elements, either from x or y, depending on condition.i.e. np.where(y == ‘Iris-setosa’, -1, 1), where value equals ‘Iris-setosa’ will change to be -1.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;Pandas&lt;/h2&gt;
-&lt;p&gt;methods&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;read_csv()&lt;/strong&gt;: read csv file , return &lt;em&gt;DataFrame&lt;/em&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;tail()&lt;/strong&gt;: get last n line of DataFrame&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;iloc(array, index)&lt;/strong&gt;: get numer of rows of column index&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;Disadvantage of perceptron&lt;/h2&gt;
-&lt;p&gt;its biggest disadvantage is that it never converges if the classes are not perfectly linearly separable.&lt;/p&gt;
-&lt;h2&gt;The curse of dimensionality&lt;/h2&gt;
-&lt;p&gt;The curse of dimensionality describes the phenomenon where the feature
-space becomes increasingly sparse for an increasing number
-of dimensions of a fixed-size training dataset&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;Regularization&lt;/em&gt; is not applicable such as decision trees and KNN, we can use feature selection and dimensionality reduction techniques to help us avoid the curse of dimensionality&lt;/p&gt;</content:encoded></item><item><title><![CDATA[React Notes!]]></title><description><![CDATA[React Notes Communicate Child to Parent Since there is no way to communicate between siblings (only
+&lt;p&gt;Facebook tried to make the web its primary platform, but due to many engineering mistakes and browser/hardware limitations, they failed. At that point, they switched to native apps as a primary focus and have since created a very large, walled off community of data and interactions.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[React Notes!]]></title><description><![CDATA[React Notes Communicate Child to Parent Since there is no way to communicate between siblings (only
 parent to child and vice versa), keeping…]]></description><link>https://gatsby-starter-blog-demo.netlify.com/react</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com/react</guid><pubDate>Tue, 30 Jul 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;React Notes&lt;/h1&gt;
 &lt;h2&gt;Communicate Child to Parent&lt;/h2&gt;
 &lt;p&gt;Since there is no way to communicate between siblings (only
@@ -1208,77 +1208,7 @@ It is a special kind of token that can be used to obtain a renewed access token 
 &lt;li&gt;RENDER: After (ideally) pushing all the necessary resources to the client, we render our initial route&lt;/li&gt;
 &lt;li&gt;PRE-CACHED: once those assets are loaded, they will go straight into the cache and, if they’re requested again, we load them from the cache.&lt;/li&gt;
 &lt;li&gt;LAZY-LOADED: This means resources needed for other routes will not be loaded.&lt;/li&gt;
-&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Notes for API engineering!]]></title><description><![CDATA[RPC vs REST RPC ( Command-based ) style endpoints are great when you want only one job done well. This makes it useful to one or two app…]]></description><link>https://gatsby-starter-blog-demo.netlify.com/api</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com/api</guid><pubDate>Sun, 21 Jul 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;RPC vs REST&lt;/h2&gt;
-&lt;p&gt;RPC (&lt;strong&gt;Command-based&lt;/strong&gt;) style endpoints are great when you want only one job done well. This makes it useful to one or two app clients because it is niche a service. RPC endpoints can implement business logic inside the service, given that it only does one thing. This adds simplicity and clarity to the service.&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;http&quot;&gt;&lt;pre class=&quot;language-http&quot;&gt;&lt;code class=&quot;language-http&quot;&gt;GET /someoperation?data=anId
-
-POST /anotheroperation
-{
-  &quot;data&quot;:&quot;anId&quot;;
-  &quot;anotherdata&quot;:&quot;another value&quot;
-}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;For a REST (&lt;strong&gt;resource-based&lt;/strong&gt;) endpoint, you must treat it like a resource that provides domain data. The reward is you are now segregating data into separate domains. This makes it useful for when you have any number of apps requesting data. This approach attempts to decouple data from application or business logic.&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;http&quot;&gt;&lt;pre class=&quot;language-http&quot;&gt;&lt;code class=&quot;language-http&quot;&gt;GET /someresources/anId
-
-PUT /someresources/anId
-{&quot;anotherdata&quot;:&quot;another value&quot;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[Agile Notes!]]></title><description><![CDATA[Methodology extreme programming scrum kanban Cargo Cult Being envious of the success and benefits of Agile, many companies adopt the…]]></description><link>https://gatsby-starter-blog-demo.netlify.com/agile</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com/agile</guid><pubDate>Sun, 21 Jul 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;Methodology&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;extreme programming&lt;/li&gt;
-&lt;li&gt;scrum&lt;/li&gt;
-&lt;li&gt;kanban&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;Cargo Cult&lt;/h2&gt;
-&lt;p&gt;Being envious of the success and benefits of Agile, many companies adopt the superficial trappings of Agile, renaming the meetings as “stand ups” and calling management reviews “retrospectives”. But in practice, nothing changes. It’s still the same primitive management driven hierarchical organization, micromanaging the teams, using outdated waterfall practices, and completely failing to grasp the core principles of agility.&lt;/p&gt;
-&lt;h1&gt;The Scrum team&lt;/h1&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Product Owner (PO):collects requirements from customers (internal or external) and produces the requirements documents. The PO constantly aligns with customers and determines the scope of work and change in the scope, so the PO will get results from the Sprints. The PO is responsible for providing all the necessary product-related information required by the team and providing requirements.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Scrum Master ( ScMa ) :is the servant-leader of the team who helps the team to deliver based on requirements. The ScMa organizes the process and moderates the meetings that will enable the team to deliver. Also, the ScMa provides statuses to the PO or any stakeholders. The ScMa is in charge of resolution of any block and impediments the team faces. The ScMa shelters and protects the team from external teams and stakeholders.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;The Architect (Arc)is the technical lead in the team&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;The Quality Manager (QM) or Quality Engineer(QE) is the team member responsible for quality management of the product. The QM organizes the quality process in the team, educates the PO and ScMa on quality best practices, and provides quality requirements to the team based on feedback from the PO, industry standards, and best practices (Including performance, security, usability, accessibility etc.).&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Developers (DEV) estimate and commit to the estimation on a Sprint basis. They constantly improve the accuracy of the estimation and self-improve from Sprint to Sprint without micromanagement from other roles and managers. Developers distribute between the different expert roles—for example performance, security, and user interface designer.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;A Technical Writer (TW) writes supporting documentation for the project. This role can be centralized, since it is usually not required to have a full-time technical writer in the team. However, technical documentation also can be produced by any other role/roles in the team as an additional responsibility.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Data-intensive Architecture Notes!]]></title><description><![CDATA[Data-intensive architecute A data-intensive application Many applications today are data-intensive, as opposed to compute-intensive. Raw CPU…]]></description><link>https://gatsby-starter-blog-demo.netlify.com/architecture-data-itensive</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com/architecture-data-itensive</guid><pubDate>Sun, 21 Jul 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Data-intensive architecute&lt;/h1&gt;
-&lt;h2&gt;A data-intensive application&lt;/h2&gt;
-&lt;p&gt;Many applications today are data-intensive, as opposed to compute-intensive. Raw CPU power is rarely a limiting factor for these applications—bigger problems are usually the amount of data, the complexity of data, and the speed at which it is changing.&lt;/p&gt;
-&lt;p&gt;A data-intensive application is typically built from standard building blocks that provide commonly needed functionality. For example, many applications need to:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Store data so that they, or another application, can find it again later (databases)&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Remember the result of an expensive operation, to speed up reads (caches)&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Allow users to search data by keyword or filter it in various ways (search indexes)&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Send a message to another process, to be handled asynchronously (stream processing)&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Periodically crunch a large amount of accumulated data (batch processing)&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;three concerns that are important in most software systems:&lt;/h2&gt;
-&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;Reliability&lt;/code&gt;
-The system should continue to work correctly (performing the correct function at the desired level of performance) even in the face of adversity (hardware or software faults, and even human error). See “Reliability”.&lt;/p&gt;
-&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;Scalability&lt;/code&gt;
-As the system grows (in data volume, traffic volume, or complexity), there should be reasonable ways of dealing with that growth. See “Scalability”.&lt;/p&gt;
-&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;Maintainability&lt;/code&gt;
-Over time, many different people will work on the system (engineering and operations, both maintaining current behavior and adapting the system to new use cases), and they should all be able to work on it productively. See “Maintainability”.&lt;/p&gt;
-&lt;h2&gt;Lagacy system&lt;/h2&gt;
-&lt;p&gt;Many people working on software systems dislike maintenance of so-called legacy systems—perhaps it involves fixing other people’s mistakes, or working with platforms that are now outdated, or systems that were forced to do things they were never intended for&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Angular Notes!]]></title><description><![CDATA[Angular Notes Angular is consisted of six parts: Data Binding Directive (There are three kinds of directives in Angular) Components…]]></description><link>https://gatsby-starter-blog-demo.netlify.com/angular</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com/angular</guid><pubDate>Sun, 21 Jul 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Angular Notes&lt;/h1&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Angular Notes!]]></title><description><![CDATA[Angular Notes Angular is consisted of six parts: Data Binding Directive (There are three kinds of directives in Angular) Components…]]></description><link>https://gatsby-starter-blog-demo.netlify.com/angular</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com/angular</guid><pubDate>Sun, 21 Jul 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Angular Notes&lt;/h1&gt;
 &lt;p&gt;Angular is consisted of six parts:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Data Binding&lt;/li&gt;
@@ -1356,7 +1286,77 @@ class and ensure that only its behavior is being tested&lt;/p&gt;
 &lt;/ul&gt;
 &lt;h2&gt;Router bug&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&quot;https://stackoverflow.com/questions/38120756/angular2-router-navigate-refresh-page&quot;&gt;https://stackoverflow.com/questions/38120756/angular2-router-navigate-refresh-page&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Input type (type = “button) is important to make naviation animation works in angular 4, without specifying type, it works on IE11 and Edge browsers, but would reload the application in Chrome.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Notes for testing!]]></title><description><![CDATA[Notes for test Unit test The unit tests are used to prove the smallest testable part of a computer program.In this sense, the great…]]></description><link>https://gatsby-starter-blog-demo.netlify.com/testing</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com/testing</guid><pubDate>Sun, 21 Jul 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Notes for test&lt;/h1&gt;
+&lt;p&gt;Input type (type = “button) is important to make naviation animation works in angular 4, without specifying type, it works on IE11 and Edge browsers, but would reload the application in Chrome.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Notes for API engineering!]]></title><description><![CDATA[RPC vs REST RPC ( Command-based ) style endpoints are great when you want only one job done well. This makes it useful to one or two app…]]></description><link>https://gatsby-starter-blog-demo.netlify.com/api</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com/api</guid><pubDate>Sun, 21 Jul 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;RPC vs REST&lt;/h2&gt;
+&lt;p&gt;RPC (&lt;strong&gt;Command-based&lt;/strong&gt;) style endpoints are great when you want only one job done well. This makes it useful to one or two app clients because it is niche a service. RPC endpoints can implement business logic inside the service, given that it only does one thing. This adds simplicity and clarity to the service.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;http&quot;&gt;&lt;pre class=&quot;language-http&quot;&gt;&lt;code class=&quot;language-http&quot;&gt;GET /someoperation?data=anId
+
+POST /anotheroperation
+{
+  &quot;data&quot;:&quot;anId&quot;;
+  &quot;anotherdata&quot;:&quot;another value&quot;
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;For a REST (&lt;strong&gt;resource-based&lt;/strong&gt;) endpoint, you must treat it like a resource that provides domain data. The reward is you are now segregating data into separate domains. This makes it useful for when you have any number of apps requesting data. This approach attempts to decouple data from application or business logic.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;http&quot;&gt;&lt;pre class=&quot;language-http&quot;&gt;&lt;code class=&quot;language-http&quot;&gt;GET /someresources/anId
+
+PUT /someresources/anId
+{&quot;anotherdata&quot;:&quot;another value&quot;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[Agile Notes!]]></title><description><![CDATA[Methodology extreme programming scrum kanban Cargo Cult Being envious of the success and benefits of Agile, many companies adopt the…]]></description><link>https://gatsby-starter-blog-demo.netlify.com/agile</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com/agile</guid><pubDate>Sun, 21 Jul 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;Methodology&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;extreme programming&lt;/li&gt;
+&lt;li&gt;scrum&lt;/li&gt;
+&lt;li&gt;kanban&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Cargo Cult&lt;/h2&gt;
+&lt;p&gt;Being envious of the success and benefits of Agile, many companies adopt the superficial trappings of Agile, renaming the meetings as “stand ups” and calling management reviews “retrospectives”. But in practice, nothing changes. It’s still the same primitive management driven hierarchical organization, micromanaging the teams, using outdated waterfall practices, and completely failing to grasp the core principles of agility.&lt;/p&gt;
+&lt;h1&gt;The Scrum team&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Product Owner (PO):collects requirements from customers (internal or external) and produces the requirements documents. The PO constantly aligns with customers and determines the scope of work and change in the scope, so the PO will get results from the Sprints. The PO is responsible for providing all the necessary product-related information required by the team and providing requirements.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Scrum Master ( ScMa ) :is the servant-leader of the team who helps the team to deliver based on requirements. The ScMa organizes the process and moderates the meetings that will enable the team to deliver. Also, the ScMa provides statuses to the PO or any stakeholders. The ScMa is in charge of resolution of any block and impediments the team faces. The ScMa shelters and protects the team from external teams and stakeholders.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The Architect (Arc)is the technical lead in the team&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The Quality Manager (QM) or Quality Engineer(QE) is the team member responsible for quality management of the product. The QM organizes the quality process in the team, educates the PO and ScMa on quality best practices, and provides quality requirements to the team based on feedback from the PO, industry standards, and best practices (Including performance, security, usability, accessibility etc.).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Developers (DEV) estimate and commit to the estimation on a Sprint basis. They constantly improve the accuracy of the estimation and self-improve from Sprint to Sprint without micromanagement from other roles and managers. Developers distribute between the different expert roles—for example performance, security, and user interface designer.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;A Technical Writer (TW) writes supporting documentation for the project. This role can be centralized, since it is usually not required to have a full-time technical writer in the team. However, technical documentation also can be produced by any other role/roles in the team as an additional responsibility.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Data-intensive Architecture Notes!]]></title><description><![CDATA[Data-intensive architecute A data-intensive application Many applications today are data-intensive, as opposed to compute-intensive. Raw CPU…]]></description><link>https://gatsby-starter-blog-demo.netlify.com/architecture-data-itensive</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com/architecture-data-itensive</guid><pubDate>Sun, 21 Jul 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Data-intensive architecute&lt;/h1&gt;
+&lt;h2&gt;A data-intensive application&lt;/h2&gt;
+&lt;p&gt;Many applications today are data-intensive, as opposed to compute-intensive. Raw CPU power is rarely a limiting factor for these applications—bigger problems are usually the amount of data, the complexity of data, and the speed at which it is changing.&lt;/p&gt;
+&lt;p&gt;A data-intensive application is typically built from standard building blocks that provide commonly needed functionality. For example, many applications need to:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Store data so that they, or another application, can find it again later (databases)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Remember the result of an expensive operation, to speed up reads (caches)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Allow users to search data by keyword or filter it in various ways (search indexes)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Send a message to another process, to be handled asynchronously (stream processing)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Periodically crunch a large amount of accumulated data (batch processing)&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;three concerns that are important in most software systems:&lt;/h2&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;Reliability&lt;/code&gt;
+The system should continue to work correctly (performing the correct function at the desired level of performance) even in the face of adversity (hardware or software faults, and even human error). See “Reliability”.&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;Scalability&lt;/code&gt;
+As the system grows (in data volume, traffic volume, or complexity), there should be reasonable ways of dealing with that growth. See “Scalability”.&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;Maintainability&lt;/code&gt;
+Over time, many different people will work on the system (engineering and operations, both maintaining current behavior and adapting the system to new use cases), and they should all be able to work on it productively. See “Maintainability”.&lt;/p&gt;
+&lt;h2&gt;Lagacy system&lt;/h2&gt;
+&lt;p&gt;Many people working on software systems dislike maintenance of so-called legacy systems—perhaps it involves fixing other people’s mistakes, or working with platforms that are now outdated, or systems that were forced to do things they were never intended for&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Notes for testing!]]></title><description><![CDATA[Notes for test Unit test The unit tests are used to prove the smallest testable part of a computer program.In this sense, the great…]]></description><link>https://gatsby-starter-blog-demo.netlify.com/testing</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com/testing</guid><pubDate>Sun, 21 Jul 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Notes for test&lt;/h1&gt;
 &lt;h2&gt;Unit test&lt;/h2&gt;
 &lt;p&gt;The unit tests are used to prove the smallest testable part of a computer program.In this sense, the great challenge is to write code that is testable; otherwise, it will be impossible to apply the unit tests.&lt;/p&gt;
 &lt;p&gt;When we create the unit test, we have to use a mechanism so that the function test does not touch the database. The mechanism is commonly known as a &lt;strong&gt;mock&lt;/strong&gt;.When applying a mock to the unit test, we isolate the function we want to test, then any possible changes in the database will not create conflict in the unit test scenarios.&lt;/p&gt;
@@ -1389,153 +1389,7 @@ class and ensure that only its behavior is being tested&lt;/p&gt;
 &lt;p&gt;MongoDB is a general purpose database that is used for a variety of use cases. The most common use cases for MongoDB include Single View, Internet of Things, Mobile, Real-Time Analytics, Personalization, Catalog, and Content Management.&lt;/p&gt;
 &lt;h2&gt;When would MySQL be a better fit?&lt;/h2&gt;
 &lt;p&gt;While most modern applications require a flexible, scalable system like MongoDB, there are use cases for which a relational database like MySQL would be better suited. Applications that require complex, multi-row transactions (e.g., a double-entry bookkeeping system) would be good examples. MongoDB is not a drop-in replacement for legacy applications built around the relational data model and SQL.&lt;/p&gt;
-&lt;p&gt;A concrete example would be the booking engine behind a travel reservation system, which also typically involves complex transactions. While the core booking engine might run on MySQL, those parts of the app that engage with users – serving up content, integrating with social networks, managing sessions – would be better placed in MongoDB&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Design Pattern Notes!]]></title><description><![CDATA[Behavioral Pattern Strategy pattern 
-In Strategy pattern, a class behavior or its algorithm can be changed at run time. This type of design…]]></description><link>https://gatsby-starter-blog-demo.netlify.com/design-pattern</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com/design-pattern</guid><pubDate>Thu, 31 Jan 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;Behavioral Pattern&lt;/h2&gt;
-&lt;p&gt;&lt;strong&gt;Strategy pattern&lt;/strong&gt;
-In Strategy pattern, a class behavior or its algorithm can be changed at run time. This type of design pattern comes under behavior pattern.&lt;/p&gt;
-&lt;p&gt;In Strategy pattern, we create objects which represent various strategies and a context object whose behavior varies as per its strategy object. The strategy object changes the executing algorithm of the context object.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Command pattern&lt;/strong&gt;
-Command pattern is a data driven design pattern and falls under behavioral pattern category. A request is wrapped under an object as command and passed to invoker object. Invoker object looks for the appropriate object which can handle this command and passes the command to the corresponding object which executes the command.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Observer pattern&lt;/strong&gt;
-Observer pattern is used when there is one-to-many relationship between objects such as if one object is modified, its depenedent objects are to be notified automatically. Observer pattern falls under behavioral pattern category.&lt;/p&gt;
-&lt;h2&gt;Structural Pattern&lt;/h2&gt;
-&lt;p&gt;&lt;strong&gt;Adapter pattern&lt;/strong&gt;
-Adapter pattern works as a bridge between two incompatible interfaces. This pattern involves a single class which is responsible to join functionalities of independent or incompatible interfaces.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Decorator pattern&lt;/strong&gt;
-Decorator pattern allows a user to add new functionality to an existing object without altering its structure. This type of design pattern comes under structural pattern as this pattern acts as a wrapper to existing class.&lt;/p&gt;
-&lt;p&gt;This pattern creates a decorator class which wraps the original class and provides additional functionality keeping class methods signature intact.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[AWS Notes!]]></title><description><![CDATA[Install Node app in AWS Installing node and system dependencies]]></description><link>https://gatsby-starter-blog-demo.netlify.com/dev-ops-aws</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com/dev-ops-aws</guid><pubDate>Thu, 31 Jan 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;Install Node app in AWS&lt;/h2&gt;
-&lt;h3&gt;Installing node and system dependencies&lt;/h3&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;curl&lt;/span&gt; -sL https://deb.nodesource.com/setup_8.x &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;sudo&lt;/span&gt; -E &lt;span class=&quot;token function&quot;&gt;bash&lt;/span&gt; -
-&lt;span class=&quot;token function&quot;&gt;sudo&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;apt-get&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt; -y nodejs&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[Docker Notes!]]></title><description><![CDATA[Userful commands Stop all containers docker stop $(docker ps -a -q) Delete all containers docker rm $(docker ps -a -q) Delete all images…]]></description><link>https://gatsby-starter-blog-demo.netlify.com/dev-ops-docker</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com/dev-ops-docker</guid><pubDate>Thu, 31 Jan 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Userful commands&lt;/h1&gt;
-&lt;h2&gt;Stop all containers&lt;/h2&gt;
-&lt;p&gt;docker stop $(docker ps -a -q)&lt;/p&gt;
-&lt;h3&gt;Delete all containers&lt;/h3&gt;
-&lt;p&gt;docker rm $(docker ps -a -q)&lt;/p&gt;
-&lt;h3&gt;Delete all images&lt;/h3&gt;
-&lt;p&gt;docker rmi $(docker images -q)&lt;/p&gt;
-&lt;p&gt; If you need to go inside the container you can use the exec command:&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;# Enter the container
-$ docker exec -it &amp;lt;container id&amp;gt; /bin/bash&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h2&gt;Production &lt;em&gt;docker-compose&lt;/em&gt;&lt;/h2&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ docker-compose build web
-$ docker-compose up --no-deps -d web&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;This will first rebuild the image for &lt;code class=&quot;language-text&quot;&gt;web&lt;/code&gt; and then stop, destroy, and recreate just the web service. The &lt;code class=&quot;language-text&quot;&gt;--no-deps&lt;/code&gt; flag prevents Compose from also recreating any services which &lt;code class=&quot;language-text&quot;&gt;web&lt;/code&gt; depends on.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;clean up logs&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;truncate -s 0 /var/lib/docker/containers/*/*-json.log&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[ELK Stack Notes!]]></title><description><![CDATA[ELK Stack notes Elasticsearch Increase production virtual memory
- Filebeat Start Filebeat
- Config Filebeat
- To see a list of available…]]></description><link>https://gatsby-starter-blog-demo.netlify.com/dev-ops-elk</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com/dev-ops-elk</guid><pubDate>Thu, 31 Jan 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;ELK Stack notes&lt;/h1&gt;
-&lt;h2&gt;Elasticsearch&lt;/h2&gt;
-&lt;p&gt;Increase production virtual memory
-&lt;code class=&quot;language-text&quot;&gt;sudo sysctl -w vm.max_map_count=262144&lt;/code&gt;&lt;/p&gt;
-&lt;h2&gt;Filebeat&lt;/h2&gt;
-&lt;p&gt;Start Filebeat
-&lt;code class=&quot;language-text&quot;&gt;sudo /etc/init.d/filebeat start&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;Config Filebeat
-&lt;code class=&quot;language-text&quot;&gt;sudo vi /etc/filebeat/filebeat.yml&lt;/code&gt;&lt;/p&gt;
-&lt;h1&gt;To see a list of available indexes&lt;/h1&gt;
-&lt;p&gt;curl ‘localhost:9200/_cat/indices?v’&lt;/p&gt;</content:encoded></item><item><title><![CDATA[General DevOps Notes!]]></title><description><![CDATA[General notes Portable vagrant with docker This is should work only with services, such as database. For project that you will need to see…]]></description><link>https://gatsby-starter-blog-demo.netlify.com/dev-ops-general</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com/dev-ops-general</guid><pubDate>Thu, 31 Jan 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;General notes&lt;/h1&gt;
-&lt;h2&gt;Portable vagrant with docker&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;This is should work only with services, such as database.&lt;/li&gt;
-&lt;li&gt;For project that you will need to see debug logs , should use docker instead of using docker provider by vagrant. &lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;AWS elastic search choice&lt;/h2&gt;
-&lt;p&gt;t2.small&lt;/p&gt;
-&lt;h2&gt;Nginx local redirect&lt;/h2&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;nginx&quot;&gt;&lt;pre class=&quot;language-nginx&quot;&gt;&lt;code class=&quot;language-nginx&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;auth_basic&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Restricted Content&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;token keyword&quot;&gt;auth_basic_user_file&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;etc&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;nginx&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;htpasswd&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;token keyword&quot;&gt;proxy_pass&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;https&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;service&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;domain&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;port&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h2&gt;Find matching string with following n line&lt;/h2&gt;
-&lt;p&gt;After&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;grep&lt;/span&gt; -i -A n &lt;span class=&quot;token variable&quot;&gt;${msg}&lt;/span&gt; filename&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Before&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;grep&lt;/span&gt; -i -B n &lt;span class=&quot;token variable&quot;&gt;${msg}&lt;/span&gt; filename&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Both&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;grep&lt;/span&gt; -i -C n &lt;span class=&quot;token variable&quot;&gt;${msg}&lt;/span&gt; filename&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[Vagrant Notes!]]></title><description><![CDATA[Clean vagrant build vagrant global-status —prune - Prunes invalid entries from the list. This is much more time consuming than simply…]]></description><link>https://gatsby-starter-blog-demo.netlify.com/dev-ops-vagrant</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com/dev-ops-vagrant</guid><pubDate>Thu, 31 Jan 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;Clean vagrant build&lt;/h2&gt;
-&lt;p&gt;vagrant global-status —prune - Prunes invalid entries from the list. This is much more time consuming than simply listing the entries.&lt;/p&gt;
-&lt;h1&gt;Setup vagrant with docker&lt;/h1&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;ruby&quot;&gt;&lt;pre class=&quot;language-ruby&quot;&gt;&lt;code class=&quot;language-ruby&quot;&gt;config&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;vm&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;box &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;ubuntu/trusty64&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h1&gt;Set vagrant up default box&lt;/h1&gt;
-&lt;p&gt;By passing &lt;code class=&quot;language-text&quot;&gt;primary&lt;/code&gt; flag to the the machine definition to start the machine as default machine when passing &lt;code class=&quot;language-text&quot;&gt;vigrant up&lt;/code&gt;&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;ruby&quot;&gt;&lt;pre class=&quot;language-ruby&quot;&gt;&lt;code class=&quot;language-ruby&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;# -*- mode: ruby -*-&lt;/span&gt;
-&lt;span class=&quot;token comment&quot;&gt;# vi: set ft=ruby :&lt;/span&gt;
-&lt;span class=&quot;token constant&quot;&gt;VAGRANTFILE_API_VERSION&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;2&quot;&lt;/span&gt;
-    &lt;span class=&quot;token constant&quot;&gt;Vagrant&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;configure&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token constant&quot;&gt;VAGRANTFILE_API_VERSION&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt;config&lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt;
-        config&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;vm&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;define &lt;span class=&quot;token string&quot;&gt;&quot;web&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; primary&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;true&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt;web&lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt;
-        web&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;vm&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;box &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;puppetlabs/ubuntu-14.04-32-nocm&quot;&lt;/span&gt;
-    &lt;span class=&quot;token keyword&quot;&gt;end&lt;/span&gt;
-&lt;span class=&quot;token keyword&quot;&gt;end&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;We’ll need to install a service that will run on port 80 of the guest machine. To do
-this, we’ll add a simple provisioning command. The complete Vagrantfile now looks
-like this:&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;ruby&quot;&gt;&lt;pre class=&quot;language-ruby&quot;&gt;&lt;code class=&quot;language-ruby&quot;&gt;web&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;vm&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;provision &lt;span class=&quot;token string&quot;&gt;&quot;shell&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; inline&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;apt-get install -y nginx&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;With the auto_correct option, Vagrant will first attempt to connect to the specified
-port (in this example, 8888), then fail over to a different port if the one specified is being
-used by another process.&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;ruby&quot;&gt;&lt;pre class=&quot;language-ruby&quot;&gt;&lt;code class=&quot;language-ruby&quot;&gt;web&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;vm&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;network &lt;span class=&quot;token string&quot;&gt;&quot;forwarded_port&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; guest&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;80&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; host&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;8888&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; auto_correct&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;true&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;To enable the GUI, we will need to add a provider-specific block to the configuration.
-In this case, the provider is “virtualbox”.&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;ruby&quot;&gt;&lt;pre class=&quot;language-ruby&quot;&gt;&lt;code class=&quot;language-ruby&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;# -*- mode: ruby -*-&lt;/span&gt;
-&lt;span class=&quot;token comment&quot;&gt;# vi: set ft=ruby :&lt;/span&gt;
-&lt;span class=&quot;token constant&quot;&gt;VAGRANTFILE_API_VERSION&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;2&quot;&lt;/span&gt;
-&lt;span class=&quot;token constant&quot;&gt;Vagrant&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;configure&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token constant&quot;&gt;VAGRANTFILE_API_VERSION&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt;config&lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt;
-    config&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;vm&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;box &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;chad-thompson/ubuntu-trusty64-gui&quot;&lt;/span&gt; config&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;
-    vm&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;provider &lt;span class=&quot;token string&quot;&gt;&quot;virtualbox&quot;&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt;vbox&lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt;
-        vbox&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;gui &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;true&lt;/span&gt;
-    &lt;span class=&quot;token keyword&quot;&gt;end&lt;/span&gt;
-&lt;span class=&quot;token keyword&quot;&gt;end&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;synced_folder&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;ruby&quot;&gt;&lt;pre class=&quot;language-ruby&quot;&gt;&lt;code class=&quot;language-ruby&quot;&gt;web&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;vm&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;synced_folder &lt;span class=&quot;token string&quot;&gt;&quot;vagrantsite/&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;/opt/vagrantsite&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;This will link the &lt;code class=&quot;language-text&quot;&gt;vagrantsite&lt;/code&gt; directory we created in step 1 to the &lt;code class=&quot;language-text&quot;&gt;/opt/vagrantsite&lt;/code&gt; directory on the guest machine.&lt;/p&gt;
-&lt;h1&gt;Ansible - is designed to execute commands using SSH&lt;/h1&gt;
-&lt;p&gt;currently it is not supporting Windows&lt;/p&gt;
-&lt;p&gt;installlation: &lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;sudo&lt;/span&gt; pip &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt; ansible&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;or for mac&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;brew &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt; ansible&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h1&gt;Vagrant newtwork&lt;/h1&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;ruby&quot;&gt;&lt;pre class=&quot;language-ruby&quot;&gt;&lt;code class=&quot;language-ruby&quot;&gt;config&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;vm&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;network &lt;span class=&quot;token string&quot;&gt;&quot;private_network&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; ip&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;192.168.99.100&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Add &lt;code class=&quot;language-text&quot;&gt;web.local 192.168.99.100&lt;/code&gt; to  &lt;code class=&quot;language-text&quot;&gt;/etc/hosts&lt;/code&gt;, The Vagrant machine can then be accessed using the &lt;code class=&quot;language-text&quot;&gt;web.local&lt;/code&gt; name address rather than a forwarded port address of something like &lt;code class=&quot;language-text&quot;&gt;http://localhost:8080&lt;/code&gt;&lt;/p&gt;
-&lt;h2&gt;Multiple machines&lt;/h2&gt;
-&lt;p&gt;The ordering and overriding of provisioners and variables is especially important in
-multimachine Vagrant environments. A multimachine Vagrantfile can specify global
-parameters (such as boxes or common provisioning tasks) that allow for individual
-machines to override the global parameters&lt;/p&gt;
-&lt;h2&gt;Important configuration&lt;/h2&gt;
-&lt;p&gt;&lt;em&gt;has_ssh&lt;/em&gt; (boolean) - If true, then Vagrant will support SSH with the container. This allows vagrant ssh to work, provisioners, etc. This defaults to false.&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;link&lt;/em&gt; (method, string argument) - Link this container to another by name. The argument should be in the format of (name:alias). Example: docker.link(“db:db”). Note, if you are linking to another container in the same Vagrantfile, make sure you call vagrant up with the —no-parallel flag.&lt;/p&gt;
-&lt;h1&gt;Vagrant with docker&lt;/h1&gt;
-&lt;p&gt;The Docker provider does not require a Vagrant box. The config.vm.box setting is completely optional.&lt;/p&gt;
-&lt;p&gt;A box can still be used and specified, however, to provide defaults. Because the Vagrantfile within a box is loaded as part of the configuration loading sequence, it can be used to configure the foundation of a development environment.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;In general, however, you will not need a box with the Docker provider.&lt;/strong&gt;&lt;/p&gt;
-&lt;h1&gt;Boot2docker&lt;/h1&gt;
-&lt;p&gt;Boot2docker is an excellent project that spin up docker containers in a virtual machine when the hosts (i.e. OSX) don’t support LXC, but it may be not suitable for large applications. &lt;/p&gt;
-&lt;h3&gt;box with docker provider&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;phusion/ubuntu-14.04-amd64&lt;/li&gt;
-&lt;li&gt;hashicorp/boot2docker&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;host-vagrant:&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;Using ansible provision to install Docker onto Ubuntu&lt;/li&gt;
-&lt;li&gt;Ensure Boot2Docker vm is also forward the same ports&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2&gt;Plugins&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;vagrant-notify-forwarder:
-By default, this sets up &lt;code class=&quot;language-text&quot;&gt;UDP port 29324&lt;/code&gt; for port forwarding&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;Sync folder for docker containers in boot2docker&lt;/h2&gt;
-&lt;p&gt;using &lt;code class=&quot;language-text&quot;&gt;vm.synced_folder&lt;/code&gt; to overide docker container volums&lt;/p&gt;
-&lt;h2&gt;Webpack&lt;/h2&gt;
-&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;watchOptions.poll&lt;/code&gt; &lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;poll: 1000 // Check for changes every second&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Watching does not work with NFS and machines in VirtualBox.&lt;/p&gt;
-&lt;h2&gt;nodemon&lt;/h2&gt;
-&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;--legacy-watch&lt;/code&gt; is needed to apply when using boot2docker to watch file changes&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Dotnet Notes!]]></title><description><![CDATA[Dotnet notes Dotnet MVC Dotnet API Duck Typing Install Angular 5 app with dotnet cli Installl the templates Create a new Angular App Change…]]></description><link>https://gatsby-starter-blog-demo.netlify.com/dotnet-readme</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com/dotnet-readme</guid><pubDate>Thu, 31 Jan 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Dotnet notes&lt;/h1&gt;
+&lt;p&gt;A concrete example would be the booking engine behind a travel reservation system, which also typically involves complex transactions. While the core booking engine might run on MySQL, those parts of the app that engage with users – serving up content, integrating with social networks, managing sessions – would be better placed in MongoDB&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Dotnet Notes!]]></title><description><![CDATA[Dotnet notes Dotnet MVC Dotnet API Duck Typing Install Angular 5 app with dotnet cli Installl the templates Create a new Angular App Change…]]></description><link>https://gatsby-starter-blog-demo.netlify.com/dotnet-readme</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com/dotnet-readme</guid><pubDate>Thu, 31 Jan 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Dotnet notes&lt;/h1&gt;
 &lt;h2&gt;Dotnet MVC&lt;/h2&gt;
 &lt;h2&gt;Dotnet API&lt;/h2&gt;
 &lt;h2&gt;Duck Typing&lt;/h2&gt;
@@ -1616,7 +1470,208 @@ dotnet ef database update&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h2&gt;Claim and Policy&lt;/h2&gt;
 &lt;p&gt;A claim is a piece of information about the user, along with some information about where the information came from.&lt;/p&gt;
 &lt;p&gt;Policy works with claims to manage user access to the application more flexibly than with standard roles.&lt;/p&gt;
-&lt;h2&gt;Model convention&lt;/h2&gt;</content:encoded></item><item><title><![CDATA[JavaScript Notes!]]></title><description><![CDATA[JavaScript notes comparasion Plain JavaScript pros: Does not require any additional libraries or technology Offers the best performance…]]></description><link>https://gatsby-starter-blog-demo.netlify.com/java-script-readme</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com/java-script-readme</guid><pubDate>Thu, 31 Jan 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;JavaScript notes&lt;/h1&gt;
+&lt;h2&gt;Model convention&lt;/h2&gt;</content:encoded></item><item><title><![CDATA[Design Pattern Notes!]]></title><description><![CDATA[Behavioral Pattern Strategy pattern 
+In Strategy pattern, a class behavior or its algorithm can be changed at run time. This type of design…]]></description><link>https://gatsby-starter-blog-demo.netlify.com/design-pattern</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com/design-pattern</guid><pubDate>Thu, 31 Jan 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;Behavioral Pattern&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Strategy pattern&lt;/strong&gt;
+In Strategy pattern, a class behavior or its algorithm can be changed at run time. This type of design pattern comes under behavior pattern.&lt;/p&gt;
+&lt;p&gt;In Strategy pattern, we create objects which represent various strategies and a context object whose behavior varies as per its strategy object. The strategy object changes the executing algorithm of the context object.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Command pattern&lt;/strong&gt;
+Command pattern is a data driven design pattern and falls under behavioral pattern category. A request is wrapped under an object as command and passed to invoker object. Invoker object looks for the appropriate object which can handle this command and passes the command to the corresponding object which executes the command.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Observer pattern&lt;/strong&gt;
+Observer pattern is used when there is one-to-many relationship between objects such as if one object is modified, its depenedent objects are to be notified automatically. Observer pattern falls under behavioral pattern category.&lt;/p&gt;
+&lt;h2&gt;Structural Pattern&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Adapter pattern&lt;/strong&gt;
+Adapter pattern works as a bridge between two incompatible interfaces. This pattern involves a single class which is responsible to join functionalities of independent or incompatible interfaces.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Decorator pattern&lt;/strong&gt;
+Decorator pattern allows a user to add new functionality to an existing object without altering its structure. This type of design pattern comes under structural pattern as this pattern acts as a wrapper to existing class.&lt;/p&gt;
+&lt;p&gt;This pattern creates a decorator class which wraps the original class and provides additional functionality keeping class methods signature intact.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[AWS Notes!]]></title><description><![CDATA[Install Node app in AWS Installing node and system dependencies]]></description><link>https://gatsby-starter-blog-demo.netlify.com/dev-ops-aws</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com/dev-ops-aws</guid><pubDate>Thu, 31 Jan 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;Install Node app in AWS&lt;/h2&gt;
+&lt;h3&gt;Installing node and system dependencies&lt;/h3&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;curl&lt;/span&gt; -sL https://deb.nodesource.com/setup_8.x &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;sudo&lt;/span&gt; -E &lt;span class=&quot;token function&quot;&gt;bash&lt;/span&gt; -
+&lt;span class=&quot;token function&quot;&gt;sudo&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;apt-get&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt; -y nodejs&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[ELK Stack Notes!]]></title><description><![CDATA[ELK Stack notes Elasticsearch Increase production virtual memory
+ Filebeat Start Filebeat
+ Config Filebeat
+ To see a list of available…]]></description><link>https://gatsby-starter-blog-demo.netlify.com/dev-ops-elk</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com/dev-ops-elk</guid><pubDate>Thu, 31 Jan 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;ELK Stack notes&lt;/h1&gt;
+&lt;h2&gt;Elasticsearch&lt;/h2&gt;
+&lt;p&gt;Increase production virtual memory
+&lt;code class=&quot;language-text&quot;&gt;sudo sysctl -w vm.max_map_count=262144&lt;/code&gt;&lt;/p&gt;
+&lt;h2&gt;Filebeat&lt;/h2&gt;
+&lt;p&gt;Start Filebeat
+&lt;code class=&quot;language-text&quot;&gt;sudo /etc/init.d/filebeat start&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Config Filebeat
+&lt;code class=&quot;language-text&quot;&gt;sudo vi /etc/filebeat/filebeat.yml&lt;/code&gt;&lt;/p&gt;
+&lt;h1&gt;To see a list of available indexes&lt;/h1&gt;
+&lt;p&gt;curl ‘localhost:9200/_cat/indices?v’&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Docker Notes!]]></title><description><![CDATA[Userful commands Stop all containers docker stop $(docker ps -a -q) Delete all containers docker rm $(docker ps -a -q) Delete all images…]]></description><link>https://gatsby-starter-blog-demo.netlify.com/dev-ops-docker</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com/dev-ops-docker</guid><pubDate>Thu, 31 Jan 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Userful commands&lt;/h1&gt;
+&lt;h2&gt;Stop all containers&lt;/h2&gt;
+&lt;p&gt;docker stop $(docker ps -a -q)&lt;/p&gt;
+&lt;h3&gt;Delete all containers&lt;/h3&gt;
+&lt;p&gt;docker rm $(docker ps -a -q)&lt;/p&gt;
+&lt;h3&gt;Delete all images&lt;/h3&gt;
+&lt;p&gt;docker rmi $(docker images -q)&lt;/p&gt;
+&lt;p&gt; If you need to go inside the container you can use the exec command:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;# Enter the container
+$ docker exec -it &amp;lt;container id&amp;gt; /bin/bash&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;Production &lt;em&gt;docker-compose&lt;/em&gt;&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ docker-compose build web
+$ docker-compose up --no-deps -d web&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;This will first rebuild the image for &lt;code class=&quot;language-text&quot;&gt;web&lt;/code&gt; and then stop, destroy, and recreate just the web service. The &lt;code class=&quot;language-text&quot;&gt;--no-deps&lt;/code&gt; flag prevents Compose from also recreating any services which &lt;code class=&quot;language-text&quot;&gt;web&lt;/code&gt; depends on.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;clean up logs&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;truncate -s 0 /var/lib/docker/containers/*/*-json.log&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[General DevOps Notes!]]></title><description><![CDATA[General notes Portable vagrant with docker This is should work only with services, such as database. For project that you will need to see…]]></description><link>https://gatsby-starter-blog-demo.netlify.com/dev-ops-general</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com/dev-ops-general</guid><pubDate>Thu, 31 Jan 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;General notes&lt;/h1&gt;
+&lt;h2&gt;Portable vagrant with docker&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;This is should work only with services, such as database.&lt;/li&gt;
+&lt;li&gt;For project that you will need to see debug logs , should use docker instead of using docker provider by vagrant. &lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;AWS elastic search choice&lt;/h2&gt;
+&lt;p&gt;t2.small&lt;/p&gt;
+&lt;h2&gt;Nginx local redirect&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;nginx&quot;&gt;&lt;pre class=&quot;language-nginx&quot;&gt;&lt;code class=&quot;language-nginx&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;auth_basic&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Restricted Content&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;auth_basic_user_file&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;etc&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;nginx&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;htpasswd&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;proxy_pass&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;https&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;service&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;domain&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;port&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;Find matching string with following n line&lt;/h2&gt;
+&lt;p&gt;After&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;grep&lt;/span&gt; -i -A n &lt;span class=&quot;token variable&quot;&gt;${msg}&lt;/span&gt; filename&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Before&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;grep&lt;/span&gt; -i -B n &lt;span class=&quot;token variable&quot;&gt;${msg}&lt;/span&gt; filename&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Both&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;grep&lt;/span&gt; -i -C n &lt;span class=&quot;token variable&quot;&gt;${msg}&lt;/span&gt; filename&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[Git Notes!]]></title><description><![CDATA[Git Notes Revert file to specific commit git checkout commit_id — file1/to/restore file2/to/restore Reset commit git reset HEAD~ Reset index…]]></description><link>https://gatsby-starter-blog-demo.netlify.com/git-git</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com/git-git</guid><pubDate>Thu, 31 Jan 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Git Notes&lt;/h1&gt;
+&lt;h2&gt;Revert file to specific commit&lt;/h2&gt;
+&lt;p&gt;git checkout commit_id — file1/to/restore file2/to/restore&lt;/p&gt;
+&lt;h2&gt;Reset commit&lt;/h2&gt;
+&lt;p&gt;git reset HEAD~&lt;/p&gt;
+&lt;h2&gt;Reset index&lt;/h2&gt;
+&lt;p&gt;git reset&lt;/p&gt;
+&lt;h2&gt;Ignore folder / directory&lt;/h2&gt;
+&lt;p&gt;directory_name/&lt;/p&gt;
+&lt;h2&gt;Amend a git commit message&lt;/h2&gt;
+&lt;p&gt;git commit —amend -m “New commit message”&lt;/p&gt;
+&lt;h2&gt;Revert git to commit id&lt;/h2&gt;
+&lt;p&gt;git reset —hard f414f31
+git reset —soft HEAD@{1}
+git commit -m “Reverting to the state of the project at f414f31”&lt;/p&gt;
+&lt;h2&gt;Clean up your local branches after merge and delete in GitHub&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;List branches in local machine
+The command &lt;code class=&quot;language-text&quot;&gt;git branch -a&lt;/code&gt; shows the test branch feature-collaboration is present on local and also present on remote&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Prune/Cleanup the local references to remote branch&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;The command &lt;code class=&quot;language-text&quot;&gt;git remote prune origin --dry-run&lt;/code&gt; lists branches that can be deleted/pruned on your local. An option &lt;code class=&quot;language-text&quot;&gt;--dry-run&lt;/code&gt; is needed.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Now go ahead and actually prune/cleanup the local references by running the command &lt;code class=&quot;language-text&quot;&gt;git remote prune origin&lt;/code&gt;. Note that you don’t need an option &lt;code class=&quot;language-text&quot;&gt;--dry-run&lt;/code&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Again, run the command &lt;code class=&quot;language-text&quot;&gt;git branch -a&lt;/code&gt; will show the local status of branches.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Delete local branch&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;Rename a local and remote branch&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Rename your local branch.
+If you are on the branch you want to rename:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;git&quot;&gt;&lt;pre class=&quot;language-git&quot;&gt;&lt;code class=&quot;language-git&quot;&gt;git branch -m new-name&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;If you are on a different branch:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;git&quot;&gt;&lt;pre class=&quot;language-git&quot;&gt;&lt;code class=&quot;language-git&quot;&gt;git branch -m old-name new-name&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ol&gt;
+&lt;li&gt;Delete the old-name remote branch and push the new-name local branch.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;git&quot;&gt;&lt;pre class=&quot;language-git&quot;&gt;&lt;code class=&quot;language-git&quot;&gt;git push origin :old-name new-name&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ol&gt;
+&lt;li&gt;Reset the upstream branch for the new-name local branch.
+Switch to the branch and then:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;git&quot;&gt;&lt;pre class=&quot;language-git&quot;&gt;&lt;code class=&quot;language-git&quot;&gt;git push origin -u new-name&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[Vagrant Notes!]]></title><description><![CDATA[Clean vagrant build vagrant global-status —prune - Prunes invalid entries from the list. This is much more time consuming than simply…]]></description><link>https://gatsby-starter-blog-demo.netlify.com/dev-ops-vagrant</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com/dev-ops-vagrant</guid><pubDate>Thu, 31 Jan 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;Clean vagrant build&lt;/h2&gt;
+&lt;p&gt;vagrant global-status —prune - Prunes invalid entries from the list. This is much more time consuming than simply listing the entries.&lt;/p&gt;
+&lt;h1&gt;Setup vagrant with docker&lt;/h1&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;ruby&quot;&gt;&lt;pre class=&quot;language-ruby&quot;&gt;&lt;code class=&quot;language-ruby&quot;&gt;config&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;vm&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;box &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;ubuntu/trusty64&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h1&gt;Set vagrant up default box&lt;/h1&gt;
+&lt;p&gt;By passing &lt;code class=&quot;language-text&quot;&gt;primary&lt;/code&gt; flag to the the machine definition to start the machine as default machine when passing &lt;code class=&quot;language-text&quot;&gt;vigrant up&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;ruby&quot;&gt;&lt;pre class=&quot;language-ruby&quot;&gt;&lt;code class=&quot;language-ruby&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;# -*- mode: ruby -*-&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;# vi: set ft=ruby :&lt;/span&gt;
+&lt;span class=&quot;token constant&quot;&gt;VAGRANTFILE_API_VERSION&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;2&quot;&lt;/span&gt;
+    &lt;span class=&quot;token constant&quot;&gt;Vagrant&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;configure&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token constant&quot;&gt;VAGRANTFILE_API_VERSION&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt;config&lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt;
+        config&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;vm&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;define &lt;span class=&quot;token string&quot;&gt;&quot;web&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; primary&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;true&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt;web&lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt;
+        web&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;vm&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;box &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;puppetlabs/ubuntu-14.04-32-nocm&quot;&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;end&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;We’ll need to install a service that will run on port 80 of the guest machine. To do
+this, we’ll add a simple provisioning command. The complete Vagrantfile now looks
+like this:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;ruby&quot;&gt;&lt;pre class=&quot;language-ruby&quot;&gt;&lt;code class=&quot;language-ruby&quot;&gt;web&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;vm&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;provision &lt;span class=&quot;token string&quot;&gt;&quot;shell&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; inline&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;apt-get install -y nginx&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;With the auto_correct option, Vagrant will first attempt to connect to the specified
+port (in this example, 8888), then fail over to a different port if the one specified is being
+used by another process.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;ruby&quot;&gt;&lt;pre class=&quot;language-ruby&quot;&gt;&lt;code class=&quot;language-ruby&quot;&gt;web&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;vm&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;network &lt;span class=&quot;token string&quot;&gt;&quot;forwarded_port&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; guest&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;80&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; host&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;8888&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; auto_correct&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;true&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;To enable the GUI, we will need to add a provider-specific block to the configuration.
+In this case, the provider is “virtualbox”.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;ruby&quot;&gt;&lt;pre class=&quot;language-ruby&quot;&gt;&lt;code class=&quot;language-ruby&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;# -*- mode: ruby -*-&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;# vi: set ft=ruby :&lt;/span&gt;
+&lt;span class=&quot;token constant&quot;&gt;VAGRANTFILE_API_VERSION&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;2&quot;&lt;/span&gt;
+&lt;span class=&quot;token constant&quot;&gt;Vagrant&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;configure&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token constant&quot;&gt;VAGRANTFILE_API_VERSION&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt;config&lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt;
+    config&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;vm&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;box &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;chad-thompson/ubuntu-trusty64-gui&quot;&lt;/span&gt; config&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;
+    vm&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;provider &lt;span class=&quot;token string&quot;&gt;&quot;virtualbox&quot;&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt;vbox&lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt;
+        vbox&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;gui &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;true&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;end&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;synced_folder&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;ruby&quot;&gt;&lt;pre class=&quot;language-ruby&quot;&gt;&lt;code class=&quot;language-ruby&quot;&gt;web&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;vm&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;synced_folder &lt;span class=&quot;token string&quot;&gt;&quot;vagrantsite/&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;/opt/vagrantsite&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;This will link the &lt;code class=&quot;language-text&quot;&gt;vagrantsite&lt;/code&gt; directory we created in step 1 to the &lt;code class=&quot;language-text&quot;&gt;/opt/vagrantsite&lt;/code&gt; directory on the guest machine.&lt;/p&gt;
+&lt;h1&gt;Ansible - is designed to execute commands using SSH&lt;/h1&gt;
+&lt;p&gt;currently it is not supporting Windows&lt;/p&gt;
+&lt;p&gt;installlation: &lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;sudo&lt;/span&gt; pip &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt; ansible&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;or for mac&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;brew &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt; ansible&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h1&gt;Vagrant newtwork&lt;/h1&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;ruby&quot;&gt;&lt;pre class=&quot;language-ruby&quot;&gt;&lt;code class=&quot;language-ruby&quot;&gt;config&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;vm&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;network &lt;span class=&quot;token string&quot;&gt;&quot;private_network&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; ip&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;192.168.99.100&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Add &lt;code class=&quot;language-text&quot;&gt;web.local 192.168.99.100&lt;/code&gt; to  &lt;code class=&quot;language-text&quot;&gt;/etc/hosts&lt;/code&gt;, The Vagrant machine can then be accessed using the &lt;code class=&quot;language-text&quot;&gt;web.local&lt;/code&gt; name address rather than a forwarded port address of something like &lt;code class=&quot;language-text&quot;&gt;http://localhost:8080&lt;/code&gt;&lt;/p&gt;
+&lt;h2&gt;Multiple machines&lt;/h2&gt;
+&lt;p&gt;The ordering and overriding of provisioners and variables is especially important in
+multimachine Vagrant environments. A multimachine Vagrantfile can specify global
+parameters (such as boxes or common provisioning tasks) that allow for individual
+machines to override the global parameters&lt;/p&gt;
+&lt;h2&gt;Important configuration&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;has_ssh&lt;/em&gt; (boolean) - If true, then Vagrant will support SSH with the container. This allows vagrant ssh to work, provisioners, etc. This defaults to false.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;link&lt;/em&gt; (method, string argument) - Link this container to another by name. The argument should be in the format of (name:alias). Example: docker.link(“db:db”). Note, if you are linking to another container in the same Vagrantfile, make sure you call vagrant up with the —no-parallel flag.&lt;/p&gt;
+&lt;h1&gt;Vagrant with docker&lt;/h1&gt;
+&lt;p&gt;The Docker provider does not require a Vagrant box. The config.vm.box setting is completely optional.&lt;/p&gt;
+&lt;p&gt;A box can still be used and specified, however, to provide defaults. Because the Vagrantfile within a box is loaded as part of the configuration loading sequence, it can be used to configure the foundation of a development environment.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;In general, however, you will not need a box with the Docker provider.&lt;/strong&gt;&lt;/p&gt;
+&lt;h1&gt;Boot2docker&lt;/h1&gt;
+&lt;p&gt;Boot2docker is an excellent project that spin up docker containers in a virtual machine when the hosts (i.e. OSX) don’t support LXC, but it may be not suitable for large applications. &lt;/p&gt;
+&lt;h3&gt;box with docker provider&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;phusion/ubuntu-14.04-amd64&lt;/li&gt;
+&lt;li&gt;hashicorp/boot2docker&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;host-vagrant:&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Using ansible provision to install Docker onto Ubuntu&lt;/li&gt;
+&lt;li&gt;Ensure Boot2Docker vm is also forward the same ports&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;Plugins&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;vagrant-notify-forwarder:
+By default, this sets up &lt;code class=&quot;language-text&quot;&gt;UDP port 29324&lt;/code&gt; for port forwarding&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Sync folder for docker containers in boot2docker&lt;/h2&gt;
+&lt;p&gt;using &lt;code class=&quot;language-text&quot;&gt;vm.synced_folder&lt;/code&gt; to overide docker container volums&lt;/p&gt;
+&lt;h2&gt;Webpack&lt;/h2&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;watchOptions.poll&lt;/code&gt; &lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;poll: 1000 // Check for changes every second&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Watching does not work with NFS and machines in VirtualBox.&lt;/p&gt;
+&lt;h2&gt;nodemon&lt;/h2&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;--legacy-watch&lt;/code&gt; is needed to apply when using boot2docker to watch file changes&lt;/p&gt;</content:encoded></item><item><title><![CDATA[JavaScript Notes!]]></title><description><![CDATA[JavaScript notes comparasion Plain JavaScript pros: Does not require any additional libraries or technology Offers the best performance…]]></description><link>https://gatsby-starter-blog-demo.netlify.com/java-script-readme</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com/java-script-readme</guid><pubDate>Thu, 31 Jan 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;JavaScript notes&lt;/h1&gt;
 &lt;h2&gt;comparasion&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;
@@ -1712,62 +1767,15 @@ dotnet ef database update&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;li&gt;
 &lt;p&gt;Composing: Composing is another benefit of functional programming allowing to generate super functions using existing functions.&lt;/p&gt;
 &lt;/li&gt;
-&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Git Notes!]]></title><description><![CDATA[Git Notes Revert file to specific commit git checkout commit_id — file1/to/restore file2/to/restore Reset commit git reset HEAD~ Reset index…]]></description><link>https://gatsby-starter-blog-demo.netlify.com/git-git</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com/git-git</guid><pubDate>Thu, 31 Jan 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Git Notes&lt;/h1&gt;
-&lt;h2&gt;Revert file to specific commit&lt;/h2&gt;
-&lt;p&gt;git checkout commit_id — file1/to/restore file2/to/restore&lt;/p&gt;
-&lt;h2&gt;Reset commit&lt;/h2&gt;
-&lt;p&gt;git reset HEAD~&lt;/p&gt;
-&lt;h2&gt;Reset index&lt;/h2&gt;
-&lt;p&gt;git reset&lt;/p&gt;
-&lt;h2&gt;Ignore folder / directory&lt;/h2&gt;
-&lt;p&gt;directory_name/&lt;/p&gt;
-&lt;h2&gt;Amend a git commit message&lt;/h2&gt;
-&lt;p&gt;git commit —amend -m “New commit message”&lt;/p&gt;
-&lt;h2&gt;Revert git to commit id&lt;/h2&gt;
-&lt;p&gt;git reset —hard f414f31
-git reset —soft HEAD@{1}
-git commit -m “Reverting to the state of the project at f414f31”&lt;/p&gt;
-&lt;h2&gt;Clean up your local branches after merge and delete in GitHub&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;List branches in local machine
-The command &lt;code class=&quot;language-text&quot;&gt;git branch -a&lt;/code&gt; shows the test branch feature-collaboration is present on local and also present on remote&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Prune/Cleanup the local references to remote branch&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;The command &lt;code class=&quot;language-text&quot;&gt;git remote prune origin --dry-run&lt;/code&gt; lists branches that can be deleted/pruned on your local. An option &lt;code class=&quot;language-text&quot;&gt;--dry-run&lt;/code&gt; is needed.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Now go ahead and actually prune/cleanup the local references by running the command &lt;code class=&quot;language-text&quot;&gt;git remote prune origin&lt;/code&gt;. Note that you don’t need an option &lt;code class=&quot;language-text&quot;&gt;--dry-run&lt;/code&gt;.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Again, run the command &lt;code class=&quot;language-text&quot;&gt;git branch -a&lt;/code&gt; will show the local status of branches.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Delete local branch&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2&gt;Rename a local and remote branch&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;Rename your local branch.
-If you are on the branch you want to rename:&lt;/li&gt;
-&lt;/ol&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;git&quot;&gt;&lt;pre class=&quot;language-git&quot;&gt;&lt;code class=&quot;language-git&quot;&gt;git branch -m new-name&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;If you are on a different branch:&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;git&quot;&gt;&lt;pre class=&quot;language-git&quot;&gt;&lt;code class=&quot;language-git&quot;&gt;git branch -m old-name new-name&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;ol&gt;
-&lt;li&gt;Delete the old-name remote branch and push the new-name local branch.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;git&quot;&gt;&lt;pre class=&quot;language-git&quot;&gt;&lt;code class=&quot;language-git&quot;&gt;git push origin :old-name new-name&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;ol&gt;
-&lt;li&gt;Reset the upstream branch for the new-name local branch.
-Switch to the branch and then:&lt;/li&gt;
-&lt;/ol&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;git&quot;&gt;&lt;pre class=&quot;language-git&quot;&gt;&lt;code class=&quot;language-git&quot;&gt;git push origin -u new-name&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[Dealling with umblanced dataset Notes!]]></title><description><![CDATA[Dealling with umblanced dataset The conventional model evaluation methods do not accurately measure model performance when faced with…]]></description><link>https://gatsby-starter-blog-demo.netlify.com/machine-learning-dealling-with-umblanced-dataset</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com/machine-learning-dealling-with-umblanced-dataset</guid><pubDate>Thu, 31 Jan 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Dealling with umblanced dataset&lt;/h1&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Dimensionality Reduction Notes!]]></title><description><![CDATA[Dimensionality Reduction Principal component analysis (PCA) It is an unsupervised linear transformation technique that is widely used across…]]></description><link>https://gatsby-starter-blog-demo.netlify.com/machine-learning-dimensionality-reduction</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com/machine-learning-dimensionality-reduction</guid><pubDate>Thu, 31 Jan 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Dimensionality Reduction&lt;/h1&gt;
+&lt;h2&gt;Principal component analysis (PCA)&lt;/h2&gt;
+&lt;p&gt;It is an unsupervised linear transformation technique that is widely used across different fields, most prominently for dimensionality reduction.&lt;/p&gt;
+&lt;h2&gt;Linear Discriminant Analysis (LDA)&lt;/h2&gt;
+&lt;p&gt;It can be used as a technique for feature extraction to increase the computational efficientcy and reduce the degreee of over-fitting due to the curse of dimensionality in nonregularized models.&lt;/p&gt;
+&lt;h2&gt;Kernel principal component analysis&lt;/h2&gt;
+&lt;p&gt;It will transform data that is not linearly separable onto a new, lower-dimensional subspace that is suitable for linear classifiers&lt;/p&gt;
+&lt;p&gt;Downside: This approach is computational expesnsive, but it can be overcome by kernel trick.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Radial Basis Function (RBF)&lt;/strong&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Dealling with umblanced dataset Notes!]]></title><description><![CDATA[Dealling with umblanced dataset The conventional model evaluation methods do not accurately measure model performance when faced with…]]></description><link>https://gatsby-starter-blog-demo.netlify.com/machine-learning-dealling-with-umblanced-dataset</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com/machine-learning-dealling-with-umblanced-dataset</guid><pubDate>Thu, 31 Jan 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Dealling with umblanced dataset&lt;/h1&gt;
 &lt;p&gt;The conventional model evaluation methods do not accurately measure model performance when faced with imbalanced datasets.&lt;/p&gt;
 &lt;h2&gt;Collect more data&lt;/h2&gt;
 &lt;h2&gt;Resampling&lt;/h2&gt;
@@ -1815,15 +1823,7 @@ Switch to the branch and then:&lt;/li&gt;
 &lt;/li&gt;
 &lt;li&gt;Modified synthetic minority oversampling technique (MSMOTE)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;Ensemble techniques&lt;/h2&gt;</content:encoded></item><item><title><![CDATA[Dimensionality Reduction Notes!]]></title><description><![CDATA[Dimensionality Reduction Principal component analysis (PCA) It is an unsupervised linear transformation technique that is widely used across…]]></description><link>https://gatsby-starter-blog-demo.netlify.com/machine-learning-dimensionality-reduction</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com/machine-learning-dimensionality-reduction</guid><pubDate>Thu, 31 Jan 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Dimensionality Reduction&lt;/h1&gt;
-&lt;h2&gt;Principal component analysis (PCA)&lt;/h2&gt;
-&lt;p&gt;It is an unsupervised linear transformation technique that is widely used across different fields, most prominently for dimensionality reduction.&lt;/p&gt;
-&lt;h2&gt;Linear Discriminant Analysis (LDA)&lt;/h2&gt;
-&lt;p&gt;It can be used as a technique for feature extraction to increase the computational efficientcy and reduce the degreee of over-fitting due to the curse of dimensionality in nonregularized models.&lt;/p&gt;
-&lt;h2&gt;Kernel principal component analysis&lt;/h2&gt;
-&lt;p&gt;It will transform data that is not linearly separable onto a new, lower-dimensional subspace that is suitable for linear classifiers&lt;/p&gt;
-&lt;p&gt;Downside: This approach is computational expesnsive, but it can be overcome by kernel trick.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Radial Basis Function (RBF)&lt;/strong&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Cluster Analysis Notes!]]></title><description><![CDATA[Unsupervised learning - Clustering Clustering (cluser analysis) is a technique that allows us to find groups of similar objects, objects…]]></description><link>https://gatsby-starter-blog-demo.netlify.com/machine-learning-clustering-analysis</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com/machine-learning-clustering-analysis</guid><pubDate>Thu, 31 Jan 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Unsupervised learning - Clustering&lt;/h1&gt;
+&lt;h2&gt;Ensemble techniques&lt;/h2&gt;</content:encoded></item><item><title><![CDATA[Cluster Analysis Notes!]]></title><description><![CDATA[Unsupervised learning - Clustering Clustering (cluser analysis) is a technique that allows us to find groups of similar objects, objects…]]></description><link>https://gatsby-starter-blog-demo.netlify.com/machine-learning-clustering-analysis</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com/machine-learning-clustering-analysis</guid><pubDate>Thu, 31 Jan 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Unsupervised learning - Clustering&lt;/h1&gt;
 &lt;p&gt;Clustering (cluser analysis) is a technique that allows us to find groups of similar objects, objects that are more related to each other than to objects in other groups.
 Exaples of business-oriented applications of clustering include the grouping of documents, music, and moviews by different topics, or finding customers that share similar interests based on common purchase behaviors as a basis for recommendation egines.&lt;/p&gt;
 &lt;h2&gt;k-means&lt;/h2&gt;
