@@ -1,163 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Michael Blog]]></title><description><![CDATA[A starter blog demonstrating what Gatsby can do.]]></description><link>https://gatsby-starter-blog-demo.netlify.com/</link><generator>RSS for Node</generator><lastBuildDate>Sat, 02 Mar 2019 10:54:55 GMT</lastBuildDate><item><title><![CDATA[Notes for Scrapy!]]></title><description><![CDATA[Scrapy notes Database choice If you plan to build some kind of search engine later on, Elasticsearch was a good choice If on the other hand…]]></description><link>https://gatsby-starter-blog-demo.netlify.com/python-scrapy</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com/python-scrapy</guid><pubDate>Fri, 26 Jul 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Scrapy notes&lt;/h1&gt;
-&lt;h2&gt;Database choice&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;If you plan to build some kind of search engine later on, Elasticsearch was a good choice&lt;/li&gt;
-&lt;li&gt;If on the other hand you just want to store the data and do processing tasks on it later, Elasticsearch was a poor choice and you would be better off with Cassandra or another NoSQL database.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;Important notes&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;Python twisted&lt;/li&gt;
-&lt;li&gt;Using MySQL instead of MongoDB due to some of the drawbacks that when using MongoDB as Database for data scraping.&lt;/li&gt;
-&lt;li&gt;Using large pool of IP (proxy) to route requests&lt;/li&gt;
-&lt;li&gt;Increasing request delay&lt;/li&gt;
-&lt;li&gt;Reduce number of requests per second&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3&gt;A table that can help you decide what the best mechanism for a given problem is:&lt;/h3&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;&lt;strong&gt;Problem&lt;/strong&gt;&lt;/th&gt;
-&lt;th align=&quot;center&quot;&gt;&lt;strong&gt;Solution&lt;/strong&gt;&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;em&gt;Something that is specific to the website that I’m crawling.&lt;/em&gt;&lt;/td&gt;
-&lt;td align=&quot;center&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;Modify your Spider.&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;em&gt;Modifying or storing Items—domain-specific, may be reused across projects.&lt;/em&gt;&lt;/td&gt;
-&lt;td align=&quot;center&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;Write an Item Pipeline.&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;em&gt;Modifying or dropping Requests/Responses—domain-specific,may be reused across projects&lt;/em&gt;&lt;/td&gt;
-&lt;td align=&quot;center&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;Write a spider middleware.&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;em&gt;Executing Requests/Responses—generic, for example,to support some custom login scheme or a special way to handle cookies.&lt;/em&gt;&lt;/td&gt;
-&lt;td align=&quot;center&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;Write a downloader middleware.&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;em&gt;All other problems.&lt;/em&gt;&lt;/td&gt;
-&lt;td align=&quot;center&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;Write an extension.&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h1&gt;Performance&lt;/h1&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;Find the bottleneck&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;lantencies: t(download) = t(response) + t(overhead)&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;t(job) = (N(request) * (t(response) + t(overhead))) / CONCURRENT_REQUESTS + t(start/stop)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Parameters control&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;t(overhead): more powerful server&lt;/li&gt;
-&lt;li&gt;t(start/stop) : same as above&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Caculate the throughput&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;T = N/(t(job) - t(start/stop))&lt;/li&gt;
-&lt;li&gt;By running a long job of N Requests, we can measure the job t aggregated time and then it’s straightforward to calculate T.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2&gt;Case study:&lt;/h2&gt;
-&lt;h3&gt;1. saturated CPU&lt;/h3&gt;
-&lt;p&gt;&lt;strong&gt;Solution&lt;/strong&gt;: I will assume that your code is, in general, efficient. You can get
-aggregated concurrency larger than &lt;em&gt;CONCURRENT&lt;/em&gt;REQUESTS_ by running many Scrapy
-crawlers on the same server. This will help you utilize more of the available cores
-especially if other services or other threads from your pipelines don’t use them.
-If you need even more concurrency, you can use multiple servers (see Chapter 11,
-Distributed Crawling with Scrapyd and Real-Time Analytics), in which case you will
-likely have more memory, network bandwidth, and hard disk throughput available
-as well. Always double-check that CPU usage is your primary constraint.&lt;/p&gt;
-&lt;h3&gt;2. blocking code&lt;/h3&gt;
-&lt;p&gt;&lt;strong&gt;Solution&lt;/strong&gt;: I will assume that you inherited the code base, and you have no intuition
-on where the blocking code is. If the system can be functional without any pipelines,
-then disable your pipelines and check whether the odd behavior persists. If yes, then
-your blocking code is in your spider. If not, then enable pipelines one-by-one and
-see when the problem starts. If the system can’t be functional without everything
-running, then add some log messages on each pipeline stage (or interleave dummy
-pipelines that print timestamps) in between your functional ones. By checking the
-logs, you will easily detect where your system spends most of its time. If you want
-a more long-term/reusable solution, you can trace your Requests using dummy
-pipelines that add timestamps at each stage to the meta fields of Request. At the end,
-hook to the item&lt;em&gt;scraped signal and log the timestamps. As soon as you find your
-blocking code, convert it to Twisted/asynchronous or use Twisted’s thread pools. To
-see the effects of this conversion, rerun the previous example while replacing SPEED&lt;/em&gt;
-&lt;em&gt;PIPELINE&lt;/em&gt;BLOCKING&lt;em&gt;DELAY&lt;/em&gt; with &lt;em&gt;SPEED&lt;/em&gt;PIPELINE&lt;em&gt;ASYNC&lt;/em&gt;DELAY_. The change in
-performance is stunning.&lt;/p&gt;
-&lt;h3&gt;3. “garbage” on the downloader&lt;/h3&gt;
-&lt;p&gt;&lt;strong&gt;Solution&lt;/strong&gt;: We can solve this problem using treq instead of &lt;em&gt;crawler.engine.
-download().&lt;/em&gt; You will note that this will skyrocket the scraper’s performance, which
-might be bad news for your API infrastructure. I would start with a low number
-of &lt;em&gt;CONCURRENT&lt;/em&gt;REQUESTS_ and increase gradually to make sure I don’t overload the
-API servers.&lt;/p&gt;
-&lt;h3&gt;4. overflow due to many or large responses&lt;/h3&gt;
-&lt;p&gt;&lt;strong&gt;Solution&lt;/strong&gt;: There isn’t much you can do for this problem with the existing infrastructure.
-It would be nice to be able to clear the body of Response as soon as you don’t need it
-anymore—likely after your spider, but doing so won’t reset Scraper’s counters at the
-time of writing. All you can really do is try to reduce your pipeline’s processing time
-effectively reducing the number of Responses in progress in the Scraper. You can
-achieve this with traditional optimization: checking whether APIs or databases you
-potentially interact with can support your scraper’s throughput, profiling the scraper,
-moving functionality from your pipelines to batch/postprocessing systems, and
-potentially using more powerful servers or distributed crawling.&lt;/p&gt;
-&lt;h3&gt;5. overflow due to limited/excessive item concurrency&lt;/h3&gt;
-&lt;p&gt;&lt;strong&gt;Solution&lt;/strong&gt;: It’s very easy to detect both problematic symptoms of this case. If you
-get very high CPU usage, it’s good to reduce the number of CONCURRENT&lt;em&gt;ITEMS. If
-you hit the 5 MB Response limit, then your pipeline can’t follow your downloader’s
-throughput and increasing CONCURRENT&lt;/em&gt;ITEMS might be able to quickly fix this. If it
-doesn’t make any difference, then follow the advice in the previous section and ask
-yourself twice if the rest of the system is able to support your Scraper’s throughput.&lt;/p&gt;
-&lt;h3&gt;6. the downloader doesn’t have enough to do&lt;/h3&gt;
-&lt;p&gt;&lt;strong&gt;Solution&lt;/strong&gt;: If each index page has more than one next page link, we can utilize them
-to accelerate our URL generation. If we can find pages that show more results (for
-example, 50) per index page even better.&lt;/p&gt;
-&lt;h2&gt;Troubleshooting flow&lt;/h2&gt;
-&lt;p&gt;To summarize, Scrapy is designed to have the downloader as a bottleneck. Start with
-a low value of CONCURRENT_REQUESTS and increase until just before you hit one of
-the following limits:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;CPU usage &gt; 80-90%&lt;/li&gt;
-&lt;li&gt;Source website latency increasing excessively&lt;/li&gt;
-&lt;li&gt;Memory limit of 5 Mb of Responses in your scraper&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;At the same time also perform the following:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Keep at least a few Requests at all times in the scheduler’s queues (mqs/dqs)
-to prevent the downloader’s URL starvation&lt;/li&gt;
-&lt;li&gt;Never use any blocking code or CPU-intensive code&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;img src=&quot;https://github.com/MagicMike90/Notes/blob/master/Python/Troubleshooting%20Scrapy&amp;#x27;s%20performance%20problems.png?raw=true&quot; alt=&quot;Troubleshooting Scrapy&amp;#x27;s performance problems&quot;&gt;&lt;/p&gt;
-&lt;h2&gt;Scrapy Distibuted Crawling&lt;/h2&gt;
-&lt;h2&gt;Crawl steps&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Inspect website structres&lt;/li&gt;
-&lt;li&gt;Use different spiders in order to satify website current structures&lt;/li&gt;
-&lt;li&gt;Using another application to schedule scrapy crawl&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;Error&lt;/h2&gt;
-&lt;p&gt;Offsite: Check &lt;code class=&quot;language-text&quot;&gt;allowed_domains&lt;/code&gt; if it matches the domain will be scraped&lt;/p&gt;
-&lt;h2&gt;Setting&lt;/h2&gt;
-&lt;p&gt;Using large pool of IP (proxy) to route requests
-Increasing request delay
-Reduce number of requests per second&lt;/p&gt;
-&lt;h2&gt;Environment&lt;/h2&gt;
-&lt;p&gt;AWS / ScrapyHub
-Radis, MySQL / MogoDB
-Elastic search
-Spark&lt;/p&gt;
-&lt;h2&gt;Advance&lt;/h2&gt;
-&lt;p&gt;Distributed Crawling with multiple servers&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Design Pattern Notes!]]></title><description><![CDATA[Behavioral Pattern Strategy pattern 
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Michael Blog]]></title><description><![CDATA[A starter blog demonstrating what Gatsby can do.]]></description><link>https://gatsby-starter-blog-demo.netlify.com/</link><generator>RSS for Node</generator><lastBuildDate>Sat, 02 Mar 2019 12:20:20 GMT</lastBuildDate><item><title><![CDATA[Design Pattern Notes!]]></title><description><![CDATA[Behavioral Pattern Strategy pattern 
 In Strategy pattern, a class behavior or its algorithm can be changed at run time. This type of design…]]></description><link>https://gatsby-starter-blog-demo.netlify.com/design-pattern</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com/design-pattern</guid><pubDate>Sat, 02 Mar 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;Behavioral Pattern&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;Strategy pattern&lt;/strong&gt;
 In Strategy pattern, a class behavior or its algorithm can be changed at run time. This type of design pattern comes under behavior pattern.&lt;/p&gt;
@@ -384,7 +225,166 @@ The following list represents more or less all the variations and functionalitie
   &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; wrappedComponent&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 
-&lt;span class=&quot;token keyword&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;default&lt;/span&gt; makeRed&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[Frontend Notes!]]></title><description><![CDATA[Client-side rendering When we talk about client-side rendering, we generally refer to an application or website that uses JavaScript running…]]></description><link>https://gatsby-starter-blog-demo.netlify.com/frontend</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com/frontend</guid><pubDate>Thu, 07 Feb 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;Client-side rendering&lt;/h2&gt;
+&lt;span class=&quot;token keyword&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;default&lt;/span&gt; makeRed&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[Notes for Scrapy!]]></title><description><![CDATA[Scrapy notes Database choice If you plan to build some kind of search engine later on, Elasticsearch was a good choice If on the other hand…]]></description><link>https://gatsby-starter-blog-demo.netlify.com/python-scrapy</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com/python-scrapy</guid><pubDate>Tue, 26 Feb 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Scrapy notes&lt;/h1&gt;
+&lt;h2&gt;Database choice&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;If you plan to build some kind of search engine later on, Elasticsearch was a good choice&lt;/li&gt;
+&lt;li&gt;If on the other hand you just want to store the data and do processing tasks on it later, Elasticsearch was a poor choice and you would be better off with Cassandra or another NoSQL database.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Important notes&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Python twisted&lt;/li&gt;
+&lt;li&gt;Using MySQL instead of MongoDB due to some of the drawbacks that when using MongoDB as Database for data scraping.&lt;/li&gt;
+&lt;li&gt;Using large pool of IP (proxy) to route requests&lt;/li&gt;
+&lt;li&gt;Increasing request delay&lt;/li&gt;
+&lt;li&gt;Reduce number of requests per second&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;A table that can help you decide what the best mechanism for a given problem is:&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;strong&gt;Problem&lt;/strong&gt;&lt;/th&gt;
+&lt;th align=&quot;center&quot;&gt;&lt;strong&gt;Solution&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;em&gt;Something that is specific to the website that I’m crawling.&lt;/em&gt;&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;Modify your Spider.&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;em&gt;Modifying or storing Items—domain-specific, may be reused across projects.&lt;/em&gt;&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;Write an Item Pipeline.&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;em&gt;Modifying or dropping Requests/Responses—domain-specific,may be reused across projects&lt;/em&gt;&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;Write a spider middleware.&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;em&gt;Executing Requests/Responses—generic, for example,to support some custom login scheme or a special way to handle cookies.&lt;/em&gt;&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;Write a downloader middleware.&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;em&gt;All other problems.&lt;/em&gt;&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;Write an extension.&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h1&gt;Performance&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Find the bottleneck&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;lantencies: t(download) = t(response) + t(overhead)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;t(job) = (N(request) * (t(response) + t(overhead))) / CONCURRENT_REQUESTS + t(start/stop)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Parameters control&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;t(overhead): more powerful server&lt;/li&gt;
+&lt;li&gt;t(start/stop) : same as above&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Caculate the throughput&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;T = N/(t(job) - t(start/stop))&lt;/li&gt;
+&lt;li&gt;By running a long job of N Requests, we can measure the job t aggregated time and then it’s straightforward to calculate T.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;Case study:&lt;/h2&gt;
+&lt;h3&gt;1. saturated CPU&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Solution&lt;/strong&gt;: I will assume that your code is, in general, efficient. You can get
+aggregated concurrency larger than &lt;em&gt;CONCURRENT&lt;/em&gt;REQUESTS_ by running many Scrapy
+crawlers on the same server. This will help you utilize more of the available cores
+especially if other services or other threads from your pipelines don’t use them.
+If you need even more concurrency, you can use multiple servers (see Chapter 11,
+Distributed Crawling with Scrapyd and Real-Time Analytics), in which case you will
+likely have more memory, network bandwidth, and hard disk throughput available
+as well. Always double-check that CPU usage is your primary constraint.&lt;/p&gt;
+&lt;h3&gt;2. blocking code&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Solution&lt;/strong&gt;: I will assume that you inherited the code base, and you have no intuition
+on where the blocking code is. If the system can be functional without any pipelines,
+then disable your pipelines and check whether the odd behavior persists. If yes, then
+your blocking code is in your spider. If not, then enable pipelines one-by-one and
+see when the problem starts. If the system can’t be functional without everything
+running, then add some log messages on each pipeline stage (or interleave dummy
+pipelines that print timestamps) in between your functional ones. By checking the
+logs, you will easily detect where your system spends most of its time. If you want
+a more long-term/reusable solution, you can trace your Requests using dummy
+pipelines that add timestamps at each stage to the meta fields of Request. At the end,
+hook to the item&lt;em&gt;scraped signal and log the timestamps. As soon as you find your
+blocking code, convert it to Twisted/asynchronous or use Twisted’s thread pools. To
+see the effects of this conversion, rerun the previous example while replacing SPEED&lt;/em&gt;
+&lt;em&gt;PIPELINE&lt;/em&gt;BLOCKING&lt;em&gt;DELAY&lt;/em&gt; with &lt;em&gt;SPEED&lt;/em&gt;PIPELINE&lt;em&gt;ASYNC&lt;/em&gt;DELAY_. The change in
+performance is stunning.&lt;/p&gt;
+&lt;h3&gt;3. “garbage” on the downloader&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Solution&lt;/strong&gt;: We can solve this problem using treq instead of &lt;em&gt;crawler.engine.
+download().&lt;/em&gt; You will note that this will skyrocket the scraper’s performance, which
+might be bad news for your API infrastructure. I would start with a low number
+of &lt;em&gt;CONCURRENT&lt;/em&gt;REQUESTS_ and increase gradually to make sure I don’t overload the
+API servers.&lt;/p&gt;
+&lt;h3&gt;4. overflow due to many or large responses&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Solution&lt;/strong&gt;: There isn’t much you can do for this problem with the existing infrastructure.
+It would be nice to be able to clear the body of Response as soon as you don’t need it
+anymore—likely after your spider, but doing so won’t reset Scraper’s counters at the
+time of writing. All you can really do is try to reduce your pipeline’s processing time
+effectively reducing the number of Responses in progress in the Scraper. You can
+achieve this with traditional optimization: checking whether APIs or databases you
+potentially interact with can support your scraper’s throughput, profiling the scraper,
+moving functionality from your pipelines to batch/postprocessing systems, and
+potentially using more powerful servers or distributed crawling.&lt;/p&gt;
+&lt;h3&gt;5. overflow due to limited/excessive item concurrency&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Solution&lt;/strong&gt;: It’s very easy to detect both problematic symptoms of this case. If you
+get very high CPU usage, it’s good to reduce the number of CONCURRENT&lt;em&gt;ITEMS. If
+you hit the 5 MB Response limit, then your pipeline can’t follow your downloader’s
+throughput and increasing CONCURRENT&lt;/em&gt;ITEMS might be able to quickly fix this. If it
+doesn’t make any difference, then follow the advice in the previous section and ask
+yourself twice if the rest of the system is able to support your Scraper’s throughput.&lt;/p&gt;
+&lt;h3&gt;6. the downloader doesn’t have enough to do&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Solution&lt;/strong&gt;: If each index page has more than one next page link, we can utilize them
+to accelerate our URL generation. If we can find pages that show more results (for
+example, 50) per index page even better.&lt;/p&gt;
+&lt;h2&gt;Troubleshooting flow&lt;/h2&gt;
+&lt;p&gt;To summarize, Scrapy is designed to have the downloader as a bottleneck. Start with
+a low value of CONCURRENT_REQUESTS and increase until just before you hit one of
+the following limits:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;CPU usage &gt; 80-90%&lt;/li&gt;
+&lt;li&gt;Source website latency increasing excessively&lt;/li&gt;
+&lt;li&gt;Memory limit of 5 Mb of Responses in your scraper&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;At the same time also perform the following:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Keep at least a few Requests at all times in the scheduler’s queues (mqs/dqs)
+to prevent the downloader’s URL starvation&lt;/li&gt;
+&lt;li&gt;Never use any blocking code or CPU-intensive code&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&quot;https://github.com/MagicMike90/Notes/blob/master/Python/Troubleshooting%20Scrapy&amp;#x27;s%20performance%20problems.png?raw=true&quot; alt=&quot;Troubleshooting Scrapy&amp;#x27;s performance problems&quot;&gt;&lt;/p&gt;
+&lt;h2&gt;Scrapy Distibuted Crawling&lt;/h2&gt;
+&lt;h2&gt;Crawl steps&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Inspect website structres&lt;/li&gt;
+&lt;li&gt;Use different spiders in order to satify website current structures&lt;/li&gt;
+&lt;li&gt;Using another application to schedule scrapy crawl&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Error&lt;/h2&gt;
+&lt;p&gt;Offsite: Check &lt;code class=&quot;language-text&quot;&gt;allowed_domains&lt;/code&gt; if it matches the domain will be scraped&lt;/p&gt;
+&lt;h2&gt;Setting&lt;/h2&gt;
+&lt;p&gt;Using large pool of IP (proxy) to route requests
+Increasing request delay
+Reduce number of requests per second&lt;/p&gt;
+&lt;h2&gt;Environment&lt;/h2&gt;
+&lt;p&gt;AWS / ScrapyHub
+Radis, MySQL / MogoDB
+Elastic search
+Spark&lt;/p&gt;
+&lt;h2&gt;Advance&lt;/h2&gt;
+&lt;p&gt;Distributed Crawling with multiple servers&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Frontend Notes!]]></title><description><![CDATA[Client-side rendering When we talk about client-side rendering, we generally refer to an application or website that uses JavaScript running…]]></description><link>https://gatsby-starter-blog-demo.netlify.com/frontend</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com/frontend</guid><pubDate>Thu, 07 Feb 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;Client-side rendering&lt;/h2&gt;
 &lt;p&gt;When we talk about client-side rendering, we generally refer to an application or website that uses JavaScript running in the browser to display (render) the pages. There is often a single page that is downloaded, with a JavaScript file that builds up the actual page (hence the term single-page application).&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Strengths
@@ -404,9 +404,7 @@ The following list represents more or less all the variations and functionalitie
 &lt;blockquote&gt;
 &lt;p&gt;Weaknesses
 : The downside of server-side rendering is that the pages often have only basic possibilities of interaction with the user, and when the content changes, or the user navigates to another page, they have to re-download the whole page. This results in more bandwidth and gives the user the feeling that the page is loading slower than it actually is.&lt;/p&gt;
-&lt;/blockquote&gt;</content:encoded></item><item><title><![CDATA[PWA Notes!]]></title><description><![CDATA[Notes for Progressive Web App Case study - Facebook Facebook tried to make the web its primary platform, but due to many engineering…]]></description><link>https://gatsby-starter-blog-demo.netlify.com/pwa-readme</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com/pwa-readme</guid><pubDate>Sun, 03 Feb 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Notes for Progressive Web App&lt;/h1&gt;
-&lt;h2&gt;Case study - Facebook&lt;/h2&gt;
-&lt;p&gt;Facebook tried to make the web its primary platform, but due to many engineering mistakes and browser/hardware limitations, they failed. At that point, they switched to native apps as a primary focus and have since created a very large, walled off community of data and interactions.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[NodeJS Architecture Pattern!]]></title><description><![CDATA[NodeJS Architecture Pattern Factors to scale Exteranl Scale Traffic Increase Direct effect: The most obvious direct effect is overloading…]]></description><link>https://gatsby-starter-blog-demo.netlify.com/node-js-architecture</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com/node-js-architecture</guid><pubDate>Sun, 03 Feb 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;NodeJS Architecture Pattern&lt;/h1&gt;
+&lt;/blockquote&gt;</content:encoded></item><item><title><![CDATA[NodeJS Architecture Pattern!]]></title><description><![CDATA[NodeJS Architecture Pattern Factors to scale Exteranl Scale Traffic Increase Direct effect: The most obvious direct effect is overloading…]]></description><link>https://gatsby-starter-blog-demo.netlify.com/node-js-architecture</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com/node-js-architecture</guid><pubDate>Sun, 03 Feb 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;NodeJS Architecture Pattern&lt;/h1&gt;
 &lt;h2&gt;Factors to scale&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Exteranl Scale&lt;/li&gt;
@@ -424,29 +422,6 @@ The following list represents more or less all the variations and functionalitie
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;/li&gt;
-&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[NodeJS Notes!]]></title><description><![CDATA[Notes for NodeJS NodeJS drawback Due to it uses sigle tread, it results in bad performance on CPU intensive computing (concurrent computing…]]></description><link>https://gatsby-starter-blog-demo.netlify.com/node-js-readme</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com/node-js-readme</guid><pubDate>Sun, 03 Feb 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Notes for NodeJS&lt;/h1&gt;
-&lt;h2&gt;NodeJS drawback&lt;/h2&gt;
-&lt;p&gt;Due to it uses sigle tread, it results in bad performance on CPU intensive computing (concurrent computing or grid computing)&lt;/p&gt;
-&lt;h2&gt;Asynchronous batching and caching&lt;/h2&gt;
-&lt;p&gt;&lt;strong&gt;Batching&lt;/strong&gt;
-If we are invoking an asynchronous function while there is still another one pending, we can attach callback to the already running operation, instead of creating a brand new request.&lt;/p&gt;
-&lt;p&gt;Problems:
-The faster the API, the fewer batched requests we get. Alought the API is fast enough, it still represents a factor in the resource load of an application.
-Also, sometimes we can safely assume that the result of an API invocation will not change so often; therefore, a simple request batching willl not provide the best performance. In all these circumstances, the best candidate to reduce the load of an application and increase its responsiveness is definitely a more agressive caching pattern.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Catching&lt;/strong&gt;
-As soon as a request completes, we store its result in the catch, which can be a variable, an entry in the database, or in a specialized catching server. Hence, the next time the API is invoked, the result can be retrieved immediately from the cache, insead of spawning another request.&lt;/p&gt;
-&lt;h2&gt;Running CPU-bound tasks&lt;/h2&gt;
-&lt;h2&gt;Scalability&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Three dimesions
-x-axis: Cloning
-y-axis: Decomposing by service/functionality
-z-axis: Splitting by data partition&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;vertical scaling - adding more resources to a single machine
-horizontal scaling - adding more machines to the infrastructure&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Cloning&lt;/li&gt;
 &lt;/ul&gt;</content:encoded></item><item><title><![CDATA[NodeJS Cookbook!]]></title><description><![CDATA[Nodejs Cookbook]]></description><link>https://gatsby-starter-blog-demo.netlify.com/node-js-cookbook</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com/node-js-cookbook</guid><pubDate>Sun, 03 Feb 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Nodejs Cookbook&lt;/h1&gt;</content:encoded></item><item><title><![CDATA[NodeJS Security Notes!]]></title><description><![CDATA[NodeJS security Code injection Indentify code injections Avoid shell injection Database injection Avoid SQL injection Mitigate injection…]]></description><link>https://gatsby-starter-blog-demo.netlify.com/node-js-security</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com/node-js-security</guid><pubDate>Sun, 03 Feb 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;NodeJS security&lt;/h1&gt;
 &lt;h2&gt;Code injection&lt;/h2&gt;
 &lt;ul&gt;
@@ -552,11 +527,117 @@ horizontal scaling - adding more machines to the infrastructure&lt;/p&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;Secure codebase&lt;/h2&gt;</content:encoded></item><item><title><![CDATA[Datebase Notes!]]></title><description><![CDATA[What are common use cases for MongoDB? MongoDB is a general purpose database that is used for a variety of use cases. The most common use…]]></description><link>https://gatsby-starter-blog-demo.netlify.com/database-compare</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com/database-compare</guid><pubDate>Thu, 31 Jan 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;What are common use cases for MongoDB?&lt;/h2&gt;
+&lt;h2&gt;Secure codebase&lt;/h2&gt;</content:encoded></item><item><title><![CDATA[PWA Notes!]]></title><description><![CDATA[Notes for Progressive Web App Case study - Facebook Facebook tried to make the web its primary platform, but due to many engineering…]]></description><link>https://gatsby-starter-blog-demo.netlify.com/pwa-readme</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com/pwa-readme</guid><pubDate>Sun, 03 Feb 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Notes for Progressive Web App&lt;/h1&gt;
+&lt;h2&gt;Case study - Facebook&lt;/h2&gt;
+&lt;p&gt;Facebook tried to make the web its primary platform, but due to many engineering mistakes and browser/hardware limitations, they failed. At that point, they switched to native apps as a primary focus and have since created a very large, walled off community of data and interactions.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[NodeJS Notes!]]></title><description><![CDATA[Notes for NodeJS NodeJS drawback Due to it uses sigle tread, it results in bad performance on CPU intensive computing (concurrent computing…]]></description><link>https://gatsby-starter-blog-demo.netlify.com/node-js-readme</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com/node-js-readme</guid><pubDate>Sun, 03 Feb 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Notes for NodeJS&lt;/h1&gt;
+&lt;h2&gt;NodeJS drawback&lt;/h2&gt;
+&lt;p&gt;Due to it uses sigle tread, it results in bad performance on CPU intensive computing (concurrent computing or grid computing)&lt;/p&gt;
+&lt;h2&gt;Asynchronous batching and caching&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Batching&lt;/strong&gt;
+If we are invoking an asynchronous function while there is still another one pending, we can attach callback to the already running operation, instead of creating a brand new request.&lt;/p&gt;
+&lt;p&gt;Problems:
+The faster the API, the fewer batched requests we get. Alought the API is fast enough, it still represents a factor in the resource load of an application.
+Also, sometimes we can safely assume that the result of an API invocation will not change so often; therefore, a simple request batching willl not provide the best performance. In all these circumstances, the best candidate to reduce the load of an application and increase its responsiveness is definitely a more agressive caching pattern.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Catching&lt;/strong&gt;
+As soon as a request completes, we store its result in the catch, which can be a variable, an entry in the database, or in a specialized catching server. Hence, the next time the API is invoked, the result can be retrieved immediately from the cache, insead of spawning another request.&lt;/p&gt;
+&lt;h2&gt;Running CPU-bound tasks&lt;/h2&gt;
+&lt;h2&gt;Scalability&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Three dimesions
+x-axis: Cloning
+y-axis: Decomposing by service/functionality
+z-axis: Splitting by data partition&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;vertical scaling - adding more resources to a single machine
+horizontal scaling - adding more machines to the infrastructure&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Cloning&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Datebase Notes!]]></title><description><![CDATA[What are common use cases for MongoDB? MongoDB is a general purpose database that is used for a variety of use cases. The most common use…]]></description><link>https://gatsby-starter-blog-demo.netlify.com/database-compare</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com/database-compare</guid><pubDate>Thu, 31 Jan 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;What are common use cases for MongoDB?&lt;/h2&gt;
 &lt;p&gt;MongoDB is a general purpose database that is used for a variety of use cases. The most common use cases for MongoDB include Single View, Internet of Things, Mobile, Real-Time Analytics, Personalization, Catalog, and Content Management.&lt;/p&gt;
 &lt;h2&gt;When would MySQL be a better fit?&lt;/h2&gt;
 &lt;p&gt;While most modern applications require a flexible, scalable system like MongoDB, there are use cases for which a relational database like MySQL would be better suited. Applications that require complex, multi-row transactions (e.g., a double-entry bookkeeping system) would be good examples. MongoDB is not a drop-in replacement for legacy applications built around the relational data model and SQL.&lt;/p&gt;
-&lt;p&gt;A concrete example would be the booking engine behind a travel reservation system, which also typically involves complex transactions. While the core booking engine might run on MySQL, those parts of the app that engage with users – serving up content, integrating with social networks, managing sessions – would be better placed in MongoDB&lt;/p&gt;</content:encoded></item><item><title><![CDATA[AWS Notes!]]></title><description><![CDATA[Install Node app in AWS Installing node and system dependencies]]></description><link>https://gatsby-starter-blog-demo.netlify.com/dev-ops-aws</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com/dev-ops-aws</guid><pubDate>Thu, 31 Jan 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;Install Node app in AWS&lt;/h2&gt;
+&lt;p&gt;A concrete example would be the booking engine behind a travel reservation system, which also typically involves complex transactions. While the core booking engine might run on MySQL, those parts of the app that engage with users – serving up content, integrating with social networks, managing sessions – would be better placed in MongoDB&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Dotnet Notes!]]></title><description><![CDATA[Dotnet notes Dotnet MVC Dotnet API Duck Typing Install Angular 5 app with dotnet cli Installl the templates Create a new Angular App Change…]]></description><link>https://gatsby-starter-blog-demo.netlify.com/dotnet-readme</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com/dotnet-readme</guid><pubDate>Thu, 31 Jan 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Dotnet notes&lt;/h1&gt;
+&lt;h2&gt;Dotnet MVC&lt;/h2&gt;
+&lt;h2&gt;Dotnet API&lt;/h2&gt;
+&lt;h2&gt;Duck Typing&lt;/h2&gt;
+&lt;h2&gt;Install Angular 5 app with dotnet cli&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Installl the templates&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;dotnet new --install Microsoft.DotNet.Web.Spa.ProjectTemplates::2.0.0-rc1-final&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ol start=&quot;2&quot;&gt;
+&lt;li&gt;Create a new Angular App&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;dotnet new angular -o ProjectName&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ol start=&quot;3&quot;&gt;
+&lt;li&gt;Change Enviroment variable to “Development”&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;SET ASPNETCORE_Environment&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;Development&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ol start=&quot;4&quot;&gt;
+&lt;li&gt;Buidl the application&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;dotnet build&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Or&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;ASPNETCORE_ENVIRONMENT&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;Development dotnet &lt;span class=&quot;token function&quot;&gt;watch&lt;/span&gt; run
+
+&lt;span class=&quot;token comment&quot;&gt;## migrate a database&lt;/span&gt;
+**Code-First** Migrations: giving the developer a chance to alter the Database schema without having to drop/recreate the whole thing &lt;span class=&quot;token keyword&quot;&gt;in&lt;/span&gt; Production.
+
+``` &lt;span class=&quot;token function&quot;&gt;bash&lt;/span&gt;
+dotnet ef migrations add &lt;span class=&quot;token string&quot;&gt;&quot;Identity&quot;&lt;/span&gt; -o &lt;span class=&quot;token string&quot;&gt;&quot;Data/Migrations&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;update a database&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;option 1: update&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;dotnet ef database update&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;option 2: drop and recreate&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;dotnet ef database drop
+dotnet ef database update&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;ASPNETCORE_ENVIRONMENT&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;Development dotnet run&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;Depency injection&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Name&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;AddTransient&amp;#x3C;service,implType&gt;()&lt;/td&gt;
+&lt;td&gt;This method tells the service provider to create a new instance of the implementation type for every dependency on the service type. See the “Using the Transient Life Cycle” section.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;AddTransient&lt;service&gt;()&lt;/td&gt;
+&lt;td&gt;This method is used to register a single type, which will be instantiated for every dependency, as described in the “Using Dependency Injection for Concrete Types” section.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;AddTransient&lt;service&gt;(factoryFunc)&lt;/td&gt;
+&lt;td&gt;This method is used to register a factory function that will be invoked to create an implementation object for every dependency on the service type, as described in the “Using a Factory Function” section.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;AddScoped&amp;#x3C;service, implType&gt;() AddScoped&lt;service&gt;() AddScoped&lt;service&gt;(factoryFunc)&lt;/td&gt;
+&lt;td&gt;These methods tell the service provider to reuse instances of the implementation type so that all service requests made by components associated with a common scope, which is usually a single HTTP request, share the same object. These methods follow the same pattern as the corresponding AddTransientmethods. See the “Using the Scoped Life Cycle” section.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;AddSingleton&amp;#x3C;service, implType&gt;() AddSingleton&lt;service&gt;() AddSingleton&amp;#x3C;service(factoryFunc)&lt;/td&gt;
+&lt;td&gt;These methods tell the service provider to create a new instance of the implementation type for the first service request and then reuse it for every subsequent service request. See the “Using the Singleton Life Cycle” section.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;AddSingleton&lt;service&gt;(instance)&lt;/td&gt;
+&lt;td&gt;This method provides the service provider with an object that should be used to service all service requests. The service provider will not create any new objects.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2&gt;Razor&lt;/h2&gt;
+&lt;h3&gt;View location Expender&lt;/h3&gt;
+&lt;p&gt;Razor uses view location expanders to build up a list of locations that should be searched for a view. View location expanders implement the IViewLocationExpander interface&lt;/p&gt;
+&lt;h2&gt;Claim and Policy&lt;/h2&gt;
+&lt;p&gt;A claim is a piece of information about the user, along with some information about where the information came from.&lt;/p&gt;
+&lt;p&gt;Policy works with claims to manage user access to the application more flexibly than with standard roles.&lt;/p&gt;
+&lt;h2&gt;Model convention&lt;/h2&gt;</content:encoded></item><item><title><![CDATA[AWS Notes!]]></title><description><![CDATA[Install Node app in AWS Installing node and system dependencies]]></description><link>https://gatsby-starter-blog-demo.netlify.com/dev-ops-aws</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com/dev-ops-aws</guid><pubDate>Thu, 31 Jan 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;Install Node app in AWS&lt;/h2&gt;
 &lt;h3&gt;Installing node and system dependencies&lt;/h3&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;curl&lt;/span&gt; -sL https://deb.nodesource.com/setup_8.x &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;sudo&lt;/span&gt; -E &lt;span class=&quot;token function&quot;&gt;bash&lt;/span&gt; -
 &lt;span class=&quot;token function&quot;&gt;sudo&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;apt-get&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt; -y nodejs&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[Docker Notes!]]></title><description><![CDATA[Userful commands Stop all containers docker stop $(docker ps -a -q) Delete all containers docker rm $(docker ps -a -q) Delete all images…]]></description><link>https://gatsby-starter-blog-demo.netlify.com/dev-ops-docker</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com/dev-ops-docker</guid><pubDate>Thu, 31 Jan 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Userful commands&lt;/h1&gt;
@@ -688,143 +769,7 @@ By default, this sets up &lt;code class=&quot;language-text&quot;&gt;UDP port 29
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;poll: 1000 // Check for changes every second&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Watching does not work with NFS and machines in VirtualBox.&lt;/p&gt;
 &lt;h2&gt;nodemon&lt;/h2&gt;
-&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;--legacy-watch&lt;/code&gt; is needed to apply when using boot2docker to watch file changes&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Git Notes!]]></title><description><![CDATA[Git Notes Revert file to specific commit git checkout commit_id — file1/to/restore file2/to/restore Reset commit git reset HEAD~ Reset index…]]></description><link>https://gatsby-starter-blog-demo.netlify.com/git-git</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com/git-git</guid><pubDate>Thu, 31 Jan 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Git Notes&lt;/h1&gt;
-&lt;h2&gt;Revert file to specific commit&lt;/h2&gt;
-&lt;p&gt;git checkout commit_id — file1/to/restore file2/to/restore&lt;/p&gt;
-&lt;h2&gt;Reset commit&lt;/h2&gt;
-&lt;p&gt;git reset HEAD~&lt;/p&gt;
-&lt;h2&gt;Reset index&lt;/h2&gt;
-&lt;p&gt;git reset&lt;/p&gt;
-&lt;h2&gt;Ignore folder / directory&lt;/h2&gt;
-&lt;p&gt;directory_name/&lt;/p&gt;
-&lt;h2&gt;Amend a git commit message&lt;/h2&gt;
-&lt;p&gt;git commit —amend -m “New commit message”&lt;/p&gt;
-&lt;h2&gt;Revert git to commit id&lt;/h2&gt;
-&lt;p&gt;git reset —hard f414f31
-git reset —soft HEAD@{1}
-git commit -m “Reverting to the state of the project at f414f31”&lt;/p&gt;
-&lt;h2&gt;Clean up your local branches after merge and delete in GitHub&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;List branches in local machine
-The command &lt;code class=&quot;language-text&quot;&gt;git branch -a&lt;/code&gt; shows the test branch feature-collaboration is present on local and also present on remote&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Prune/Cleanup the local references to remote branch&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;The command &lt;code class=&quot;language-text&quot;&gt;git remote prune origin --dry-run&lt;/code&gt; lists branches that can be deleted/pruned on your local. An option &lt;code class=&quot;language-text&quot;&gt;--dry-run&lt;/code&gt; is needed.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Now go ahead and actually prune/cleanup the local references by running the command &lt;code class=&quot;language-text&quot;&gt;git remote prune origin&lt;/code&gt;. Note that you don’t need an option &lt;code class=&quot;language-text&quot;&gt;--dry-run&lt;/code&gt;.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Again, run the command &lt;code class=&quot;language-text&quot;&gt;git branch -a&lt;/code&gt; will show the local status of branches.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Delete local branch&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2&gt;Rename a local and remote branch&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;Rename your local branch.
-If you are on the branch you want to rename:&lt;/li&gt;
-&lt;/ol&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;git&quot;&gt;&lt;pre class=&quot;language-git&quot;&gt;&lt;code class=&quot;language-git&quot;&gt;git branch -m new-name&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;If you are on a different branch:&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;git&quot;&gt;&lt;pre class=&quot;language-git&quot;&gt;&lt;code class=&quot;language-git&quot;&gt;git branch -m old-name new-name&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;ol&gt;
-&lt;li&gt;Delete the old-name remote branch and push the new-name local branch.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;git&quot;&gt;&lt;pre class=&quot;language-git&quot;&gt;&lt;code class=&quot;language-git&quot;&gt;git push origin :old-name new-name&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;ol&gt;
-&lt;li&gt;Reset the upstream branch for the new-name local branch.
-Switch to the branch and then:&lt;/li&gt;
-&lt;/ol&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;git&quot;&gt;&lt;pre class=&quot;language-git&quot;&gt;&lt;code class=&quot;language-git&quot;&gt;git push origin -u new-name&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[Dotnet Notes!]]></title><description><![CDATA[Dotnet notes Dotnet MVC Dotnet API Duck Typing Install Angular 5 app with dotnet cli Installl the templates Create a new Angular App Change…]]></description><link>https://gatsby-starter-blog-demo.netlify.com/dotnet-readme</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com/dotnet-readme</guid><pubDate>Thu, 31 Jan 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Dotnet notes&lt;/h1&gt;
-&lt;h2&gt;Dotnet MVC&lt;/h2&gt;
-&lt;h2&gt;Dotnet API&lt;/h2&gt;
-&lt;h2&gt;Duck Typing&lt;/h2&gt;
-&lt;h2&gt;Install Angular 5 app with dotnet cli&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;Installl the templates&lt;/li&gt;
-&lt;/ol&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;dotnet new --install Microsoft.DotNet.Web.Spa.ProjectTemplates::2.0.0-rc1-final&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;ol start=&quot;2&quot;&gt;
-&lt;li&gt;Create a new Angular App&lt;/li&gt;
-&lt;/ol&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;dotnet new angular -o ProjectName&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;ol start=&quot;3&quot;&gt;
-&lt;li&gt;Change Enviroment variable to “Development”&lt;/li&gt;
-&lt;/ol&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;SET ASPNETCORE_Environment&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;Development&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;ol start=&quot;4&quot;&gt;
-&lt;li&gt;Buidl the application&lt;/li&gt;
-&lt;/ol&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;dotnet build&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Or&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;ASPNETCORE_ENVIRONMENT&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;Development dotnet &lt;span class=&quot;token function&quot;&gt;watch&lt;/span&gt; run
-
-&lt;span class=&quot;token comment&quot;&gt;## migrate a database&lt;/span&gt;
-**Code-First** Migrations: giving the developer a chance to alter the Database schema without having to drop/recreate the whole thing &lt;span class=&quot;token keyword&quot;&gt;in&lt;/span&gt; Production.
-
-``` &lt;span class=&quot;token function&quot;&gt;bash&lt;/span&gt;
-dotnet ef migrations add &lt;span class=&quot;token string&quot;&gt;&quot;Identity&quot;&lt;/span&gt; -o &lt;span class=&quot;token string&quot;&gt;&quot;Data/Migrations&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h2&gt;update a database&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;option 1: update&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;dotnet ef database update&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;ul&gt;
-&lt;li&gt;option 2: drop and recreate&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;dotnet ef database drop
-dotnet ef database update&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;ASPNETCORE_ENVIRONMENT&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;Development dotnet run&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3&gt;Depency injection&lt;/h3&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;Name&lt;/th&gt;
-&lt;th&gt;Description&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;AddTransient&amp;#x3C;service,implType&gt;()&lt;/td&gt;
-&lt;td&gt;This method tells the service provider to create a new instance of the implementation type for every dependency on the service type. See the “Using the Transient Life Cycle” section.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;AddTransient&lt;service&gt;()&lt;/td&gt;
-&lt;td&gt;This method is used to register a single type, which will be instantiated for every dependency, as described in the “Using Dependency Injection for Concrete Types” section.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;AddTransient&lt;service&gt;(factoryFunc)&lt;/td&gt;
-&lt;td&gt;This method is used to register a factory function that will be invoked to create an implementation object for every dependency on the service type, as described in the “Using a Factory Function” section.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;AddScoped&amp;#x3C;service, implType&gt;() AddScoped&lt;service&gt;() AddScoped&lt;service&gt;(factoryFunc)&lt;/td&gt;
-&lt;td&gt;These methods tell the service provider to reuse instances of the implementation type so that all service requests made by components associated with a common scope, which is usually a single HTTP request, share the same object. These methods follow the same pattern as the corresponding AddTransientmethods. See the “Using the Scoped Life Cycle” section.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;AddSingleton&amp;#x3C;service, implType&gt;() AddSingleton&lt;service&gt;() AddSingleton&amp;#x3C;service(factoryFunc)&lt;/td&gt;
-&lt;td&gt;These methods tell the service provider to create a new instance of the implementation type for the first service request and then reuse it for every subsequent service request. See the “Using the Singleton Life Cycle” section.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;AddSingleton&lt;service&gt;(instance)&lt;/td&gt;
-&lt;td&gt;This method provides the service provider with an object that should be used to service all service requests. The service provider will not create any new objects.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h2&gt;Razor&lt;/h2&gt;
-&lt;h3&gt;View location Expender&lt;/h3&gt;
-&lt;p&gt;Razor uses view location expanders to build up a list of locations that should be searched for a view. View location expanders implement the IViewLocationExpander interface&lt;/p&gt;
-&lt;h2&gt;Claim and Policy&lt;/h2&gt;
-&lt;p&gt;A claim is a piece of information about the user, along with some information about where the information came from.&lt;/p&gt;
-&lt;p&gt;Policy works with claims to manage user access to the application more flexibly than with standard roles.&lt;/p&gt;
-&lt;h2&gt;Model convention&lt;/h2&gt;</content:encoded></item><item><title><![CDATA[JavaScript Notes!]]></title><description><![CDATA[JavaScript notes comparasion Plain JavaScript pros: Does not require any additional libraries or technology Offers the best performance…]]></description><link>https://gatsby-starter-blog-demo.netlify.com/java-script-readme</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com/java-script-readme</guid><pubDate>Thu, 31 Jan 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;JavaScript notes&lt;/h1&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;--legacy-watch&lt;/code&gt; is needed to apply when using boot2docker to watch file changes&lt;/p&gt;</content:encoded></item><item><title><![CDATA[JavaScript Notes!]]></title><description><![CDATA[JavaScript notes comparasion Plain JavaScript pros: Does not require any additional libraries or technology Offers the best performance…]]></description><link>https://gatsby-starter-blog-demo.netlify.com/java-script-readme</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com/java-script-readme</guid><pubDate>Thu, 31 Jan 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;JavaScript notes&lt;/h1&gt;
 &lt;h2&gt;comparasion&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;
@@ -920,7 +865,62 @@ dotnet ef database update&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;li&gt;
 &lt;p&gt;Composing: Composing is another benefit of functional programming allowing to generate super functions using existing functions.&lt;/p&gt;
 &lt;/li&gt;
-&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Dealling with umblanced dataset Notes!]]></title><description><![CDATA[Dealling with umblanced dataset The conventional model evaluation methods do not accurately measure model performance when faced with…]]></description><link>https://gatsby-starter-blog-demo.netlify.com/machine-learning-dealling-with-umblanced-dataset</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com/machine-learning-dealling-with-umblanced-dataset</guid><pubDate>Thu, 31 Jan 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Dealling with umblanced dataset&lt;/h1&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Git Notes!]]></title><description><![CDATA[Git Notes Revert file to specific commit git checkout commit_id — file1/to/restore file2/to/restore Reset commit git reset HEAD~ Reset index…]]></description><link>https://gatsby-starter-blog-demo.netlify.com/git-git</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com/git-git</guid><pubDate>Thu, 31 Jan 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Git Notes&lt;/h1&gt;
+&lt;h2&gt;Revert file to specific commit&lt;/h2&gt;
+&lt;p&gt;git checkout commit_id — file1/to/restore file2/to/restore&lt;/p&gt;
+&lt;h2&gt;Reset commit&lt;/h2&gt;
+&lt;p&gt;git reset HEAD~&lt;/p&gt;
+&lt;h2&gt;Reset index&lt;/h2&gt;
+&lt;p&gt;git reset&lt;/p&gt;
+&lt;h2&gt;Ignore folder / directory&lt;/h2&gt;
+&lt;p&gt;directory_name/&lt;/p&gt;
+&lt;h2&gt;Amend a git commit message&lt;/h2&gt;
+&lt;p&gt;git commit —amend -m “New commit message”&lt;/p&gt;
+&lt;h2&gt;Revert git to commit id&lt;/h2&gt;
+&lt;p&gt;git reset —hard f414f31
+git reset —soft HEAD@{1}
+git commit -m “Reverting to the state of the project at f414f31”&lt;/p&gt;
+&lt;h2&gt;Clean up your local branches after merge and delete in GitHub&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;List branches in local machine
+The command &lt;code class=&quot;language-text&quot;&gt;git branch -a&lt;/code&gt; shows the test branch feature-collaboration is present on local and also present on remote&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Prune/Cleanup the local references to remote branch&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;The command &lt;code class=&quot;language-text&quot;&gt;git remote prune origin --dry-run&lt;/code&gt; lists branches that can be deleted/pruned on your local. An option &lt;code class=&quot;language-text&quot;&gt;--dry-run&lt;/code&gt; is needed.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Now go ahead and actually prune/cleanup the local references by running the command &lt;code class=&quot;language-text&quot;&gt;git remote prune origin&lt;/code&gt;. Note that you don’t need an option &lt;code class=&quot;language-text&quot;&gt;--dry-run&lt;/code&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Again, run the command &lt;code class=&quot;language-text&quot;&gt;git branch -a&lt;/code&gt; will show the local status of branches.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Delete local branch&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;Rename a local and remote branch&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Rename your local branch.
+If you are on the branch you want to rename:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;git&quot;&gt;&lt;pre class=&quot;language-git&quot;&gt;&lt;code class=&quot;language-git&quot;&gt;git branch -m new-name&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;If you are on a different branch:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;git&quot;&gt;&lt;pre class=&quot;language-git&quot;&gt;&lt;code class=&quot;language-git&quot;&gt;git branch -m old-name new-name&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ol&gt;
+&lt;li&gt;Delete the old-name remote branch and push the new-name local branch.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;git&quot;&gt;&lt;pre class=&quot;language-git&quot;&gt;&lt;code class=&quot;language-git&quot;&gt;git push origin :old-name new-name&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ol&gt;
+&lt;li&gt;Reset the upstream branch for the new-name local branch.
+Switch to the branch and then:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;git&quot;&gt;&lt;pre class=&quot;language-git&quot;&gt;&lt;code class=&quot;language-git&quot;&gt;git push origin -u new-name&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[Dealling with umblanced dataset Notes!]]></title><description><![CDATA[Dealling with umblanced dataset The conventional model evaluation methods do not accurately measure model performance when faced with…]]></description><link>https://gatsby-starter-blog-demo.netlify.com/machine-learning-dealling-with-umblanced-dataset</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com/machine-learning-dealling-with-umblanced-dataset</guid><pubDate>Thu, 31 Jan 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Dealling with umblanced dataset&lt;/h1&gt;
 &lt;p&gt;The conventional model evaluation methods do not accurately measure model performance when faced with imbalanced datasets.&lt;/p&gt;
 &lt;h2&gt;Collect more data&lt;/h2&gt;
 &lt;h2&gt;Resampling&lt;/h2&gt;
@@ -968,7 +968,49 @@ dotnet ef database update&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;/li&gt;
 &lt;li&gt;Modified synthetic minority oversampling technique (MSMOTE)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;Ensemble techniques&lt;/h2&gt;</content:encoded></item><item><title><![CDATA[Data Prepocessing Notes!]]></title><description><![CDATA[Data prepocessing Dealling with Missing data Eliminating samples or feature with missing values There are three types of missing data…]]></description><link>https://gatsby-starter-blog-demo.netlify.com/machine-learning-data-prepocessing</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com/machine-learning-data-prepocessing</guid><pubDate>Thu, 31 Jan 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Data prepocessing&lt;/h1&gt;
+&lt;h2&gt;Ensemble techniques&lt;/h2&gt;</content:encoded></item><item><title><![CDATA[Dimensionality Reduction Notes!]]></title><description><![CDATA[Dimensionality Reduction Principal component analysis (PCA) It is an unsupervised linear transformation technique that is widely used across…]]></description><link>https://gatsby-starter-blog-demo.netlify.com/machine-learning-dimensionality-reduction</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com/machine-learning-dimensionality-reduction</guid><pubDate>Thu, 31 Jan 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Dimensionality Reduction&lt;/h1&gt;
+&lt;h2&gt;Principal component analysis (PCA)&lt;/h2&gt;
+&lt;p&gt;It is an unsupervised linear transformation technique that is widely used across different fields, most prominently for dimensionality reduction.&lt;/p&gt;
+&lt;h2&gt;Linear Discriminant Analysis (LDA)&lt;/h2&gt;
+&lt;p&gt;It can be used as a technique for feature extraction to increase the computational efficientcy and reduce the degreee of over-fitting due to the curse of dimensionality in nonregularized models.&lt;/p&gt;
+&lt;h2&gt;Kernel principal component analysis&lt;/h2&gt;
+&lt;p&gt;It will transform data that is not linearly separable onto a new, lower-dimensional subspace that is suitable for linear classifiers&lt;/p&gt;
+&lt;p&gt;Downside: This approach is computational expesnsive, but it can be overcome by kernel trick.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Radial Basis Function (RBF)&lt;/strong&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Cluster Analysis Notes!]]></title><description><![CDATA[Unsupervised learning - Clustering Clustering (cluser analysis) is a technique that allows us to find groups of similar objects, objects…]]></description><link>https://gatsby-starter-blog-demo.netlify.com/machine-learning-clustering-analysis</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com/machine-learning-clustering-analysis</guid><pubDate>Thu, 31 Jan 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Unsupervised learning - Clustering&lt;/h1&gt;
+&lt;p&gt;Clustering (cluser analysis) is a technique that allows us to find groups of similar objects, objects that are more related to each other than to objects in other groups.
+Exaples of business-oriented applications of clustering include the grouping of documents, music, and moviews by different topics, or finding customers that share similar interests based on common purchase behaviors as a basis for recommendation egines.&lt;/p&gt;
+&lt;h2&gt;k-means&lt;/h2&gt;
+&lt;p&gt;It belongs to the cateory of protoype-based clustering.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Drawbacks&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;One or more clusters can be empty&lt;/li&gt;
+&lt;li&gt;we have to specify the number of clusters, k, a priori&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Hard VS Soft clustering&lt;/h2&gt;
+&lt;p&gt;Hard clustering: a family of algorithms where each sample in a dataset is assigned to exactly on cluster.
+Soft clustering: sometimes called fuzzy clustering, it assign a sample to one or more clusters.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;fuzzy C-mean (FCM, also called soft k-means or fuzzy k-means).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;hierachical&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;agglomerative&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;single linkage&lt;/li&gt;
+&lt;li&gt;complete linkage&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;divisive clustering&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;density-based clustering&lt;/h2&gt;
+&lt;p&gt;Density-based spatial Clustering of Applications with Noice (DBSCAN)&lt;/p&gt;
+&lt;p&gt;Advantages:it does not assume that the clusters have a spherical shape as in k-means.&lt;/p&gt;
+&lt;p&gt;Disadvantage: With an increasing number of features in our dataset -assuming a fixed number of training examples - the negative effect of curse of dimensionality increases.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Data Prepocessing Notes!]]></title><description><![CDATA[Data prepocessing Dealling with Missing data Eliminating samples or feature with missing values There are three types of missing data…]]></description><link>https://gatsby-starter-blog-demo.netlify.com/machine-learning-data-prepocessing</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com/machine-learning-data-prepocessing</guid><pubDate>Thu, 31 Jan 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Data prepocessing&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;Dealling with Missing data&lt;/p&gt;
@@ -1036,25 +1078,11 @@ dotnet ef database update&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;li&gt;If two or more features are highly correlated, one feature may be ranked very highly while the information fo the other feature(s) may not be fully captured. On the other hand, we don’t need to be concerned about this problem if we are merely interested in the predictive performance of a model rather than the interpretation of feature importtances.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Dimensionality Reduction Notes!]]></title><description><![CDATA[Dimensionality Reduction Principal component analysis (PCA) It is an unsupervised linear transformation technique that is widely used across…]]></description><link>https://gatsby-starter-blog-demo.netlify.com/machine-learning-dimensionality-reduction</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com/machine-learning-dimensionality-reduction</guid><pubDate>Thu, 31 Jan 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Dimensionality Reduction&lt;/h1&gt;
-&lt;h2&gt;Principal component analysis (PCA)&lt;/h2&gt;
-&lt;p&gt;It is an unsupervised linear transformation technique that is widely used across different fields, most prominently for dimensionality reduction.&lt;/p&gt;
-&lt;h2&gt;Linear Discriminant Analysis (LDA)&lt;/h2&gt;
-&lt;p&gt;It can be used as a technique for feature extraction to increase the computational efficientcy and reduce the degreee of over-fitting due to the curse of dimensionality in nonregularized models.&lt;/p&gt;
-&lt;h2&gt;Kernel principal component analysis&lt;/h2&gt;
-&lt;p&gt;It will transform data that is not linearly separable onto a new, lower-dimensional subspace that is suitable for linear classifiers&lt;/p&gt;
-&lt;p&gt;Downside: This approach is computational expesnsive, but it can be overcome by kernel trick.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Radial Basis Function (RBF)&lt;/strong&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Embedding a machine learning model to web application Notes!]]></title><description><![CDATA[Embedding a machine learning model to web application Serializing fitted scikit-learn estimaters Training a machine learning model can be…]]></description><link>https://gatsby-starter-blog-demo.netlify.com/machine-learning-embedding-model-to-webapp</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com/machine-learning-embedding-model-to-webapp</guid><pubDate>Thu, 31 Jan 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Embedding a machine learning model to web application&lt;/h1&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Embedding a machine learning model to web application Notes!]]></title><description><![CDATA[Embedding a machine learning model to web application Serializing fitted scikit-learn estimaters Training a machine learning model can be…]]></description><link>https://gatsby-starter-blog-demo.netlify.com/machine-learning-embedding-model-to-webapp</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com/machine-learning-embedding-model-to-webapp</guid><pubDate>Thu, 31 Jan 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Embedding a machine learning model to web application&lt;/h1&gt;
 &lt;h2&gt;Serializing fitted scikit-learn estimaters&lt;/h2&gt;
 &lt;p&gt;Training a machine learning model can be computationally quite expensive.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Model persistence (pickle): serialize and de-serialize Python object structures to compact byte code, so that we can save our classifer in its current state and reload it if we want to claasify new samples without needing to learn the modle from the training data all over again.&lt;/li&gt;
-&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Feature Engineering Notes!]]></title><description><![CDATA[Feature Engineering Identifying Important Features In Random Forests NOTE: there are two things to keep in mind regarding feature importance…]]></description><link>https://gatsby-starter-blog-demo.netlify.com/machine-learning-feature-engineering</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com/machine-learning-feature-engineering</guid><pubDate>Thu, 31 Jan 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Feature Engineering&lt;/h1&gt;
-&lt;h2&gt;Identifying Important Features In Random Forests&lt;/h2&gt;
-&lt;p&gt;NOTE: there are two things to keep in mind regarding feature importance:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;While not technically required, scikit-learn requires that we break up nominal categorical features into multiple binary features. This has the effect of spreading the importance of that feature across all of the bninary features and can often makes each feature appear to be &lt;em&gt;umimportant&lt;/em&gt; even when the original nominal categorical feature is highly imprtant&lt;/li&gt;
-&lt;li&gt;If two features are highly correlated then one feature will claim much of the importance, making the other feature appear to be far less important, which has implications for interpretation if not considerred.&lt;/li&gt;
 &lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Ensemble learning Notes!]]></title><description><![CDATA[Ensemble learning Ensemble methods: combine different classifiers into a meta-classifier that has a better generalization performance than…]]></description><link>https://gatsby-starter-blog-demo.netlify.com/machine-learning-ensemble-learning</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com/machine-learning-ensemble-learning</guid><pubDate>Thu, 31 Jan 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Ensemble learning&lt;/h1&gt;
 &lt;p&gt;Ensemble methods: combine different classifiers into a meta-classifier that has a better generalization performance than each individual classifier alone.&lt;/p&gt;
 &lt;p&gt;Example: assuming that we collected predictions from 10 experts, ensemble methods would allow us to strategically combine these predictions by the 10 experts to come up with a prediction that is more accurate and robust than the predictions by each individual expert.&lt;/p&gt;
@@ -1101,6 +1129,44 @@ dotnet ef database update&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Disadvantages&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Sensitive to noisy data and outliers&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Feature Engineering Notes!]]></title><description><![CDATA[Feature Engineering Identifying Important Features In Random Forests NOTE: there are two things to keep in mind regarding feature importance…]]></description><link>https://gatsby-starter-blog-demo.netlify.com/machine-learning-feature-engineering</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com/machine-learning-feature-engineering</guid><pubDate>Thu, 31 Jan 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Feature Engineering&lt;/h1&gt;
+&lt;h2&gt;Identifying Important Features In Random Forests&lt;/h2&gt;
+&lt;p&gt;NOTE: there are two things to keep in mind regarding feature importance:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;While not technically required, scikit-learn requires that we break up nominal categorical features into multiple binary features. This has the effect of spreading the importance of that feature across all of the bninary features and can often makes each feature appear to be &lt;em&gt;umimportant&lt;/em&gt; even when the original nominal categorical feature is highly imprtant&lt;/li&gt;
+&lt;li&gt;If two features are highly correlated then one feature will claim much of the importance, making the other feature appear to be far less important, which has implications for interpretation if not considerred.&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Regression Analysis notest!]]></title><description><![CDATA[Regression Analysis Datasets ( https://archive.ics.uci.edu/ml/datasets/Housing ) CRIM: This is the per capita crime rate by town ZN: This is…]]></description><link>https://gatsby-starter-blog-demo.netlify.com/machine-learning-regression-analysis</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com/machine-learning-regression-analysis</guid><pubDate>Thu, 31 Jan 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Regression Analysis&lt;/h1&gt;
+&lt;h2&gt;Datasets (&lt;a href=&quot;https://archive.ics.uci.edu/ml/datasets/Housing&quot;&gt;https://archive.ics.uci.edu/ml/datasets/Housing&lt;/a&gt;)&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;CRIM: This is the per capita crime rate by town&lt;/li&gt;
+&lt;li&gt;ZN: This is the proportion of residential land zoned for lots larger than 25,000 sq.ft.&lt;/li&gt;
+&lt;li&gt;INDUS: This is the proportion of non-retail business acres per town&lt;/li&gt;
+&lt;li&gt;CHAS: This is the Charles River dummy variable (this is equal to 1 if tract bounds river; 0 otherwise)&lt;/li&gt;
+&lt;li&gt;NOX: This is the nitric oxides concentration (parts per 10 million)&lt;/li&gt;
+&lt;li&gt;RM: This is the average number of rooms per dwelling&lt;/li&gt;
+&lt;li&gt;AGE: This is the proportion of owner-occupied units built prior to 1940&lt;/li&gt;
+&lt;li&gt;DIS: This is the weighted distances to five Boston employment centers&lt;/li&gt;
+&lt;li&gt;RAD: This is the index of accessibility to radial highways&lt;/li&gt;
+&lt;li&gt;TAX: This is the full-value property-tax rate per $10,000&lt;/li&gt;
+&lt;li&gt;PTRATIO: This is the pupil-teacher ratio by town&lt;/li&gt;
+&lt;li&gt;B: This is calculated as 1000(Bk - 0.63)^2, where Bk is the proportion of people of African American descent by town&lt;/li&gt;
+&lt;li&gt;LSTAT: This is the percentage lower status of the population&lt;/li&gt;
+&lt;li&gt;MEDV: This is the median value of owner-occupied homes in $1000s&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;RANDom SAmple Consensus (RANSAC) - fitting a robust regression model&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Select a random number of samples to be inliers and fit the model&lt;/li&gt;
+&lt;li&gt;Test all other data points against the fitted model and add those points that fall within a user-givern tolerance to the inliers&lt;/li&gt;
+&lt;li&gt;Refit the mole using all inliers.&lt;/li&gt;
+&lt;li&gt;Estimate the error of the fitted model versus the inliers.&lt;/li&gt;
+&lt;li&gt;Terminate the algorithm if the performance meets a certain user-defined threshold or if a fixed number of iterations has been reached; go back to step 1 otherwise&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Regulation&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Redge Regression&lt;/li&gt;
+&lt;li&gt;Least Absolute&lt;/li&gt;
+&lt;li&gt;Shrinkage and Selection Operator (LASSO)&lt;/li&gt;
+&lt;li&gt;Elastic Net&lt;/li&gt;
 &lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Introduction of Machine Learning!]]></title><description><![CDATA[Introduction A diagram of AI in computer science Rule-based system VS Machine learning The logic required to make a decision is specific to…]]></description><link>https://gatsby-starter-blog-demo.netlify.com/machine-learning-intro</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com/machine-learning-intro</guid><pubDate>Thu, 31 Jan 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Introduction&lt;/h1&gt;
 &lt;h2&gt;A diagram of AI in computer science&lt;/h2&gt;
 &lt;p&gt;&lt;img src=&quot;https://github.com/MagicMike90/Notes/blob/master/Machine-Learning/ai_explaination.jpg&quot; alt=&quot;alt text&quot; title=&quot;A diagram of AI category1&quot;&gt;&lt;/p&gt;
@@ -1200,47 +1266,6 @@ objective function is often a cost function that we want to minimize.&lt;/p&gt;
 &lt;li&gt;scikit-learn&lt;/li&gt;
 &lt;li&gt;pandas&lt;/li&gt;
 &lt;li&gt;matplotlib&lt;/li&gt;
-&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Regression Analysis notest!]]></title><description><![CDATA[Regression Analysis Datasets ( https://archive.ics.uci.edu/ml/datasets/Housing ) CRIM: This is the per capita crime rate by town ZN: This is…]]></description><link>https://gatsby-starter-blog-demo.netlify.com/machine-learning-regression-analysis</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com/machine-learning-regression-analysis</guid><pubDate>Thu, 31 Jan 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Regression Analysis&lt;/h1&gt;
-&lt;h2&gt;Datasets (&lt;a href=&quot;https://archive.ics.uci.edu/ml/datasets/Housing&quot;&gt;https://archive.ics.uci.edu/ml/datasets/Housing&lt;/a&gt;)&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;CRIM: This is the per capita crime rate by town&lt;/li&gt;
-&lt;li&gt;ZN: This is the proportion of residential land zoned for lots larger than 25,000 sq.ft.&lt;/li&gt;
-&lt;li&gt;INDUS: This is the proportion of non-retail business acres per town&lt;/li&gt;
-&lt;li&gt;CHAS: This is the Charles River dummy variable (this is equal to 1 if tract bounds river; 0 otherwise)&lt;/li&gt;
-&lt;li&gt;NOX: This is the nitric oxides concentration (parts per 10 million)&lt;/li&gt;
-&lt;li&gt;RM: This is the average number of rooms per dwelling&lt;/li&gt;
-&lt;li&gt;AGE: This is the proportion of owner-occupied units built prior to 1940&lt;/li&gt;
-&lt;li&gt;DIS: This is the weighted distances to five Boston employment centers&lt;/li&gt;
-&lt;li&gt;RAD: This is the index of accessibility to radial highways&lt;/li&gt;
-&lt;li&gt;TAX: This is the full-value property-tax rate per $10,000&lt;/li&gt;
-&lt;li&gt;PTRATIO: This is the pupil-teacher ratio by town&lt;/li&gt;
-&lt;li&gt;B: This is calculated as 1000(Bk - 0.63)^2, where Bk is the proportion of people of African American descent by town&lt;/li&gt;
-&lt;li&gt;LSTAT: This is the percentage lower status of the population&lt;/li&gt;
-&lt;li&gt;MEDV: This is the median value of owner-occupied homes in $1000s&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;RANDom SAmple Consensus (RANSAC) - fitting a robust regression model&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Select a random number of samples to be inliers and fit the model&lt;/li&gt;
-&lt;li&gt;Test all other data points against the fitted model and add those points that fall within a user-givern tolerance to the inliers&lt;/li&gt;
-&lt;li&gt;Refit the mole using all inliers.&lt;/li&gt;
-&lt;li&gt;Estimate the error of the fitted model versus the inliers.&lt;/li&gt;
-&lt;li&gt;Terminate the algorithm if the performance meets a certain user-defined threshold or if a fixed number of iterations has been reached; go back to step 1 otherwise&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;Regulation&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Redge Regression&lt;/li&gt;
-&lt;li&gt;Least Absolute&lt;/li&gt;
-&lt;li&gt;Shrinkage and Selection Operator (LASSO)&lt;/li&gt;
-&lt;li&gt;Elastic Net&lt;/li&gt;
-&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Sentiment Analysis notest!]]></title><description><![CDATA[Sentiment Analysis bag of words model: It allows us to represent text as numerical feature vectores Transforming words into feature vectors…]]></description><link>https://gatsby-starter-blog-demo.netlify.com/machine-learning-sentiment-analysis</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com/machine-learning-sentiment-analysis</guid><pubDate>Thu, 31 Jan 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Sentiment Analysis&lt;/h1&gt;
-&lt;ul&gt;
-&lt;li&gt;bag of words model: It allows us to represent text as numerical feature vectores&lt;/li&gt;
-&lt;li&gt;Transforming words into feature vectors&lt;/li&gt;
-&lt;li&gt;Assessing word relevancy via term frequency-inverse document frequency&lt;/li&gt;
-&lt;li&gt;Cleaning text data&lt;/li&gt;
-&lt;li&gt;Processing documents into tokens&lt;/li&gt;
-&lt;li&gt;Training a logistic regression model for document classification&lt;/li&gt;
-&lt;li&gt;Online algorithms and out-of-core learning for large datasets&lt;/li&gt;
 &lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Model Evaluation Hyperparameter Tuning notest!]]></title><description><![CDATA[Model evaluation and Hyperparameter tuning Holdout cross-validation A classic and popular approach for estimating the generalization…]]></description><link>https://gatsby-starter-blog-demo.netlify.com/machine-learning-model-evaluation-hyperparameter-tuning</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com/machine-learning-model-evaluation-hyperparameter-tuning</guid><pubDate>Thu, 31 Jan 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Model evaluation and Hyperparameter tuning&lt;/h1&gt;
 &lt;h2&gt;Holdout cross-validation&lt;/h2&gt;
 &lt;p&gt;A classic and popular approach for estimating the generalization performance of machine learning models is holdout cross-validation.&lt;/p&gt;
@@ -1316,66 +1341,7 @@ It requires more memory and are slower to train and to predict than linear model
 &lt;p&gt;Adanvatage:
 They are able to capture information contained in large amounts of data and build incredibly complex models. Given enough computation time, data, and careful tuning of the parameters, neural networks often beat other machine learning algorithms (for classifcation and regression tasks)&lt;/p&gt;
 &lt;p&gt;Disadavantage
-Take a long time to train.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Training Algorithms of machine learning!]]></title><description><![CDATA[Training Algorithms Linear Algebra notes Numpy The advantage of using Numpy over classic Python for-loop structures is that its arithmetic…]]></description><link>https://gatsby-starter-blog-demo.netlify.com/machine-learning-training-algorithms</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com/machine-learning-training-algorithms</guid><pubDate>Thu, 31 Jan 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Training Algorithms&lt;/h1&gt;
-&lt;h2&gt;&lt;a href=&quot;http://www.cs.cmu.edu/~zkolter/course/linalg/linalg_notes.pdf&quot;&gt;Linear Algebra notes&lt;/a&gt;&lt;/h2&gt;
-&lt;h2&gt;Numpy&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;The advantage of using Numpy over classic Python for-loop structures is that its arithmetic operations are vectorized, imporve the performance of operations by making better use of &lt;strong&gt;Single Instruction, Multiple Data (SIMD)&lt;/strong&gt; of moden CPU architecures.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;methods&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;dot()&lt;/strong&gt;:dot product of two pioints&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;zip()&lt;/strong&gt;:The zip() function take iterables (can be zero or more), makes iterator that aggregates elements based on the iterables passed, and returns an iterator of tuples.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;where&lt;/strong&gt;(condition[, x, y]): Return elements, either from x or y, depending on condition.i.e. np.where(y == ‘Iris-setosa’, -1, 1), where value equals ‘Iris-setosa’ will change to be -1.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;Pandas&lt;/h2&gt;
-&lt;p&gt;methods&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;read_csv()&lt;/strong&gt;: read csv file , return &lt;em&gt;DataFrame&lt;/em&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;tail()&lt;/strong&gt;: get last n line of DataFrame&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;iloc(array, index)&lt;/strong&gt;: get numer of rows of column index&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;Disadvantage of perceptron&lt;/h2&gt;
-&lt;p&gt;its biggest disadvantage is that it never converges if the classes are not perfectly linearly separable.&lt;/p&gt;
-&lt;h2&gt;The curse of dimensionality&lt;/h2&gt;
-&lt;p&gt;The curse of dimensionality describes the phenomenon where the feature
-space becomes increasingly sparse for an increasing number
-of dimensions of a fixed-size training dataset&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;Regularization&lt;/em&gt; is not applicable such as decision trees and KNN, we can use feature selection and dimensionality reduction techniques to help us avoid the curse of dimensionality&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Cluster Analysis Notes!]]></title><description><![CDATA[Unsupervised learning - Clustering Clustering (cluser analysis) is a technique that allows us to find groups of similar objects, objects…]]></description><link>https://gatsby-starter-blog-demo.netlify.com/machine-learning-clustering-analysis</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com/machine-learning-clustering-analysis</guid><pubDate>Thu, 31 Jan 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Unsupervised learning - Clustering&lt;/h1&gt;
-&lt;p&gt;Clustering (cluser analysis) is a technique that allows us to find groups of similar objects, objects that are more related to each other than to objects in other groups.
-Exaples of business-oriented applications of clustering include the grouping of documents, music, and moviews by different topics, or finding customers that share similar interests based on common purchase behaviors as a basis for recommendation egines.&lt;/p&gt;
-&lt;h2&gt;k-means&lt;/h2&gt;
-&lt;p&gt;It belongs to the cateory of protoype-based clustering.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Drawbacks&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;One or more clusters can be empty&lt;/li&gt;
-&lt;li&gt;we have to specify the number of clusters, k, a priori&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;Hard VS Soft clustering&lt;/h2&gt;
-&lt;p&gt;Hard clustering: a family of algorithms where each sample in a dataset is assigned to exactly on cluster.
-Soft clustering: sometimes called fuzzy clustering, it assign a sample to one or more clusters.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;fuzzy C-mean (FCM, also called soft k-means or fuzzy k-means).&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;hierachical&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;agglomerative&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;single linkage&lt;/li&gt;
-&lt;li&gt;complete linkage&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;divisive clustering&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;density-based clustering&lt;/h2&gt;
-&lt;p&gt;Density-based spatial Clustering of Applications with Noice (DBSCAN)&lt;/p&gt;
-&lt;p&gt;Advantages:it does not assume that the clusters have a spherical shape as in k-means.&lt;/p&gt;
-&lt;p&gt;Disadvantage: With an increasing number of features in our dataset -assuming a fixed number of training examples - the negative effect of curse of dimensionality increases.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Summary of machine learning!]]></title><description><![CDATA[Summary of machine learning Common used machine learning algorithm Listed in order of increasing complexity: Logiistic regressiong K-nearest…]]></description><link>https://gatsby-starter-blog-demo.netlify.com/machine-learning-summary</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com/machine-learning-summary</guid><pubDate>Thu, 31 Jan 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Summary of machine learning&lt;/h1&gt;
+Take a long time to train.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Summary of machine learning!]]></title><description><![CDATA[Summary of machine learning Common used machine learning algorithm Listed in order of increasing complexity: Logiistic regressiong K-nearest…]]></description><link>https://gatsby-starter-blog-demo.netlify.com/machine-learning-summary</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com/machine-learning-summary</guid><pubDate>Thu, 31 Jan 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Summary of machine learning&lt;/h1&gt;
 &lt;h2&gt;Common used machine learning algorithm&lt;/h2&gt;
 &lt;p&gt;Listed in order of increasing complexity:&lt;/p&gt;
 &lt;ul&gt;
@@ -1483,6 +1449,68 @@ Soft clustering: sometimes called fuzzy clustering, it assign a sample to one or
 &lt;li&gt;review: A free open class designed by Standford University, this course teaches machine learning knowledge from basis to advance.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Training Algorithms of machine learning!]]></title><description><![CDATA[Training Algorithms Linear Algebra notes Numpy The advantage of using Numpy over classic Python for-loop structures is that its arithmetic…]]></description><link>https://gatsby-starter-blog-demo.netlify.com/machine-learning-training-algorithms</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com/machine-learning-training-algorithms</guid><pubDate>Thu, 31 Jan 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Training Algorithms&lt;/h1&gt;
+&lt;h2&gt;&lt;a href=&quot;http://www.cs.cmu.edu/~zkolter/course/linalg/linalg_notes.pdf&quot;&gt;Linear Algebra notes&lt;/a&gt;&lt;/h2&gt;
+&lt;h2&gt;Numpy&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;The advantage of using Numpy over classic Python for-loop structures is that its arithmetic operations are vectorized, imporve the performance of operations by making better use of &lt;strong&gt;Single Instruction, Multiple Data (SIMD)&lt;/strong&gt; of moden CPU architecures.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;methods&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;dot()&lt;/strong&gt;:dot product of two pioints&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;zip()&lt;/strong&gt;:The zip() function take iterables (can be zero or more), makes iterator that aggregates elements based on the iterables passed, and returns an iterator of tuples.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;where&lt;/strong&gt;(condition[, x, y]): Return elements, either from x or y, depending on condition.i.e. np.where(y == ‘Iris-setosa’, -1, 1), where value equals ‘Iris-setosa’ will change to be -1.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Pandas&lt;/h2&gt;
+&lt;p&gt;methods&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;read_csv()&lt;/strong&gt;: read csv file , return &lt;em&gt;DataFrame&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;tail()&lt;/strong&gt;: get last n line of DataFrame&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;iloc(array, index)&lt;/strong&gt;: get numer of rows of column index&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Disadvantage of perceptron&lt;/h2&gt;
+&lt;p&gt;its biggest disadvantage is that it never converges if the classes are not perfectly linearly separable.&lt;/p&gt;
+&lt;h2&gt;The curse of dimensionality&lt;/h2&gt;
+&lt;p&gt;The curse of dimensionality describes the phenomenon where the feature
+space becomes increasingly sparse for an increasing number
+of dimensions of a fixed-size training dataset&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Regularization&lt;/em&gt; is not applicable such as decision trees and KNN, we can use feature selection and dimensionality reduction techniques to help us avoid the curse of dimensionality&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Sentiment Analysis notest!]]></title><description><![CDATA[Sentiment Analysis bag of words model: It allows us to represent text as numerical feature vectores Transforming words into feature vectors…]]></description><link>https://gatsby-starter-blog-demo.netlify.com/machine-learning-sentiment-analysis</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com/machine-learning-sentiment-analysis</guid><pubDate>Thu, 31 Jan 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Sentiment Analysis&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;bag of words model: It allows us to represent text as numerical feature vectores&lt;/li&gt;
+&lt;li&gt;Transforming words into feature vectors&lt;/li&gt;
+&lt;li&gt;Assessing word relevancy via term frequency-inverse document frequency&lt;/li&gt;
+&lt;li&gt;Cleaning text data&lt;/li&gt;
+&lt;li&gt;Processing documents into tokens&lt;/li&gt;
+&lt;li&gt;Training a logistic regression model for document classification&lt;/li&gt;
+&lt;li&gt;Online algorithms and out-of-core learning for large datasets&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Agile Notes!]]></title><description><![CDATA[Methodology extreme programming scrum kanban Cargo Cult Being envious of the success and benefits of Agile, many companies adopt the…]]></description><link>https://gatsby-starter-blog-demo.netlify.com/agile</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com/agile</guid><pubDate>Mon, 21 Jan 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;Methodology&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;extreme programming&lt;/li&gt;
+&lt;li&gt;scrum&lt;/li&gt;
+&lt;li&gt;kanban&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Cargo Cult&lt;/h2&gt;
+&lt;p&gt;Being envious of the success and benefits of Agile, many companies adopt the superficial trappings of Agile, renaming the meetings as “stand ups” and calling management reviews “retrospectives”. But in practice, nothing changes. It’s still the same primitive management driven hierarchical organization, micromanaging the teams, using outdated waterfall practices, and completely failing to grasp the core principles of agility.&lt;/p&gt;
+&lt;h1&gt;The Scrum team&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Product Owner (PO):collects requirements from customers (internal or external) and produces the requirements documents. The PO constantly aligns with customers and determines the scope of work and change in the scope, so the PO will get results from the Sprints. The PO is responsible for providing all the necessary product-related information required by the team and providing requirements.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Scrum Master ( ScMa ) :is the servant-leader of the team who helps the team to deliver based on requirements. The ScMa organizes the process and moderates the meetings that will enable the team to deliver. Also, the ScMa provides statuses to the PO or any stakeholders. The ScMa is in charge of resolution of any block and impediments the team faces. The ScMa shelters and protects the team from external teams and stakeholders.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The Architect (Arc)is the technical lead in the team&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The Quality Manager (QM) or Quality Engineer(QE) is the team member responsible for quality management of the product. The QM organizes the quality process in the team, educates the PO and ScMa on quality best practices, and provides quality requirements to the team based on feedback from the PO, industry standards, and best practices (Including performance, security, usability, accessibility etc.).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Developers (DEV) estimate and commit to the estimation on a Sprint basis. They constantly improve the accuracy of the estimation and self-improve from Sprint to Sprint without micromanagement from other roles and managers. Developers distribute between the different expert roles—for example performance, security, and user interface designer.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;A Technical Writer (TW) writes supporting documentation for the project. This role can be centralized, since it is usually not required to have a full-time technical writer in the team. However, technical documentation also can be produced by any other role/roles in the team as an additional responsibility.&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Angular Notes!]]></title><description><![CDATA[Angular Notes Angular is consisted of six parts: Data Binding Directive (There are three kinds of directives in Angular) Components…]]></description><link>https://gatsby-starter-blog-demo.netlify.com/angular</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com/angular</guid><pubDate>Mon, 21 Jan 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Angular Notes&lt;/h1&gt;
 &lt;p&gt;Angular is consisted of six parts:&lt;/p&gt;
 &lt;ul&gt;
@@ -1561,7 +1589,49 @@ class and ensure that only its behavior is being tested&lt;/p&gt;
 &lt;/ul&gt;
 &lt;h2&gt;Router bug&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&quot;https://stackoverflow.com/questions/38120756/angular2-router-navigate-refresh-page&quot;&gt;https://stackoverflow.com/questions/38120756/angular2-router-navigate-refresh-page&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Input type (type = “button) is important to make naviation animation works in angular 4, without specifying type, it works on IE11 and Edge browsers, but would reload the application in Chrome.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Notes for authendication!]]></title><description><![CDATA[Notes for authendication Sessions Client - session cookies
+&lt;p&gt;Input type (type = “button) is important to make naviation animation works in angular 4, without specifying type, it works on IE11 and Edge browsers, but would reload the application in Chrome.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Notes for API engineering!]]></title><description><![CDATA[RPC vs REST RPC ( Command-based ) style endpoints are great when you want only one job done well. This makes it useful to one or two app…]]></description><link>https://gatsby-starter-blog-demo.netlify.com/api</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com/api</guid><pubDate>Mon, 21 Jan 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;RPC vs REST&lt;/h2&gt;
+&lt;p&gt;RPC (&lt;strong&gt;Command-based&lt;/strong&gt;) style endpoints are great when you want only one job done well. This makes it useful to one or two app clients because it is niche a service. RPC endpoints can implement business logic inside the service, given that it only does one thing. This adds simplicity and clarity to the service.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;http&quot;&gt;&lt;pre class=&quot;language-http&quot;&gt;&lt;code class=&quot;language-http&quot;&gt;GET /someoperation?data=anId
+
+POST /anotheroperation
+{
+  &quot;data&quot;:&quot;anId&quot;;
+  &quot;anotherdata&quot;:&quot;another value&quot;
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;For a REST (&lt;strong&gt;resource-based&lt;/strong&gt;) endpoint, you must treat it like a resource that provides domain data. The reward is you are now segregating data into separate domains. This makes it useful for when you have any number of apps requesting data. This approach attempts to decouple data from application or business logic.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;http&quot;&gt;&lt;pre class=&quot;language-http&quot;&gt;&lt;code class=&quot;language-http&quot;&gt;GET /someresources/anId
+
+PUT /someresources/anId
+{&quot;anotherdata&quot;:&quot;another value&quot;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[Data-intensive Architecture Notes!]]></title><description><![CDATA[Data-intensive architecute A data-intensive application Many applications today are data-intensive, as opposed to compute-intensive. Raw CPU…]]></description><link>https://gatsby-starter-blog-demo.netlify.com/architecture-data-itensive</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com/architecture-data-itensive</guid><pubDate>Mon, 21 Jan 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Data-intensive architecute&lt;/h1&gt;
+&lt;h2&gt;A data-intensive application&lt;/h2&gt;
+&lt;p&gt;Many applications today are data-intensive, as opposed to compute-intensive. Raw CPU power is rarely a limiting factor for these applications—bigger problems are usually the amount of data, the complexity of data, and the speed at which it is changing.&lt;/p&gt;
+&lt;p&gt;A data-intensive application is typically built from standard building blocks that provide commonly needed functionality. For example, many applications need to:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Store data so that they, or another application, can find it again later (databases)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Remember the result of an expensive operation, to speed up reads (caches)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Allow users to search data by keyword or filter it in various ways (search indexes)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Send a message to another process, to be handled asynchronously (stream processing)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Periodically crunch a large amount of accumulated data (batch processing)&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;three concerns that are important in most software systems:&lt;/h2&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;Reliability&lt;/code&gt;
+The system should continue to work correctly (performing the correct function at the desired level of performance) even in the face of adversity (hardware or software faults, and even human error). See “Reliability”.&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;Scalability&lt;/code&gt;
+As the system grows (in data volume, traffic volume, or complexity), there should be reasonable ways of dealing with that growth. See “Scalability”.&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;Maintainability&lt;/code&gt;
+Over time, many different people will work on the system (engineering and operations, both maintaining current behavior and adapting the system to new use cases), and they should all be able to work on it productively. See “Maintainability”.&lt;/p&gt;
+&lt;h2&gt;Lagacy system&lt;/h2&gt;
+&lt;p&gt;Many people working on software systems dislike maintenance of so-called legacy systems—perhaps it involves fixing other people’s mistakes, or working with platforms that are now outdated, or systems that were forced to do things they were never intended for&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Notes for authendication!]]></title><description><![CDATA[Notes for authendication Sessions Client - session cookies
 Server - session-state service/server/manager problem: Memory issues: Whenever…]]></description><link>https://gatsby-starter-blog-demo.netlify.com/application-application-user-athendication</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com/application-application-user-athendication</guid><pubDate>Mon, 21 Jan 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Notes for authendication&lt;/h1&gt;
 &lt;h2&gt;Sessions&lt;/h2&gt;
 &lt;p&gt;Client - session cookies
@@ -1586,20 +1656,7 @@ It is a special kind of token that can be used to obtain a renewed access token 
 &lt;li&gt;The user performs a standard login with a useranme and password&lt;/li&gt;
 &lt;li&gt;The server identifies the user and prompts them with an additional , user-specific request that can be only satisfied by something obtained or obtainable throught a different channel: an OTP password sent by SMS, an unique authentication card with a number of answer codes, a dynamic PIN generated by a proprietary device or a mobile app, and so on&lt;/li&gt;
 &lt;li&gt;If the user gives the correct answer, they get authenticated using a standard session-based or token-based method&lt;/li&gt;
-&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Notes for API engineering!]]></title><description><![CDATA[RPC vs REST RPC ( Command-based ) style endpoints are great when you want only one job done well. This makes it useful to one or two app…]]></description><link>https://gatsby-starter-blog-demo.netlify.com/api</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com/api</guid><pubDate>Mon, 21 Jan 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;RPC vs REST&lt;/h2&gt;
-&lt;p&gt;RPC (&lt;strong&gt;Command-based&lt;/strong&gt;) style endpoints are great when you want only one job done well. This makes it useful to one or two app clients because it is niche a service. RPC endpoints can implement business logic inside the service, given that it only does one thing. This adds simplicity and clarity to the service.&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;http&quot;&gt;&lt;pre class=&quot;language-http&quot;&gt;&lt;code class=&quot;language-http&quot;&gt;GET /someoperation?data=anId
-
-POST /anotheroperation
-{
-  &quot;data&quot;:&quot;anId&quot;;
-  &quot;anotherdata&quot;:&quot;another value&quot;
-}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;For a REST (&lt;strong&gt;resource-based&lt;/strong&gt;) endpoint, you must treat it like a resource that provides domain data. The reward is you are now segregating data into separate domains. This makes it useful for when you have any number of apps requesting data. This approach attempts to decouple data from application or business logic.&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;http&quot;&gt;&lt;pre class=&quot;language-http&quot;&gt;&lt;code class=&quot;language-http&quot;&gt;GET /someresources/anId
-
-PUT /someresources/anId
-{&quot;anotherdata&quot;:&quot;another value&quot;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[Application Development Notes!]]></title><description><![CDATA[Frontend technoloy choices : React has shorter learning curve since, it can be impletemented with   a type checking library developed by…]]></description><link>https://gatsby-starter-blog-demo.netlify.com/application</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com/application</guid><pubDate>Mon, 21 Jan 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;Frontend technoloy choices&lt;/h2&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Application Development Notes!]]></title><description><![CDATA[Frontend technoloy choices : React has shorter learning curve since, it can be impletemented with   a type checking library developed by…]]></description><link>https://gatsby-starter-blog-demo.netlify.com/application</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com/application</guid><pubDate>Mon, 21 Jan 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;Frontend technoloy choices&lt;/h2&gt;
 &lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;ReactJS&lt;/code&gt;: React has shorter learning curve since, it can be impletemented with &lt;code class=&quot;language-text&quot;&gt;FlowJS&lt;/code&gt; a type checking library developed by Facebook, flux pattern is well supported by &lt;code class=&quot;language-text&quot;&gt;Redux&lt;/code&gt; library.&lt;/p&gt;
 &lt;p&gt;There are also some good quality third party CSS framewok, such &lt;code class=&quot;language-text&quot;&gt;Antd&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;Material UI&lt;/code&gt;. However since ReactJS is using virtual DOM to update the view, it will be tricky to integrate those third party libray that manunipulate DOM directly, i.e. D3.JS.&lt;/p&gt;
 &lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;AngularJS (2)&lt;/code&gt;: Compare to ReactJS, Angular 2/4 is more powerful by implementing TypeScript, one of the benefit is to raise compile time errors. It is more enterprise ready framework, that is why it takes more time for developers to learn.&lt;/p&gt;
@@ -1644,63 +1701,6 @@ PUT /someresources/anId
 &lt;li&gt;RENDER: After (ideally) pushing all the necessary resources to the client, we render our initial route&lt;/li&gt;
 &lt;li&gt;PRE-CACHED: once those assets are loaded, they will go straight into the cache and, if they’re requested again, we load them from the cache.&lt;/li&gt;
 &lt;li&gt;LAZY-LOADED: This means resources needed for other routes will not be loaded.&lt;/li&gt;
-&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Data-intensive Architecture Notes!]]></title><description><![CDATA[Data-intensive architecute A data-intensive application Many applications today are data-intensive, as opposed to compute-intensive. Raw CPU…]]></description><link>https://gatsby-starter-blog-demo.netlify.com/architecture-data-itensive</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com/architecture-data-itensive</guid><pubDate>Mon, 21 Jan 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Data-intensive architecute&lt;/h1&gt;
-&lt;h2&gt;A data-intensive application&lt;/h2&gt;
-&lt;p&gt;Many applications today are data-intensive, as opposed to compute-intensive. Raw CPU power is rarely a limiting factor for these applications—bigger problems are usually the amount of data, the complexity of data, and the speed at which it is changing.&lt;/p&gt;
-&lt;p&gt;A data-intensive application is typically built from standard building blocks that provide commonly needed functionality. For example, many applications need to:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Store data so that they, or another application, can find it again later (databases)&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Remember the result of an expensive operation, to speed up reads (caches)&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Allow users to search data by keyword or filter it in various ways (search indexes)&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Send a message to another process, to be handled asynchronously (stream processing)&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Periodically crunch a large amount of accumulated data (batch processing)&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;three concerns that are important in most software systems:&lt;/h2&gt;
-&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;Reliability&lt;/code&gt;
-The system should continue to work correctly (performing the correct function at the desired level of performance) even in the face of adversity (hardware or software faults, and even human error). See “Reliability”.&lt;/p&gt;
-&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;Scalability&lt;/code&gt;
-As the system grows (in data volume, traffic volume, or complexity), there should be reasonable ways of dealing with that growth. See “Scalability”.&lt;/p&gt;
-&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;Maintainability&lt;/code&gt;
-Over time, many different people will work on the system (engineering and operations, both maintaining current behavior and adapting the system to new use cases), and they should all be able to work on it productively. See “Maintainability”.&lt;/p&gt;
-&lt;h2&gt;Lagacy system&lt;/h2&gt;
-&lt;p&gt;Many people working on software systems dislike maintenance of so-called legacy systems—perhaps it involves fixing other people’s mistakes, or working with platforms that are now outdated, or systems that were forced to do things they were never intended for&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Agile Notes!]]></title><description><![CDATA[Methodology extreme programming scrum kanban Cargo Cult Being envious of the success and benefits of Agile, many companies adopt the…]]></description><link>https://gatsby-starter-blog-demo.netlify.com/agile</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com/agile</guid><pubDate>Mon, 21 Jan 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;Methodology&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;extreme programming&lt;/li&gt;
-&lt;li&gt;scrum&lt;/li&gt;
-&lt;li&gt;kanban&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;Cargo Cult&lt;/h2&gt;
-&lt;p&gt;Being envious of the success and benefits of Agile, many companies adopt the superficial trappings of Agile, renaming the meetings as “stand ups” and calling management reviews “retrospectives”. But in practice, nothing changes. It’s still the same primitive management driven hierarchical organization, micromanaging the teams, using outdated waterfall practices, and completely failing to grasp the core principles of agility.&lt;/p&gt;
-&lt;h1&gt;The Scrum team&lt;/h1&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Product Owner (PO):collects requirements from customers (internal or external) and produces the requirements documents. The PO constantly aligns with customers and determines the scope of work and change in the scope, so the PO will get results from the Sprints. The PO is responsible for providing all the necessary product-related information required by the team and providing requirements.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Scrum Master ( ScMa ) :is the servant-leader of the team who helps the team to deliver based on requirements. The ScMa organizes the process and moderates the meetings that will enable the team to deliver. Also, the ScMa provides statuses to the PO or any stakeholders. The ScMa is in charge of resolution of any block and impediments the team faces. The ScMa shelters and protects the team from external teams and stakeholders.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;The Architect (Arc)is the technical lead in the team&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;The Quality Manager (QM) or Quality Engineer(QE) is the team member responsible for quality management of the product. The QM organizes the quality process in the team, educates the PO and ScMa on quality best practices, and provides quality requirements to the team based on feedback from the PO, industry standards, and best practices (Including performance, security, usability, accessibility etc.).&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Developers (DEV) estimate and commit to the estimation on a Sprint basis. They constantly improve the accuracy of the estimation and self-improve from Sprint to Sprint without micromanagement from other roles and managers. Developers distribute between the different expert roles—for example performance, security, and user interface designer.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;A Technical Writer (TW) writes supporting documentation for the project. This role can be centralized, since it is usually not required to have a full-time technical writer in the team. However, technical documentation also can be produced by any other role/roles in the team as an additional responsibility.&lt;/p&gt;
-&lt;/li&gt;
 &lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Microservice Architecture Notes!]]></title><description><![CDATA[Microservice notes SOA VS Mircoservice Microservices are fine-grained SOA components. In other words, a single SOA
 component can be…]]></description><link>https://gatsby-starter-blog-demo.netlify.com/architecture-microservice</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com/architecture-microservice</guid><pubDate>Mon, 21 Jan 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Microservice notes&lt;/h1&gt;
 &lt;h1&gt;SOA VS Mircoservice&lt;/h1&gt;
