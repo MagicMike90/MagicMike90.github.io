@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Michael Blog]]></title><description><![CDATA[A starter blog demonstrating what Gatsby can do.]]></description><link>https:/magicmike90.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 12 Apr 2020 03:03:00 GMT</lastBuildDate><item><title><![CDATA[Notes for testing!]]></title><description><![CDATA[Notes for test Unit test The unit tests are used to prove the smallest testable part of a computer program.In this sense, the great…]]></description><link>https:/magicmike90.github.iotesting</link><guid isPermaLink="false">https:/magicmike90.github.iotesting</guid><pubDate>Sat, 02 Mar 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Notes for test&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Michael Blog]]></title><description><![CDATA[A starter blog demonstrating what Gatsby can do.]]></description><link>https:/magicmike90.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 12 Apr 2020 05:42:29 GMT</lastBuildDate><item><title><![CDATA[Notes for testing!]]></title><description><![CDATA[Notes for test Unit test The unit tests are used to prove the smallest testable part of a computer program.In this sense, the great…]]></description><link>https:/magicmike90.github.iotesting</link><guid isPermaLink="false">https:/magicmike90.github.iotesting</guid><pubDate>Sat, 02 Mar 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Notes for test&lt;/h1&gt;
 &lt;h2&gt;Unit test&lt;/h2&gt;
 &lt;p&gt;The unit tests are used to prove the smallest testable part of a computer program.In this sense, the great challenge is to write code that is testable; otherwise, it will be impossible to apply the unit tests.&lt;/p&gt;
 &lt;p&gt;When we create the unit test, we have to use a mechanism so that the function test does not touch the database. The mechanism is commonly known as a &lt;strong&gt;mock&lt;/strong&gt;.When applying a mock to the unit test, we isolate the function we want to test, then any possible changes in the database will not create conflict in the unit test scenarios.&lt;/p&gt;
@@ -378,7 +378,9 @@ Spark&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Weaknesses
 : The downside of server-side rendering is that the pages often have only basic possibilities of interaction with the user, and when the content changes, or the user navigates to another page, they have to re-download the whole page. This results in more bandwidth and gives the user the feeling that the page is loading slower than it actually is.&lt;/p&gt;
-&lt;/blockquote&gt;</content:encoded></item><item><title><![CDATA[NodeJS Architecture Pattern!]]></title><description><![CDATA[NodeJS Architecture Pattern Factors to scale Exteranl Scale Traffic Increase Direct effect: The most obvious direct effect is overloading…]]></description><link>https:/magicmike90.github.ionode-js-architecture</link><guid isPermaLink="false">https:/magicmike90.github.ionode-js-architecture</guid><pubDate>Sun, 03 Feb 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;NodeJS Architecture Pattern&lt;/h1&gt;
+&lt;/blockquote&gt;</content:encoded></item><item><title><![CDATA[PWA Notes!]]></title><description><![CDATA[Notes for Progressive Web App Case study - Facebook Facebook tried to make the web its primary platform, but due to many engineering…]]></description><link>https:/magicmike90.github.iopwa-readme</link><guid isPermaLink="false">https:/magicmike90.github.iopwa-readme</guid><pubDate>Sun, 03 Feb 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Notes for Progressive Web App&lt;/h1&gt;
+&lt;h2&gt;Case study - Facebook&lt;/h2&gt;
+&lt;p&gt;Facebook tried to make the web its primary platform, but due to many engineering mistakes and browser/hardware limitations, they failed. At that point, they switched to native apps as a primary focus and have since created a very large, walled off community of data and interactions.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[NodeJS Architecture Pattern!]]></title><description><![CDATA[NodeJS Architecture Pattern Factors to scale Exteranl Scale Traffic Increase Direct effect: The most obvious direct effect is overloading…]]></description><link>https:/magicmike90.github.ionode-js-architecture</link><guid isPermaLink="false">https:/magicmike90.github.ionode-js-architecture</guid><pubDate>Sun, 03 Feb 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;NodeJS Architecture Pattern&lt;/h1&gt;
 &lt;h2&gt;Factors to scale&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Exteranl Scale&lt;/li&gt;
@@ -396,9 +398,7 @@ Spark&lt;/p&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;/li&gt;
-&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[PWA Notes!]]></title><description><![CDATA[Notes for Progressive Web App Case study - Facebook Facebook tried to make the web its primary platform, but due to many engineering…]]></description><link>https:/magicmike90.github.iopwa-readme</link><guid isPermaLink="false">https:/magicmike90.github.iopwa-readme</guid><pubDate>Sun, 03 Feb 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Notes for Progressive Web App&lt;/h1&gt;
-&lt;h2&gt;Case study - Facebook&lt;/h2&gt;
-&lt;p&gt;Facebook tried to make the web its primary platform, but due to many engineering mistakes and browser/hardware limitations, they failed. At that point, they switched to native apps as a primary focus and have since created a very large, walled off community of data and interactions.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[NodeJS Cookbook!]]></title><description><![CDATA[Nodejs Cookbook]]></description><link>https:/magicmike90.github.ionode-js-cookbook</link><guid isPermaLink="false">https:/magicmike90.github.ionode-js-cookbook</guid><pubDate>Sun, 03 Feb 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Nodejs Cookbook&lt;/h1&gt;</content:encoded></item><item><title><![CDATA[NodeJS Notes!]]></title><description><![CDATA[Notes for NodeJS NodeJS drawback Due to it uses sigle tread, it results in bad performance on CPU intensive computing (concurrent computing…]]></description><link>https:/magicmike90.github.ionode-js-readme</link><guid isPermaLink="false">https:/magicmike90.github.ionode-js-readme</guid><pubDate>Sun, 03 Feb 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Notes for NodeJS&lt;/h1&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[NodeJS Cookbook!]]></title><description><![CDATA[Nodejs Cookbook]]></description><link>https:/magicmike90.github.ionode-js-cookbook</link><guid isPermaLink="false">https:/magicmike90.github.ionode-js-cookbook</guid><pubDate>Sun, 03 Feb 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Nodejs Cookbook&lt;/h1&gt;</content:encoded></item><item><title><![CDATA[NodeJS Notes!]]></title><description><![CDATA[Notes for NodeJS NodeJS drawback Due to it uses sigle tread, it results in bad performance on CPU intensive computing (concurrent computing…]]></description><link>https:/magicmike90.github.ionode-js-readme</link><guid isPermaLink="false">https:/magicmike90.github.ionode-js-readme</guid><pubDate>Sun, 03 Feb 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Notes for NodeJS&lt;/h1&gt;
 &lt;h2&gt;NodeJS drawback&lt;/h2&gt;
 &lt;p&gt;Due to it uses sigle tread, it results in bad performance on CPU intensive computing (concurrent computing or grid computing)&lt;/p&gt;
 &lt;h2&gt;Asynchronous batching and caching&lt;/h2&gt;
@@ -518,15 +518,7 @@ horizontal scaling - adding more machines to the infrastructure&lt;/p&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;Secure codebase&lt;/h2&gt;</content:encoded></item><item><title><![CDATA[Dimensionality Reduction Notes!]]></title><description><![CDATA[Dimensionality Reduction Principal component analysis (PCA) It is an unsupervised linear transformation technique that is widely used across…]]></description><link>https:/magicmike90.github.iomachine-learning-dimensionality-reduction</link><guid isPermaLink="false">https:/magicmike90.github.iomachine-learning-dimensionality-reduction</guid><pubDate>Thu, 31 Jan 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Dimensionality Reduction&lt;/h1&gt;
-&lt;h2&gt;Principal component analysis (PCA)&lt;/h2&gt;
-&lt;p&gt;It is an unsupervised linear transformation technique that is widely used across different fields, most prominently for dimensionality reduction.&lt;/p&gt;
-&lt;h2&gt;Linear Discriminant Analysis (LDA)&lt;/h2&gt;
-&lt;p&gt;It can be used as a technique for feature extraction to increase the computational efficientcy and reduce the degreee of over-fitting due to the curse of dimensionality in nonregularized models.&lt;/p&gt;
-&lt;h2&gt;Kernel principal component analysis&lt;/h2&gt;
-&lt;p&gt;It will transform data that is not linearly separable onto a new, lower-dimensional subspace that is suitable for linear classifiers&lt;/p&gt;
-&lt;p&gt;Downside: This approach is computational expesnsive, but it can be overcome by kernel trick.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Radial Basis Function (RBF)&lt;/strong&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Dealling with umblanced dataset Notes!]]></title><description><![CDATA[Dealling with umblanced dataset The conventional model evaluation methods do not accurately measure model performance when faced with…]]></description><link>https:/magicmike90.github.iomachine-learning-dealling-with-umblanced-dataset</link><guid isPermaLink="false">https:/magicmike90.github.iomachine-learning-dealling-with-umblanced-dataset</guid><pubDate>Thu, 31 Jan 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Dealling with umblanced dataset&lt;/h1&gt;
+&lt;h2&gt;Secure codebase&lt;/h2&gt;</content:encoded></item><item><title><![CDATA[Dealling with umblanced dataset Notes!]]></title><description><![CDATA[Dealling with umblanced dataset The conventional model evaluation methods do not accurately measure model performance when faced with…]]></description><link>https:/magicmike90.github.iomachine-learning-dealling-with-umblanced-dataset</link><guid isPermaLink="false">https:/magicmike90.github.iomachine-learning-dealling-with-umblanced-dataset</guid><pubDate>Thu, 31 Jan 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Dealling with umblanced dataset&lt;/h1&gt;
 &lt;p&gt;The conventional model evaluation methods do not accurately measure model performance when faced with imbalanced datasets.&lt;/p&gt;
 &lt;h2&gt;Collect more data&lt;/h2&gt;
 &lt;h2&gt;Resampling&lt;/h2&gt;
@@ -574,12 +566,15 @@ horizontal scaling - adding more machines to the infrastructure&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;Modified synthetic minority oversampling technique (MSMOTE)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;Ensemble techniques&lt;/h2&gt;</content:encoded></item><item><title><![CDATA[Embedding a machine learning model to web application Notes!]]></title><description><![CDATA[Embedding a machine learning model to web application Serializing fitted scikit-learn estimaters Training a machine learning model can be…]]></description><link>https:/magicmike90.github.iomachine-learning-embedding-model-to-webapp</link><guid isPermaLink="false">https:/magicmike90.github.iomachine-learning-embedding-model-to-webapp</guid><pubDate>Thu, 31 Jan 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Embedding a machine learning model to web application&lt;/h1&gt;
-&lt;h2&gt;Serializing fitted scikit-learn estimaters&lt;/h2&gt;
-&lt;p&gt;Training a machine learning model can be computationally quite expensive.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Model persistence (pickle): serialize and de-serialize Python object structures to compact byte code, so that we can save our classifer in its current state and reload it if we want to claasify new samples without needing to learn the modle from the training data all over again.&lt;/li&gt;
-&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Cluster Analysis Notes!]]></title><description><![CDATA[Unsupervised learning - Clustering Clustering (cluser analysis) is a technique that allows us to find groups of similar objects, objects…]]></description><link>https:/magicmike90.github.iomachine-learning-clustering-analysis</link><guid isPermaLink="false">https:/magicmike90.github.iomachine-learning-clustering-analysis</guid><pubDate>Thu, 31 Jan 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Unsupervised learning - Clustering&lt;/h1&gt;
+&lt;h2&gt;Ensemble techniques&lt;/h2&gt;</content:encoded></item><item><title><![CDATA[Dimensionality Reduction Notes!]]></title><description><![CDATA[Dimensionality Reduction Principal component analysis (PCA) It is an unsupervised linear transformation technique that is widely used across…]]></description><link>https:/magicmike90.github.iomachine-learning-dimensionality-reduction</link><guid isPermaLink="false">https:/magicmike90.github.iomachine-learning-dimensionality-reduction</guid><pubDate>Thu, 31 Jan 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Dimensionality Reduction&lt;/h1&gt;
+&lt;h2&gt;Principal component analysis (PCA)&lt;/h2&gt;
+&lt;p&gt;It is an unsupervised linear transformation technique that is widely used across different fields, most prominently for dimensionality reduction.&lt;/p&gt;
+&lt;h2&gt;Linear Discriminant Analysis (LDA)&lt;/h2&gt;
+&lt;p&gt;It can be used as a technique for feature extraction to increase the computational efficientcy and reduce the degreee of over-fitting due to the curse of dimensionality in nonregularized models.&lt;/p&gt;
+&lt;h2&gt;Kernel principal component analysis&lt;/h2&gt;
+&lt;p&gt;It will transform data that is not linearly separable onto a new, lower-dimensional subspace that is suitable for linear classifiers&lt;/p&gt;
+&lt;p&gt;Downside: This approach is computational expesnsive, but it can be overcome by kernel trick.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Radial Basis Function (RBF)&lt;/strong&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Cluster Analysis Notes!]]></title><description><![CDATA[Unsupervised learning - Clustering Clustering (cluser analysis) is a technique that allows us to find groups of similar objects, objects…]]></description><link>https:/magicmike90.github.iomachine-learning-clustering-analysis</link><guid isPermaLink="false">https:/magicmike90.github.iomachine-learning-clustering-analysis</guid><pubDate>Thu, 31 Jan 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Unsupervised learning - Clustering&lt;/h1&gt;
 &lt;p&gt;Clustering (cluser analysis) is a technique that allows us to find groups of similar objects, objects that are more related to each other than to objects in other groups.
 Exaples of business-oriented applications of clustering include the grouping of documents, music, and moviews by different topics, or finding customers that share similar interests based on common purchase behaviors as a basis for recommendation egines.&lt;/p&gt;
 &lt;h2&gt;k-means&lt;/h2&gt;
@@ -677,12 +672,11 @@ Soft clustering: sometimes called fuzzy clustering, it assign a sample to one or
 &lt;li&gt;If two or more features are highly correlated, one feature may be ranked very highly while the information fo the other feature(s) may not be fully captured. On the other hand, we don’t need to be concerned about this problem if we are merely interested in the predictive performance of a model rather than the interpretation of feature importtances.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Feature Engineering Notes!]]></title><description><![CDATA[Feature Engineering Identifying Important Features In Random Forests NOTE: there are two things to keep in mind regarding feature importance…]]></description><link>https:/magicmike90.github.iomachine-learning-feature-engineering</link><guid isPermaLink="false">https:/magicmike90.github.iomachine-learning-feature-engineering</guid><pubDate>Thu, 31 Jan 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Feature Engineering&lt;/h1&gt;
-&lt;h2&gt;Identifying Important Features In Random Forests&lt;/h2&gt;
-&lt;p&gt;NOTE: there are two things to keep in mind regarding feature importance:&lt;/p&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Embedding a machine learning model to web application Notes!]]></title><description><![CDATA[Embedding a machine learning model to web application Serializing fitted scikit-learn estimaters Training a machine learning model can be…]]></description><link>https:/magicmike90.github.iomachine-learning-embedding-model-to-webapp</link><guid isPermaLink="false">https:/magicmike90.github.iomachine-learning-embedding-model-to-webapp</guid><pubDate>Thu, 31 Jan 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Embedding a machine learning model to web application&lt;/h1&gt;
+&lt;h2&gt;Serializing fitted scikit-learn estimaters&lt;/h2&gt;
+&lt;p&gt;Training a machine learning model can be computationally quite expensive.&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;While not technically required, scikit-learn requires that we break up nominal categorical features into multiple binary features. This has the effect of spreading the importance of that feature across all of the bninary features and can often makes each feature appear to be &lt;em&gt;umimportant&lt;/em&gt; even when the original nominal categorical feature is highly imprtant&lt;/li&gt;
-&lt;li&gt;If two features are highly correlated then one feature will claim much of the importance, making the other feature appear to be far less important, which has implications for interpretation if not considerred.&lt;/li&gt;
+&lt;li&gt;Model persistence (pickle): serialize and de-serialize Python object structures to compact byte code, so that we can save our classifer in its current state and reload it if we want to claasify new samples without needing to learn the modle from the training data all over again.&lt;/li&gt;
 &lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Ensemble learning Notes!]]></title><description><![CDATA[Ensemble learning Ensemble methods: combine different classifiers into a meta-classifier that has a better generalization performance than…]]></description><link>https:/magicmike90.github.iomachine-learning-ensemble-learning</link><guid isPermaLink="false">https:/magicmike90.github.iomachine-learning-ensemble-learning</guid><pubDate>Thu, 31 Jan 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Ensemble learning&lt;/h1&gt;
 &lt;p&gt;Ensemble methods: combine different classifiers into a meta-classifier that has a better generalization performance than each individual classifier alone.&lt;/p&gt;
 &lt;p&gt;Example: assuming that we collected predictions from 10 experts, ensemble methods would allow us to strategically combine these predictions by the 10 experts to come up with a prediction that is more accurate and robust than the predictions by each individual expert.&lt;/p&gt;
@@ -729,6 +723,12 @@ Soft clustering: sometimes called fuzzy clustering, it assign a sample to one or
 &lt;p&gt;Disadvantages&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Sensitive to noisy data and outliers&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Feature Engineering Notes!]]></title><description><![CDATA[Feature Engineering Identifying Important Features In Random Forests NOTE: there are two things to keep in mind regarding feature importance…]]></description><link>https:/magicmike90.github.iomachine-learning-feature-engineering</link><guid isPermaLink="false">https:/magicmike90.github.iomachine-learning-feature-engineering</guid><pubDate>Thu, 31 Jan 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Feature Engineering&lt;/h1&gt;
+&lt;h2&gt;Identifying Important Features In Random Forests&lt;/h2&gt;
+&lt;p&gt;NOTE: there are two things to keep in mind regarding feature importance:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;While not technically required, scikit-learn requires that we break up nominal categorical features into multiple binary features. This has the effect of spreading the importance of that feature across all of the bninary features and can often makes each feature appear to be &lt;em&gt;umimportant&lt;/em&gt; even when the original nominal categorical feature is highly imprtant&lt;/li&gt;
+&lt;li&gt;If two features are highly correlated then one feature will claim much of the importance, making the other feature appear to be far less important, which has implications for interpretation if not considerred.&lt;/li&gt;
 &lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Introduction of Machine Learning!]]></title><description><![CDATA[Introduction A diagram of AI in computer science alt text Rule-based system VS Machine learning The logic required to make a decision is…]]></description><link>https:/magicmike90.github.iomachine-learning-intro</link><guid isPermaLink="false">https:/magicmike90.github.iomachine-learning-intro</guid><pubDate>Thu, 31 Jan 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Introduction&lt;/h1&gt;
 &lt;h2&gt;A diagram of AI in computer science&lt;/h2&gt;
 &lt;p&gt;&lt;img src=&quot;https://github.com/MagicMike90/Notes/blob/master/Machine-Learning/ai_explaination.jpg&quot; alt=&quot;alt text&quot; title=&quot;A diagram of AI category1&quot;&gt;&lt;/p&gt;
@@ -864,32 +864,39 @@ it increase computational cost, since it trains k models instead of a single mod
 &lt;li&gt;Area under the cureve (AUC) can be computed based on ROC curve to charaterize the performance of a classification model&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Training Algorithms of machine learning!]]></title><description><![CDATA[Training Algorithms Linear Algebra notes Numpy The advantage of using Numpy over classic Python for-loop structures is that its arithmetic…]]></description><link>https:/magicmike90.github.iomachine-learning-training-algorithms</link><guid isPermaLink="false">https:/magicmike90.github.iomachine-learning-training-algorithms</guid><pubDate>Thu, 31 Jan 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Training Algorithms&lt;/h1&gt;
-&lt;h2&gt;&lt;a href=&quot;http://www.cs.cmu.edu/~zkolter/course/linalg/linalg_notes.pdf&quot;&gt;Linear Algebra notes&lt;/a&gt;&lt;/h2&gt;
-&lt;h2&gt;Numpy&lt;/h2&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Regression Analysis notest!]]></title><description><![CDATA[Regression Analysis Datasets (https://archive.ics.uci.edu/ml/datasets/Housing) CRIM: This is the per capita crime rate by town ZN: This is…]]></description><link>https:/magicmike90.github.iomachine-learning-regression-analysis</link><guid isPermaLink="false">https:/magicmike90.github.iomachine-learning-regression-analysis</guid><pubDate>Thu, 31 Jan 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Regression Analysis&lt;/h1&gt;
+&lt;h2&gt;Datasets (&lt;a href=&quot;https://archive.ics.uci.edu/ml/datasets/Housing&quot;&gt;https://archive.ics.uci.edu/ml/datasets/Housing&lt;/a&gt;)&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;The advantage of using Numpy over classic Python for-loop structures is that its arithmetic operations are vectorized, imporve the performance of operations by making better use of &lt;strong&gt;Single Instruction, Multiple Data (SIMD)&lt;/strong&gt; of moden CPU architecures.&lt;/li&gt;
+&lt;li&gt;CRIM: This is the per capita crime rate by town&lt;/li&gt;
+&lt;li&gt;ZN: This is the proportion of residential land zoned for lots larger than 25,000 sq.ft.&lt;/li&gt;
+&lt;li&gt;INDUS: This is the proportion of non-retail business acres per town&lt;/li&gt;
+&lt;li&gt;CHAS: This is the Charles River dummy variable (this is equal to 1 if tract bounds river; 0 otherwise)&lt;/li&gt;
+&lt;li&gt;NOX: This is the nitric oxides concentration (parts per 10 million)&lt;/li&gt;
+&lt;li&gt;RM: This is the average number of rooms per dwelling&lt;/li&gt;
+&lt;li&gt;AGE: This is the proportion of owner-occupied units built prior to 1940&lt;/li&gt;
+&lt;li&gt;DIS: This is the weighted distances to five Boston employment centers&lt;/li&gt;
+&lt;li&gt;RAD: This is the index of accessibility to radial highways&lt;/li&gt;
+&lt;li&gt;TAX: This is the full-value property-tax rate per $10,000&lt;/li&gt;
+&lt;li&gt;PTRATIO: This is the pupil-teacher ratio by town&lt;/li&gt;
+&lt;li&gt;B: This is calculated as 1000(Bk - 0.63)^2, where Bk is the proportion of people of African American descent by town&lt;/li&gt;
+&lt;li&gt;LSTAT: This is the percentage lower status of the population&lt;/li&gt;
+&lt;li&gt;MEDV: This is the median value of owner-occupied homes in $1000s&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;methods&lt;/p&gt;
+&lt;h2&gt;RANDom SAmple Consensus (RANSAC) - fitting a robust regression model&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;dot()&lt;/strong&gt;:dot product of two pioints&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;zip()&lt;/strong&gt;:The zip() function take iterables (can be zero or more), makes iterator that aggregates elements based on the iterables passed, and returns an iterator of tuples.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;where&lt;/strong&gt;(condition[, x, y]): Return elements, either from x or y, depending on condition.i.e. np.where(y == ‘Iris-setosa’, -1, 1), where value equals ‘Iris-setosa’ will change to be -1.&lt;/li&gt;
+&lt;li&gt;Select a random number of samples to be inliers and fit the model&lt;/li&gt;
+&lt;li&gt;Test all other data points against the fitted model and add those points that fall within a user-givern tolerance to the inliers&lt;/li&gt;
+&lt;li&gt;Refit the mole using all inliers.&lt;/li&gt;
+&lt;li&gt;Estimate the error of the fitted model versus the inliers.&lt;/li&gt;
+&lt;li&gt;Terminate the algorithm if the performance meets a certain user-defined threshold or if a fixed number of iterations has been reached; go back to step 1 otherwise&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;Pandas&lt;/h2&gt;
-&lt;p&gt;methods&lt;/p&gt;
+&lt;h2&gt;Regulation&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;read_csv()&lt;/strong&gt;: read csv file , return &lt;em&gt;DataFrame&lt;/em&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;tail()&lt;/strong&gt;: get last n line of DataFrame&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;iloc(array, index)&lt;/strong&gt;: get numer of rows of column index&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;Disadvantage of perceptron&lt;/h2&gt;
-&lt;p&gt;its biggest disadvantage is that it never converges if the classes are not perfectly linearly separable.&lt;/p&gt;
-&lt;h2&gt;The curse of dimensionality&lt;/h2&gt;
-&lt;p&gt;The curse of dimensionality describes the phenomenon where the feature
-space becomes increasingly sparse for an increasing number
-of dimensions of a fixed-size training dataset&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;Regularization&lt;/em&gt; is not applicable such as decision trees and KNN, we can use feature selection and dimensionality reduction techniques to help us avoid the curse of dimensionality&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Scifit-learn notes!]]></title><description><![CDATA[Scifit-learn Overfitting means that the model captures the patterns in the training data well, but fails to generalize well to unseen data…]]></description><link>https:/magicmike90.github.iomachine-learning-scikit-learn</link><guid isPermaLink="false">https:/magicmike90.github.iomachine-learning-scikit-learn</guid><pubDate>Thu, 31 Jan 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Scifit-learn&lt;/h1&gt;
+&lt;li&gt;Redge Regression&lt;/li&gt;
+&lt;li&gt;Least Absolute&lt;/li&gt;
+&lt;li&gt;Shrinkage and Selection Operator (LASSO)&lt;/li&gt;
+&lt;li&gt;Elastic Net&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Scifit-learn notes!]]></title><description><![CDATA[Scifit-learn Overfitting means that the model captures the patterns in the training data well, but fails to generalize well to unseen data…]]></description><link>https:/magicmike90.github.iomachine-learning-scikit-learn</link><guid isPermaLink="false">https:/magicmike90.github.iomachine-learning-scikit-learn</guid><pubDate>Thu, 31 Jan 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Scifit-learn&lt;/h1&gt;
 &lt;p&gt;&lt;strong&gt;Overfitting&lt;/strong&gt; means that the model captures the patterns in the training data well, but fails to generalize well to unseen data.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Training data: the slited data used to build machine learning model&lt;/li&gt;
@@ -937,38 +944,6 @@ Take a long time to train.&lt;/p&gt;</content:encoded></item><item><title><![CDA
 &lt;li&gt;Processing documents into tokens&lt;/li&gt;
 &lt;li&gt;Training a logistic regression model for document classification&lt;/li&gt;
 &lt;li&gt;Online algorithms and out-of-core learning for large datasets&lt;/li&gt;
-&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Regression Analysis notest!]]></title><description><![CDATA[Regression Analysis Datasets (https://archive.ics.uci.edu/ml/datasets/Housing) CRIM: This is the per capita crime rate by town ZN: This is…]]></description><link>https:/magicmike90.github.iomachine-learning-regression-analysis</link><guid isPermaLink="false">https:/magicmike90.github.iomachine-learning-regression-analysis</guid><pubDate>Thu, 31 Jan 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Regression Analysis&lt;/h1&gt;
-&lt;h2&gt;Datasets (&lt;a href=&quot;https://archive.ics.uci.edu/ml/datasets/Housing&quot;&gt;https://archive.ics.uci.edu/ml/datasets/Housing&lt;/a&gt;)&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;CRIM: This is the per capita crime rate by town&lt;/li&gt;
-&lt;li&gt;ZN: This is the proportion of residential land zoned for lots larger than 25,000 sq.ft.&lt;/li&gt;
-&lt;li&gt;INDUS: This is the proportion of non-retail business acres per town&lt;/li&gt;
-&lt;li&gt;CHAS: This is the Charles River dummy variable (this is equal to 1 if tract bounds river; 0 otherwise)&lt;/li&gt;
-&lt;li&gt;NOX: This is the nitric oxides concentration (parts per 10 million)&lt;/li&gt;
-&lt;li&gt;RM: This is the average number of rooms per dwelling&lt;/li&gt;
-&lt;li&gt;AGE: This is the proportion of owner-occupied units built prior to 1940&lt;/li&gt;
-&lt;li&gt;DIS: This is the weighted distances to five Boston employment centers&lt;/li&gt;
-&lt;li&gt;RAD: This is the index of accessibility to radial highways&lt;/li&gt;
-&lt;li&gt;TAX: This is the full-value property-tax rate per $10,000&lt;/li&gt;
-&lt;li&gt;PTRATIO: This is the pupil-teacher ratio by town&lt;/li&gt;
-&lt;li&gt;B: This is calculated as 1000(Bk - 0.63)^2, where Bk is the proportion of people of African American descent by town&lt;/li&gt;
-&lt;li&gt;LSTAT: This is the percentage lower status of the population&lt;/li&gt;
-&lt;li&gt;MEDV: This is the median value of owner-occupied homes in $1000s&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;RANDom SAmple Consensus (RANSAC) - fitting a robust regression model&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Select a random number of samples to be inliers and fit the model&lt;/li&gt;
-&lt;li&gt;Test all other data points against the fitted model and add those points that fall within a user-givern tolerance to the inliers&lt;/li&gt;
-&lt;li&gt;Refit the mole using all inliers.&lt;/li&gt;
-&lt;li&gt;Estimate the error of the fitted model versus the inliers.&lt;/li&gt;
-&lt;li&gt;Terminate the algorithm if the performance meets a certain user-defined threshold or if a fixed number of iterations has been reached; go back to step 1 otherwise&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;Regulation&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Redge Regression&lt;/li&gt;
-&lt;li&gt;Least Absolute&lt;/li&gt;
-&lt;li&gt;Shrinkage and Selection Operator (LASSO)&lt;/li&gt;
-&lt;li&gt;Elastic Net&lt;/li&gt;
 &lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Summary of machine learning!]]></title><description><![CDATA[Summary of machine learning Common used machine learning algorithm Listed in order of increasing complexity: Logiistic regressiong K-nearest…]]></description><link>https:/magicmike90.github.iomachine-learning-summary</link><guid isPermaLink="false">https:/magicmike90.github.iomachine-learning-summary</guid><pubDate>Thu, 31 Jan 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Summary of machine learning&lt;/h1&gt;
 &lt;h2&gt;Common used machine learning algorithm&lt;/h2&gt;
 &lt;p&gt;Listed in order of increasing complexity:&lt;/p&gt;
@@ -1077,7 +1052,32 @@ Take a long time to train.&lt;/p&gt;</content:encoded></item><item><title><![CDA
 &lt;li&gt;review: A free open class designed by Standford University, this course teaches machine learning knowledge from basis to advance.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Git Notes!]]></title><description><![CDATA[Git Notes Revert file to specific commit git checkout commit_id — file1/to/restore file2/to/restore Reset commit git reset HEAD~ Reset index…]]></description><link>https:/magicmike90.github.iogit-git</link><guid isPermaLink="false">https:/magicmike90.github.iogit-git</guid><pubDate>Thu, 31 Jan 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Git Notes&lt;/h1&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Training Algorithms of machine learning!]]></title><description><![CDATA[Training Algorithms Linear Algebra notes Numpy The advantage of using Numpy over classic Python for-loop structures is that its arithmetic…]]></description><link>https:/magicmike90.github.iomachine-learning-training-algorithms</link><guid isPermaLink="false">https:/magicmike90.github.iomachine-learning-training-algorithms</guid><pubDate>Thu, 31 Jan 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Training Algorithms&lt;/h1&gt;
+&lt;h2&gt;&lt;a href=&quot;http://www.cs.cmu.edu/~zkolter/course/linalg/linalg_notes.pdf&quot;&gt;Linear Algebra notes&lt;/a&gt;&lt;/h2&gt;
+&lt;h2&gt;Numpy&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;The advantage of using Numpy over classic Python for-loop structures is that its arithmetic operations are vectorized, imporve the performance of operations by making better use of &lt;strong&gt;Single Instruction, Multiple Data (SIMD)&lt;/strong&gt; of moden CPU architecures.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;methods&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;dot()&lt;/strong&gt;:dot product of two pioints&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;zip()&lt;/strong&gt;:The zip() function take iterables (can be zero or more), makes iterator that aggregates elements based on the iterables passed, and returns an iterator of tuples.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;where&lt;/strong&gt;(condition[, x, y]): Return elements, either from x or y, depending on condition.i.e. np.where(y == ‘Iris-setosa’, -1, 1), where value equals ‘Iris-setosa’ will change to be -1.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Pandas&lt;/h2&gt;
+&lt;p&gt;methods&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;read_csv()&lt;/strong&gt;: read csv file , return &lt;em&gt;DataFrame&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;tail()&lt;/strong&gt;: get last n line of DataFrame&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;iloc(array, index)&lt;/strong&gt;: get numer of rows of column index&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Disadvantage of perceptron&lt;/h2&gt;
+&lt;p&gt;its biggest disadvantage is that it never converges if the classes are not perfectly linearly separable.&lt;/p&gt;
+&lt;h2&gt;The curse of dimensionality&lt;/h2&gt;
+&lt;p&gt;The curse of dimensionality describes the phenomenon where the feature
+space becomes increasingly sparse for an increasing number
+of dimensions of a fixed-size training dataset&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Regularization&lt;/em&gt; is not applicable such as decision trees and KNN, we can use feature selection and dimensionality reduction techniques to help us avoid the curse of dimensionality&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Git Notes!]]></title><description><![CDATA[Git Notes Revert file to specific commit git checkout commit_id — file1/to/restore file2/to/restore Reset commit git reset HEAD~ Reset index…]]></description><link>https:/magicmike90.github.iogit-git</link><guid isPermaLink="false">https:/magicmike90.github.iogit-git</guid><pubDate>Thu, 31 Jan 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Git Notes&lt;/h1&gt;
 &lt;h2&gt;Revert file to specific commit&lt;/h2&gt;
 &lt;p&gt;git checkout commit_id — file1/to/restore file2/to/restore&lt;/p&gt;
 &lt;h2&gt;Reset commit&lt;/h2&gt;
@@ -1208,7 +1208,10 @@ Switch to the branch and then:&lt;/li&gt;
 &lt;li&gt;lazy loading: Consider an object that is expensive to create that is to say it takes a great deal of time to create the object. If we are unsure if the object’s value will be needed, we can defer its full creation until later.&lt;/li&gt;
 &lt;li&gt;Currying – Partial application: Currying is the technique of translating the evaluation of a function that takes multiple arguments into evaluating a sequence of functions, each with a single argument.&lt;/li&gt;
 &lt;li&gt;Composing: Composing is another benefit of functional programming allowing to generate super functions using existing functions.&lt;/li&gt;
-&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Dotnet Notes!]]></title><description><![CDATA[Dotnet notes Dotnet MVC Dotnet API Duck Typing Install Angular 5 app with dotnet cli Installl the templates Create a new Angular App Change…]]></description><link>https:/magicmike90.github.iodotnet-readme</link><guid isPermaLink="false">https:/magicmike90.github.iodotnet-readme</guid><pubDate>Thu, 31 Jan 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Dotnet notes&lt;/h1&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[AWS Notes!]]></title><description><![CDATA[Install Node app in AWS Installing node and system dependencies]]></description><link>https:/magicmike90.github.iodev-ops-aws</link><guid isPermaLink="false">https:/magicmike90.github.iodev-ops-aws</guid><pubDate>Thu, 31 Jan 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;Install Node app in AWS&lt;/h2&gt;
+&lt;h3&gt;Installing node and system dependencies&lt;/h3&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;curl&lt;/span&gt; -sL https://deb.nodesource.com/setup_8.x &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;sudo&lt;/span&gt; -E &lt;span class=&quot;token function&quot;&gt;bash&lt;/span&gt; -
+&lt;span class=&quot;token function&quot;&gt;sudo&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;apt-get&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt; -y nodejs&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[Dotnet Notes!]]></title><description><![CDATA[Dotnet notes Dotnet MVC Dotnet API Duck Typing Install Angular 5 app with dotnet cli Installl the templates Create a new Angular App Change…]]></description><link>https:/magicmike90.github.iodotnet-readme</link><guid isPermaLink="false">https:/magicmike90.github.iodotnet-readme</guid><pubDate>Thu, 31 Jan 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Dotnet notes&lt;/h1&gt;
 &lt;h2&gt;Dotnet MVC&lt;/h2&gt;
 &lt;h2&gt;Dotnet API&lt;/h2&gt;
 &lt;h2&gt;Duck Typing&lt;/h2&gt;
@@ -1306,10 +1309,7 @@ $ docker-compose up --no-deps -d web&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;blockquote&gt;
 &lt;p&gt;clean up logs&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;truncate -s &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt; /var/lib/docker/containers/*/*-json.log&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[AWS Notes!]]></title><description><![CDATA[Install Node app in AWS Installing node and system dependencies]]></description><link>https:/magicmike90.github.iodev-ops-aws</link><guid isPermaLink="false">https:/magicmike90.github.iodev-ops-aws</guid><pubDate>Thu, 31 Jan 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;Install Node app in AWS&lt;/h2&gt;
-&lt;h3&gt;Installing node and system dependencies&lt;/h3&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;curl&lt;/span&gt; -sL https://deb.nodesource.com/setup_8.x &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;sudo&lt;/span&gt; -E &lt;span class=&quot;token function&quot;&gt;bash&lt;/span&gt; -
-&lt;span class=&quot;token function&quot;&gt;sudo&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;apt-get&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt; -y nodejs&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[ELK Stack Notes!]]></title><description><![CDATA[ELK Stack notes Elasticsearch Increase production virtual memory
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;truncate -s &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt; /var/lib/docker/containers/*/*-json.log&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[ELK Stack Notes!]]></title><description><![CDATA[ELK Stack notes Elasticsearch Increase production virtual memory
  Filebeat Start Filebeat
  Config Filebeat
  To see a list of available…]]></description><link>https:/magicmike90.github.iodev-ops-elk</link><guid isPermaLink="false">https:/magicmike90.github.iodev-ops-elk</guid><pubDate>Thu, 31 Jan 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;ELK Stack notes&lt;/h1&gt;
@@ -1592,20 +1592,7 @@ class and ensure that only its behavior is being tested&lt;/p&gt;
 &lt;/ul&gt;
 &lt;h2&gt;Router bug&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&quot;https://stackoverflow.com/questions/38120756/angular2-router-navigate-refresh-page&quot;&gt;https://stackoverflow.com/questions/38120756/angular2-router-navigate-refresh-page&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Input type (type = “button) is important to make naviation animation works in angular 4, without specifying type, it works on IE11 and Edge browsers, but would reload the application in Chrome.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Notes for API engineering!]]></title><description><![CDATA[RPC vs REST RPC (Command-based) style endpoints are great when you want only one job done well. This makes it useful to one or two app…]]></description><link>https:/magicmike90.github.ioapi</link><guid isPermaLink="false">https:/magicmike90.github.ioapi</guid><pubDate>Mon, 21 Jan 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;RPC vs REST&lt;/h2&gt;
-&lt;p&gt;RPC (&lt;strong&gt;Command-based&lt;/strong&gt;) style endpoints are great when you want only one job done well. This makes it useful to one or two app clients because it is niche a service. RPC endpoints can implement business logic inside the service, given that it only does one thing. This adds simplicity and clarity to the service.&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;http&quot;&gt;&lt;pre class=&quot;language-http&quot;&gt;&lt;code class=&quot;language-http&quot;&gt;GET /someoperation?data=anId
-
-POST /anotheroperation
-{
-  &quot;data&quot;:&quot;anId&quot;;
-  &quot;anotherdata&quot;:&quot;another value&quot;
-}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;For a REST (&lt;strong&gt;resource-based&lt;/strong&gt;) endpoint, you must treat it like a resource that provides domain data. The reward is you are now segregating data into separate domains. This makes it useful for when you have any number of apps requesting data. This approach attempts to decouple data from application or business logic.&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;http&quot;&gt;&lt;pre class=&quot;language-http&quot;&gt;&lt;code class=&quot;language-http&quot;&gt;GET /someresources/anId
-
-PUT /someresources/anId
-{&quot;anotherdata&quot;:&quot;another value&quot;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[Agile Notes!]]></title><description><![CDATA[Methodology extreme programming scrum kanban Cargo Cult Being envious of the success and benefits of Agile, many companies adopt the…]]></description><link>https:/magicmike90.github.ioagile</link><guid isPermaLink="false">https:/magicmike90.github.ioagile</guid><pubDate>Mon, 21 Jan 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;Methodology&lt;/h2&gt;
+&lt;p&gt;Input type (type = “button) is important to make naviation animation works in angular 4, without specifying type, it works on IE11 and Edge browsers, but would reload the application in Chrome.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Agile Notes!]]></title><description><![CDATA[Methodology extreme programming scrum kanban Cargo Cult Being envious of the success and benefits of Agile, many companies adopt the…]]></description><link>https:/magicmike90.github.ioagile</link><guid isPermaLink="false">https:/magicmike90.github.ioagile</guid><pubDate>Mon, 21 Jan 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;Methodology&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;extreme programming&lt;/li&gt;
 &lt;li&gt;scrum&lt;/li&gt;
@@ -1621,7 +1608,20 @@ PUT /someresources/anId
 &lt;li&gt;The Quality Manager (QM) or Quality Engineer(QE) is the team member responsible for quality management of the product. The QM organizes the quality process in the team, educates the PO and ScMa on quality best practices, and provides quality requirements to the team based on feedback from the PO, industry standards, and best practices (Including performance, security, usability, accessibility etc.).&lt;/li&gt;
 &lt;li&gt;Developers (DEV) estimate and commit to the estimation on a Sprint basis. They constantly improve the accuracy of the estimation and self-improve from Sprint to Sprint without micromanagement from other roles and managers. Developers distribute between the different expert roles—for example performance, security, and user interface designer.&lt;/li&gt;
 &lt;li&gt;A Technical Writer (TW) writes supporting documentation for the project. This role can be centralized, since it is usually not required to have a full-time technical writer in the team. However, technical documentation also can be produced by any other role/roles in the team as an additional responsibility.&lt;/li&gt;
-&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Microservice Architecture Notes!]]></title><description><![CDATA[Microservice notes SOA VS Mircoservice Microservices are fine-grained SOA components. In other words, a single SOA
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Notes for API engineering!]]></title><description><![CDATA[RPC vs REST RPC (Command-based) style endpoints are great when you want only one job done well. This makes it useful to one or two app…]]></description><link>https:/magicmike90.github.ioapi</link><guid isPermaLink="false">https:/magicmike90.github.ioapi</guid><pubDate>Mon, 21 Jan 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;RPC vs REST&lt;/h2&gt;
+&lt;p&gt;RPC (&lt;strong&gt;Command-based&lt;/strong&gt;) style endpoints are great when you want only one job done well. This makes it useful to one or two app clients because it is niche a service. RPC endpoints can implement business logic inside the service, given that it only does one thing. This adds simplicity and clarity to the service.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;http&quot;&gt;&lt;pre class=&quot;language-http&quot;&gt;&lt;code class=&quot;language-http&quot;&gt;GET /someoperation?data=anId
+
+POST /anotheroperation
+{
+  &quot;data&quot;:&quot;anId&quot;;
+  &quot;anotherdata&quot;:&quot;another value&quot;
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;For a REST (&lt;strong&gt;resource-based&lt;/strong&gt;) endpoint, you must treat it like a resource that provides domain data. The reward is you are now segregating data into separate domains. This makes it useful for when you have any number of apps requesting data. This approach attempts to decouple data from application or business logic.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;http&quot;&gt;&lt;pre class=&quot;language-http&quot;&gt;&lt;code class=&quot;language-http&quot;&gt;GET /someresources/anId
+
+PUT /someresources/anId
+{&quot;anotherdata&quot;:&quot;another value&quot;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[Microservice Architecture Notes!]]></title><description><![CDATA[Microservice notes SOA VS Mircoservice Microservices are fine-grained SOA components. In other words, a single SOA
 component can be…]]></description><link>https:/magicmike90.github.ioarchitecture-microservice</link><guid isPermaLink="false">https:/magicmike90.github.ioarchitecture-microservice</guid><pubDate>Mon, 21 Jan 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Microservice notes&lt;/h1&gt;
 &lt;h1&gt;SOA VS Mircoservice&lt;/h1&gt;
 &lt;p&gt;Microservices are fine-grained SOA components. In other words, a single SOA
